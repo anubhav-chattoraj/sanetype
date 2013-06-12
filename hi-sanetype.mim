@@ -6,8 +6,34 @@
 
 (map
   (independent
-    ("x", ?अ)
-    ("a", ?आ)
+    ;; Traditional vowels
+    ("x" , ?अ)
+    ("a" , ?आ)
+    ("i" , ?इ)
+    ("I" , ?ई)
+    ("u" , ?उ)
+    ("U" , ?ऊ)
+    ("Ar", ?ऋ)
+    ("AR", ?ॠ)
+    ("Al", ?ऌ)
+    ("AL", ?ॡ)
+    ("e" , ?ए)
+    ("Ai", ?ऐ)
+    ("o" , ?ओ)
+    ("Au", ?औ)
+    ;; Non-traditional vowels
+    ("Aa", ?ऄ)
+    ("Ea", ?ऍ)
+    ("Ee", ?ऎ)
+    ("Ao", ?ऑ)
+    ("Oo", ?ऒ)
+    ("Ae", ?ॲ)
+    ("Oe", ?ॳ)
+    ("OE", ?ॴ)
+    ("Aw", ?ॵ)
+    ("Ou", ?ॶ)
+    ("OU", ?ॷ)
+    ;; Traditional consonants
     ("k", ?क))
   (dependent
     ("x", ?्)
