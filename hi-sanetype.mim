@@ -1,0 +1,25 @@
+(input-method hi sanetype)
+
+(description "Devanagari input by sanetype method")
+
+(title "से")
+
+(map
+  (independent
+    ("x", ?अ)
+    ("a", ?आ)
+    ("k", ?क))
+  (dependent
+    ("x", ?्)
+    ("a", ?ा)))
+(state
+  (first
+    (independent (shift second)))
+  (second
+    (dependent (shift first))
+    (nil (shift first)))
+    
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; End:
