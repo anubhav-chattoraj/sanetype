@@ -1,4 +1,4 @@
-_ __TODO__: Translate this page into Hindi._
+_TODO: Translate this page into Hindi._
 
 _Yell at me if it's past August 2013 and this README is still monolingual._
 
