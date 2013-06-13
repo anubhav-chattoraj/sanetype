@@ -32,16 +32,7 @@
     ("OE" ?ॴ)
     ("Aw" ?ॵ)
     ("Eu" ?ॶ)
-    ("EU" ?ॷ)
-    ;; diacritics
-    ("["  ?ं)
-    ("/"  ?ँ)
-    (":"  ?ः)
-    ("'"  ?ʼ) ; MODIFIER LETTER APOSTROPHE
-    ("''" ?ऽ)
-    ;; miscellaneous symbols
-    ("Om" ?ॐ)
-    (",," ?॰))
+    ("EU" ?ॷ))
   (dependent
     ;; Hindi vowels
     ("x"  ?्)
@@ -69,8 +60,7 @@
     ("OE" ?ऻ)
     ("Aw" ?ॏ)
     ("Eu" ?ॖ)
-    ("EU" ?ॗ)
-    ("q"  delete @=)) ;; change mode
+    ("EU" ?ॗ)) 
   (consonant
     ;; Plain consonants
     ("k"  ?क)
@@ -132,20 +122,53 @@
     ("j_" ?ॼ)
     ("d_" ?ॾ)
     ("b_" ?ॿ)
-    ("Hh" ?ॽ)           ; glottal stop
-    ("Q"  delete @=))   ; change mode
+    ("Hh" ?ॽ))   ; glottal stop
   (consdiacritics
     ("h"  "्ह")
-    ("X"  ?़)))
+    ("X"  ?़))
+  (misc
+    ;; diacritics
+    ("["  ?ं)
+    ("/"  ?ँ)
+    (":"  ?ः)
+    ("'"  ?ʼ) ; MODIFIER LETTER APOSTROPHE
+    ("''" ?ऽ)
+    ;; punctuation
+    ("\\" ?।)
+    ("|"  ?॥)
+    ;; digits
+    ("0"  ?०)
+    ("1"  ?१)
+    ("2"  ?२)
+    ("3"  ?३)
+    ("4"  ?४)
+    ("5"  ?५)
+    ("6"  ?६)
+    ("7"  ?७)
+    ("8"  ?८)
+    ("9"  ?९)
+    ;; symbols
+    ("Om" ?ॐ)
+    (",," ?॰))
+  (mode
+    ("q"  (shift escape))
+    ("Q"  (shift second))))
     
 (state
   (first
+    (mode)
     (independent (commit))
+    (misc (commit))
+    (consdiacritics (commit))
     (consonant (commit) (shift second)))
   (second
+    (mode)
     (dependent (commit) (shift first))
     (consdiacritics (commit))
-    (nil (shift first))))
+    (nil (shift first)))
+  (escape
+    (independent (commit))
+    (nil (commit))))
     
 ;; Local Variables:
 ;; coding: utf-8
