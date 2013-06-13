@@ -34,12 +34,11 @@
     ("Eu" ?ॶ)
     ("EU" ?ॷ)
     ;; diacritics
-    ("X"  ?़)
     ("["  ?ं)
     ("/"  ?ँ)
     (":"  ?ः)
     ("'"  ?ʼ) ; MODIFIER LETTER APOSTROPHE
-    ("S'" ?ऽ)
+    ("''" ?ऽ)
     ;; miscellaneous symbols
     ("Om" ?ॐ)
     (",," ?॰))
@@ -125,15 +124,18 @@
     ("Sr" "श्र")
     ("V"  "द्य")
     ("<"  "र्")
-    (">"  "्र")
-    ("h"  "्ह")))
+    (">"  "्र"))
+  (consdiacritics
+    ("h"  "्ह")
+    ("X"  ?़)))
     
 (state
   (first
-    (independent)
-    (consonant (shift second)))
+    (independent (commit))
+    (consonant (commit) (shift second)))
   (second
-    (dependent (shift first))
+    (dependent (commit) (shift first))
+    (consdiacritics (commit))
     (nil (shift first))))
     
 ;; Local Variables:
