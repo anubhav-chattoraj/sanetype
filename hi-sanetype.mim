@@ -69,7 +69,8 @@
     ("OE" ?ऻ)
     ("Aw" ?ॏ)
     ("Eu" ?ॖ)
-    ("EU" ?ॗ))
+    ("EU" ?ॗ)
+    ("q"  delete @=)) ;; change mode
   (consonant
     ;; Plain consonants
     ("k"  ?क)
@@ -117,6 +118,7 @@
     ("Ph" ?फ़)
     ("Y"  ?य़)
     ("R"  ?ऱ)
+    ("Z"  ?ऴ)
     ;; Conjuncts
     ("Sk" "क्ष")
     ("F"  "त्र")
@@ -124,7 +126,14 @@
     ("Sr" "श्र")
     ("V"  "द्य")
     ("<"  "र्")
-    (">"  "्र"))
+    (">"  "्र")
+    ;; Implosives
+    ("g_" ?ॻ)
+    ("j_" ?ॼ)
+    ("d_" ?ॾ)
+    ("b_" ?ॿ)
+    ("Hh" ?ॽ)           ; glottal stop
+    ("Q"  delete @=))   ; change mode
   (consdiacritics
     ("h"  "्ह")
     ("X"  ?़)))
