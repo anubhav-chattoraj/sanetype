@@ -37,4 +37,4 @@ __For SCIM__: At the end of `mdb.dir` file in this directory, add
 Restart IBus/SCIM. 
 
 You can now add the `Hindi - sanetype(m17n)` input method to IBus from the 
-Preferences dialog, and to SCIM from the IMEngine Global Setup.
+Preferences dialog, or to SCIM from the IMEngine Global Setup.
