@@ -197,7 +197,11 @@
     ("9"   ?९)
     ;; symbols
     ("Om"  ?ॐ)
-    (",,"  ?॰))
+    (",,"  ?॰)
+    ("$"   ?₹)
+    ;; non-printing chars
+    ("`"   0x200C) ; zero-width joiner
+    ("~"   0x200D)); zero-width non-joiner
   (mode
     ("q"  (shift escape))
     ("Q"  (shift second))))
