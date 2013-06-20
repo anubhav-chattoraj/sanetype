@@ -9,8 +9,8 @@
 (map
   (characters
     ;; Hindi vowels
-    ("X"   ?अ)                  ; DEVANAGARI LETTER A
-    ("A"   ?आ)                  ; DEVANAGARI LETTER AA
+    ("A"   ?अ)                  ; DEVANAGARI LETTER A
+    ("Aa"   ?आ)                  ; DEVANAGARI LETTER AA
     ("I"   ?इ)                  ; DEVANAGARI LETTER I
     ("Ii"   ?ई)                  ; DEVANAGARI LETTER II
     ("U"   ?उ)                  ; DEVANAGARI LETTER U
@@ -22,7 +22,7 @@
     ("Au"  ?औ)                  ; DEVANAGARI LETTER AU
     ;; Non-Hindi vowels
     (",A"  ?ऄ)                  ; DEVANAGARI LETTER SHORT A
-    ("Ea"  ?ऍ)                  ; DEVANAGARI LETTER CANDRA E
+    ("Ee"  ?ऍ)                  ; DEVANAGARI LETTER CANDRA E
     (",E"  ?ऎ)                  ; DEVANAGARI LETTER SHORT E
     ("Ao"  ?ऑ)                  ; DEVANAGARI LETTER CANDRA O
     (",O"  ?ऒ)                  ; DEVANAGARI LETTER SHORT O
@@ -32,7 +32,7 @@
     ("Ae"  ?ॲ)                  ; DEVANAGARI LETTER CANDRA A
     ("Oe"  ?ॳ)                  ; DEVANAGARI LETTER OE
     ("Ooe"  ?ॴ)                  ; DEVANAGARI LETTER OOE
-    ("Aw"  ?ॵ)                  ; DEVANAGARI LETTER AW
+    (",W"  ?ॵ)                  ; DEVANAGARI LETTER AW
     ("Ue"  ?ॶ)                  ; DEVANAGARI LETTER UE
     ("Uue"  ?ॷ)                 ; DEVANAGARI LETTER UUE
     ;; Hindi vowels
@@ -49,7 +49,7 @@
     ("au"  ?ौ)                  ; DEVANAGARI VOWEL SIGN AU
     ;; Non-Hindi vowels
     (",a"  ?ॆ)                  ; DEVANAGARI VOWEL SIGN SHORT E
-    ("ea"  ?ॅ)                  ; DEVANAGARI VOWEL SIGN CANDRA E
+    ("ee"  ?ॅ)                  ; DEVANAGARI VOWEL SIGN CANDRA E
     (",e"  ?ॆ)                  ; DEVANAGARI VOWEL SIGN SHORT E
     ("ao"  ?ॉ)                  ; DEVANAGARI VOWEL SIGN CANDRA O
     (",o"  ?ॊ)                  ; DEVANAGARI VOWEL SIGN SHORT O
@@ -59,7 +59,7 @@
     ("ae"  ?ॅ)                  ; DEVANAGARI VOWEL SIGN CANDRA E
     ("oe"  ?ऺ)                  ; DEVANAGARI VOWEL SIGN OE
     ("ooe"  ?ऻ)                  ; DEVANAGARI VOWEL SIGN OOE
-    ("aw"  ?ॏ)                  ; DEVANAGARI VOWEL SIGN AW
+    (",w"  ?ॏ)                  ; DEVANAGARI VOWEL SIGN AW
     ("ue"  ?ॖ)                  ; DEVANAGARI VOWEL SIGN UE
     ("uue"  ?ॗ)                 ; DEVANAGARI VOWEL SIGN UUE
     ;; Plain consonants
@@ -67,12 +67,12 @@
     ("kh"  ?ख)                  ; DEVANAGARI LETTER KHA
     ("g"   ?ग)                  ; DEVANAGARI LETTER GA
     ("gh"  ?घ)                  ; DEVANAGARI LETTER GHA
-    ("Qg"  ?ङ)                  ; DEVANAGARI LETTER NGA
+    ("G"  ?ङ)                  ; DEVANAGARI LETTER NGA
     ("c"   ?च)                  ; DEVANAGARI LETTER CA
     ("ch"  ?छ)                  ; DEVANAGARI LETTER CHA
     ("j"   ?ज)                  ; DEVANAGARI LETTER JA
     ("jh"  ?झ)                  ; DEVANAGARI LETTER JHA
-    ("Qy"  ?ञ)                  ; DEVANAGARI LETTER NYA
+    ("Y"  ?ञ)                  ; DEVANAGARI LETTER NYA
     ("t"   ?ट)                  ; DEVANAGARI LETTER TTA
     ("th"  ?ठ)                  ; DEVANAGARI LETTER TTHA
     ("d"   ?ड)                  ; DEVANAGARI LETTER DDA
@@ -112,22 +112,22 @@
     ;; Conjuncts
     ("Sk"  "क्ष")
     ("F"   "त्र")
-    ("Qj"  "ज्ञ")
+    ("J"  "ज्ञ")
     ("Sr"  "श्र")
     ("V"   "द्य")
-    (".R"   "र्")
+    ("D"   "र्")
     ("R"   "्र")                
     ;; geminates
     ("Zk"  "क्क")
     ("Zkh" "क्ख")
     ("Zg"  "ग्ग")
     ("Zgh" "ग्घ")
-    ("ZQg" "ङ्ङ")
+    ("ZG" "ङ्ङ")
     ("Zc"  "च्च")
     ("Zch" "च्छ")
     ("Zj"  "ज्ज")
     ("Zjh" "ज्झ")
-    ("ZQy" "ञ्ञ")
+    ("ZY" "ञ्ञ")
     ("Zt"  "ट्ट")
     ("Zth" "ट्ठ")
     ("Zd"  "ड्ड")
@@ -204,7 +204,7 @@
 (state
   (first
     (mode)
-    (characters))
+    (characters (commit)))
   (escape
     (nil (commit))))
     
