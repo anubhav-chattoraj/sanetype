@@ -199,11 +199,16 @@
     ("$"    ?₹)                 ; INDIAN RUPEE SIGN
     ;; non-printing chars
     ("`"   0x200C)              ; ZERO WIDTH JOINER
-    ("~"   0x200D)))            ; ZERO WIDTH NON-JOINER
+    ("~"   0x200D))             ; ZERO WIDTH NON-JOINER
+  (mode
+    ("q")))
     
 (state
   (init
-    (characters)))
+    (characters)
+    (mode (shift escape)))
+  (escape
+    (nil (commit))))
     
 ;; Local Variables:
 ;; coding: utf-8
