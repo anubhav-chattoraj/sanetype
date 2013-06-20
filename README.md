@@ -28,7 +28,12 @@ Input is (mostly) phonetic. See the wiki page for examples.
 Find the directory where m17n is installed (generally `/usr/share/m17n` or
 `/usr/local/share/m17n`).
 
-Copy `hi-sanetype.mim` into this directory.
+Copy the contents of the `linux` folder into this directory. This can be done by
+opening a terminal in the `Sanetype` folder and executing
+
+    sudo cp -R linux/* m17ndir/
+    
+where `m17ndir` is the directory where m17n is installed. 
 
 __For SCIM__: At the end of `mdb.dir` file in this directory, add
     
