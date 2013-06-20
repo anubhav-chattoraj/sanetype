@@ -36,7 +36,6 @@
     ("Ue"  ?ॶ)                  ; DEVANAGARI LETTER UE
     ("Uue"  ?ॷ)                 ; DEVANAGARI LETTER UUE
     ;; Hindi vowels
-    ("x"   ?्)                  ; DEVANAGARI SIGN VIRAMA
     ("a"   ?ा)                  ; DEVANAGARI VOWEL SIGN AA
     ("i"   ?ि)                  ; DEVANAGARI VOWEL SIGN I
     ("ii"   ?ी)                  ; DEVANAGARI VOWEL SIGN II
@@ -72,7 +71,7 @@
     ("ch"  ?छ)                  ; DEVANAGARI LETTER CHA
     ("j"   ?ज)                  ; DEVANAGARI LETTER JA
     ("jh"  ?झ)                  ; DEVANAGARI LETTER JHA
-    ("Y"  ?ञ)                  ; DEVANAGARI LETTER NYA
+    (",n"  ?ञ)                  ; DEVANAGARI LETTER NYA
     ("t"   ?ट)                  ; DEVANAGARI LETTER TTA
     ("th"  ?ठ)                  ; DEVANAGARI LETTER TTHA
     ("d"   ?ड)                  ; DEVANAGARI LETTER DDA
@@ -93,8 +92,8 @@
     ("l"   ?ल)                  ; DEVANAGARI LETTER LA
     ("L"   ?ळ)                  ; DEVANAGARI LETTER LLA
     ("w"   ?व)                  ; DEVANAGARI LETTER VA
-    ("Sh"  ?श)                  ; DEVANAGARI LETTER SHA
-    ("Ss"  ?ष)                  ; DEVANAGARI LETTER SSA
+    ("x"  ?श)                  ; DEVANAGARI LETTER SHA
+    ("S"  ?ष)                  ; DEVANAGARI LETTER SSA
     ("s"   ?स)                  ; DEVANAGARI LETTER SA
     ("H"   ?ह)                  ; DEVANAGARI LETTER HA
     ;; Consonants with nuqta
@@ -110,71 +109,74 @@
     (".r"   ?ऱ)                  ; DEVANAGARI LETTER RRA
     (".L"   ?ऴ)                  ; DEVANAGARI LETTER LLLA
     ;; Conjuncts
-    ("Sk"  "क्ष")
+    ("K"  "क्ष")
     ("F"   "त्र")
     ("J"  "ज्ञ")
-    ("Sr"  "श्र")
+    ("X"  "श्र")
     ("V"   "द्य")
+    ;; Half-consonants
+    ("h"  "्ह")
     ("D"   "र्")
-    ("R"   "्र")                
+    ("R"   "्र")            
+    ("Y"   "्य")
     ;; geminates
-    ("Zk"  "क्क")
-    ("Zkh" "क्ख")
-    ("Zg"  "ग्ग")
-    ("Zgh" "ग्घ")
-    ("ZG" "ङ्ङ")
-    ("Zc"  "च्च")
-    ("Zch" "च्छ")
-    ("Zj"  "ज्ज")
-    ("Zjh" "ज्झ")
-    ("ZY" "ञ्ञ")
-    ("Zt"  "ट्ट")
-    ("Zth" "ट्ठ")
-    ("Zd"  "ड्ड")
-    ("Zdh" "ढ्ढ")
-    ("ZN"  "ण्ण")
-    ("Zf"  "त्त")
-    ("Zfh" "त्थ")
-    ("Zv"  "द्द")
-    ("Zvh" "द्ध")
-    ("Zn"  "न्न")
-    ("Zp"  "प्प")
-    ("Zph" "प्फ")
-    ("Zb"  "ब्ब")
-    ("Zbh" "ब्भ")
-    ("Zm"  "म्म")
-    ("Zy"  "य्य")
-    ("Zr"  "र्र")
-    ("Zl"  "ल्ल")
-    ("ZL"  "ळ्ळ")
-    ("Zw"  "व्व")
-    ("ZSh" "श्श")
-    ("ZSs" "ष्ष")
-    ("Zs"  "स्स")
-    ("ZH"  "ह्ह")
-    ("Z.k"  "क़्क़")
-    ("Z.kh" "ख़्ख़")
-    ("Z.g"  "ग़्ग़")
-    ("Z.j"  "ज़्ज़")
-    ("Z.d"  "ड़्ड़")
-    ("Z.dh" "ड़्ढ़")
-    ("Z.n"  "ऩ्ऩ")
-    ("Z.ph" "फ़्फ़")
-    ("Z.y"  "य़्य़")
-    ("Z.r"  "ऱ्ऱ")
-    ("Z.L"  "ऴ्ऴ")
+    ("qk"  "क्क")
+    ("qkh" "क्ख")
+    ("qg"  "ग्ग")
+    ("qgh" "ग्घ")
+    ("qG" "ङ्ङ")
+    ("qc"  "च्च")
+    ("qch" "च्छ")
+    ("qj"  "ज्ज")
+    ("qjh" "ज्झ")
+    ("q,n" "ञ्ञ")
+    ("qt"  "ट्ट")
+    ("qth" "ट्ठ")
+    ("qd"  "ड्ड")
+    ("qdh" "ढ्ढ")
+    ("qN"  "ण्ण")
+    ("qf"  "त्त")
+    ("qfh" "त्थ")
+    ("qv"  "द्द")
+    ("qvh" "द्ध")
+    ("qn"  "न्न")
+    ("qp"  "प्प")
+    ("qph" "प्फ")
+    ("qb"  "ब्ब")
+    ("qbh" "ब्भ")
+    ("qm"  "म्म")
+    ("qy"  "य्य")
+    ("qr"  "र्र")
+    ("ql"  "ल्ल")
+    ("qL"  "ळ्ळ")
+    ("qw"  "व्व")
+    ("qx" "श्श")
+    ("qS" "ष्ष")
+    ("qs"  "स्स")
+    ("qH"  "ह्ह")
+    ("q.k"  "क़्क़")
+    ("q.kh" "ख़्ख़")
+    ("q.g"  "ग़्ग़")
+    ("q.j"  "ज़्ज़")
+    ("q.d"  "ड़्ड़")
+    ("q.dh" "ड़्ढ़")
+    ("q.n"  "ऩ्ऩ")
+    ("q.ph" "फ़्फ़")
+    ("q.y"  "य़्य़")
+    ("q.r"  "ऱ्ऱ")
+    ("q.L"  "ऴ्ऴ")
     ;; Implosives
     ("_g"  ?ॻ)                  ; DEVANAGARI LETTER GGA
     ("_j"  ?ॼ)                  ; DEVANAGARI LETTER JJA
     ("_d"  ?ॾ)                  ; DEVANAGARI LETTER DDDA
     ("_b"  ?ॿ)                  ; DEVANAGARI LETTER BBA
     ("Hh"  ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
-    ;; diacritics
-    ("h"  "्ह")                 
-    ("z"   ?़)                 ; DEVANAGARI SIGN NUKTA
+    ;; diacritics    
+    ("z"   ?्)                  ; DEVANAGARI SIGN VIRAMA
+    ("Q"   ?़)                 ; DEVANAGARI SIGN NUKTA
     ("M"   ?ं)                  ; DEVANAGARI SIGN ANUSVARA
     ("W"   ?ँ)                  ; DEVANAGARI SIGN CANDRABINDU
-    (":"   ?ः)                  ; DEVANAGARI SIGN VISARGA
+    ("Z"   ?ः)                  ; DEVANAGARI SIGN VISARGA
     ("'"   ?ʼ)                  ; MODIFIER LETTER APOSTROPHE
     ("''"  ?ऽ)                  ;  DEVANAGARI SIGN AVAGRAHA
     ;; punctuation
@@ -192,21 +194,16 @@
     ("8"   ?८)                  ; DEVANAGARI DIGIT EIGHT
     ("9"   ?९)                  ; DEVANAGARI DIGIT NINE
     ;; symbols
-    (".Om"  ?ॐ)                  ; DEVANAGARI OM
+    (",M"  ?ॐ)                  ; DEVANAGARI OM
     (",,"  ?॰)                  ; DEVANAGARI ABBREVIATION SIGN
     ("$"   ?₹)                  ; INDIAN RUPEE SIGN
     ;; non-printing chars
     ("`"   0x200C)              ; ZERO WIDTH JOINER
-    ("~"   0x200D))             ; ZERO WIDTH NON-JOINER
-  (mode
-    ("q"  (shift escape))))
+    ("~"   0x200D)))             ; ZERO WIDTH NON-JOINER
     
 (state
-  (first
-    (mode)
-    (characters (commit)))
-  (escape
-    (nil (commit))))
+  (init
+    (characters)))
     
 ;; Local Variables:
 ;; coding: utf-8
