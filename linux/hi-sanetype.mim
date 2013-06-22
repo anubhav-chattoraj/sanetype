@@ -178,7 +178,6 @@
     ("W"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
     ("Z"    ?ः)                 ; DEVANAGARI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
-    ("''"   ?ऽ)                 ;  DEVANAGARI SIGN AVAGRAHA
     ;; punctuation
     ("\\"   ?।)                 ; DEVANAGARI DANDA
     ("|"    ?॥)                 ; DEVANAGARI DOUBLE DANDA
@@ -194,21 +193,25 @@
     ("8"    ?८)                 ; DEVANAGARI DIGIT EIGHT
     ("9"    ?९)                 ; DEVANAGARI DIGIT NINE
     ;; symbols
+    ("&"    ?ऽ)                 ;  DEVANAGARI SIGN AVAGRAHA
     (",M"   ?ॐ)                 ; DEVANAGARI OM
     (",,"   ?॰)                 ; DEVANAGARI ABBREVIATION SIGN
     ("$"    ?₹)                 ; INDIAN RUPEE SIGN
     ;; non-printing chars
-    ("`"   0x200C)              ; ZERO WIDTH JOINER
-    ("~"   0x200D))             ; ZERO WIDTH NON-JOINER
-  (mode
-    ("q")))
+    ("`"    0x200C)              ; ZERO WIDTH JOINER
+    ("~"    0x200D)              ; ZERO WIDTH NON-JOINER
+    ;; overridden ASCII characters
+    ("$$"   ?$)
+    ("``"   ?`)
+    ("~~"   ?~)
+    ("||"   ?|)
+    ("\\\\" ?\\)
+    ("&&"   ?&)
+    ("''"   ?')))
     
 (state
   (init
-    (characters)
-    (mode (shift escape)))
-  (escape
-    (nil (commit))))
+    (characters)))
     
 ;; Local Variables:
 ;; coding: utf-8
