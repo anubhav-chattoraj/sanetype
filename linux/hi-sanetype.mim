@@ -76,15 +76,15 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("j"    ?ज)                 ; DEVANAGARI LETTER JA
     ("jh"   ?झ)                 ; DEVANAGARI LETTER JHA
     (",n"   ?ञ)                 ; DEVANAGARI LETTER NYA
-    ("t"    ?ट)                 ; DEVANAGARI LETTER TTA
-    ("th"   ?ठ)                 ; DEVANAGARI LETTER TTHA
-    ("d"    ?ड)                 ; DEVANAGARI LETTER DDA
-    ("dh"   ?ढ)                 ; DEVANAGARI LETTER DDHA
+    ("T"    ?ट)                 ; DEVANAGARI LETTER TTA
+    ("Th"   ?ठ)                 ; DEVANAGARI LETTER TTHA
+    ("D"    ?ड)                 ; DEVANAGARI LETTER DDA
+    ("Dh"   ?ढ)                 ; DEVANAGARI LETTER DDHA
     ("N"    ?ण)                 ; DEVANAGARI LETTER NNA
-    ("f"    ?त)                 ; DEVANAGARI LETTER TA
-    ("fh"   ?थ)                 ; DEVANAGARI LETTER THA
-    ("v"    ?द)                 ; DEVANAGARI LETTER DA
-    ("vh"   ?ध)                 ; DEVANAGARI LETTER DHA
+    ("t"    ?त)                 ; DEVANAGARI LETTER TA
+    ("th"   ?थ)                 ; DEVANAGARI LETTER THA
+    ("d"    ?द)                 ; DEVANAGARI LETTER DA
+    ("dh"   ?ध)                 ; DEVANAGARI LETTER DHA
     ("n"    ?न)                 ; DEVANAGARI LETTER NA
     ("p"    ?प)                 ; DEVANAGARI LETTER PA
     ("ph"   ?फ)                 ; DEVANAGARI LETTER PHA
@@ -95,8 +95,8 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("r"    ?र)                 ; DEVANAGARI LETTER RA
     ("l"    ?ल)                 ; DEVANAGARI LETTER LA
     ("L"    ?ळ)                 ; DEVANAGARI LETTER LLA
-    ("w"    ?व)                 ; DEVANAGARI LETTER VA
-    ("x"    ?श)                 ; DEVANAGARI LETTER SHA
+    ("v"    ?व)                 ; DEVANAGARI LETTER VA
+    ("sh"   ?श)                 ; DEVANAGARI LETTER SHA
     ("S"    ?ष)                 ; DEVANAGARI LETTER SSA
     ("s"    ?स)                 ; DEVANAGARI LETTER SA
     ("H"    ?ह)                 ; DEVANAGARI LETTER HA
@@ -113,28 +113,28 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     (".r"   ?ऱ)                 ; DEVANAGARI LETTER RRA
     (".L"   ?ऴ)                 ; DEVANAGARI LETTER LLLA
     ;; Conjuncts
-    ("K" "क्ष")  ("F" "त्र")  ("J" "ज्ञ")  ("X" "श्र")  ("V" "द्य")
+    ("K" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
-    ("h" "्ह") ("D" "र्") ("R" "्र") ("Y" "्य")
+    ("h" "्ह") ("q" "र्") ("w" "्र") ("Y" "्य")
     ;; geminates
-    ("qk"   "क्क") ("qkh"  "क्ख") ("qg"   "ग्ग") ("qgh"  "ग्घ")  ("qG"   "ङ्ङ")
-    ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("q,n"  "ञ्ञ")
-    ("qt"   "ट्ट") ("qth"  "ट्ठ") ("qd"   "ड्ड") ("qdh"  "ढ्ढ") ("qN"   "ण्ण")
-    ("qf"   "त्त") ("qfh"  "त्थ") ("qv"   "द्द") ("qvh"  "द्ध") ("qn"   "न्न")
-    ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
-    ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") ("qL"   "ळ्ळ") ("qw"   "व्व")
-    ("qx"   "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
-    ("q.k"  "क़्क़") ("q.kh" "ख़्ख़") ("q.g"  "ग़्ग़") ("q.j"  "ज़्ज़") ("q.d"  "ड़्ड़")
-    ("q.dh" "ड़्ढ़") ("q.n"  "ऩ्ऩ") ("q.ph" "फ़्फ़") ("q.y"  "य़्य़") ("q.r"  "ऱ्ऱ")
-    ("q.L"  "ऴ्ऴ")
+    ("Xk"   "क्क") ("Xkh"  "क्ख") ("Xg"   "ग्ग") ("Xgh"  "ग्घ")  ("XG"   "ङ्ङ")
+    ("Xc"   "च्च") ("Xch"  "च्छ") ("Xj"   "ज्ज") ("Xjh"  "ज्झ") ("X,n"  "ञ्ञ")
+    ("XT"   "ट्ट") ("XTh"  "ट्ठ") ("XD"   "ड्ड") ("XDh"  "ड्ढ") ("XN"   "ण्ण")
+    ("Xt"   "त्त") ("Xth"  "त्थ") ("Xd"   "द्द") ("Xdh"  "द्ध") ("Xn"   "न्न")
+    ("Xp"   "प्प") ("Xph"  "प्फ") ("Xb"   "ब्ब") ("Xbh"  "ब्भ") ("Xm"   "म्म")
+    ("Xy"   "य्य") ("Xr"   "र्र") ("Xl"   "ल्ल") ("XL"   "ळ्ळ") ("Xv"   "व्व")
+    ("Xsh"  "श्श") ("XS"   "ष्ष") ("Xs"   "स्स") ("XH"   "ह्ह")
+    ("X.k"  "क़्क़") ("X.kh" "ख़्ख़") ("X.g"  "ग़्ग़") ("X.j"  "ज़्ज़") ("X.d"  "ड़्ड़")
+    ("X.dh" "ड़्ढ़") ("X.n"  "ऩ्ऩ") ("X.ph" "फ़्फ़") ("X.y"  "य़्य़") ("X.r"  "ऱ्ऱ")
+    ("X.L"  "ऴ्ऴ")
     ;; Implosives
     ("_g"   ?ॻ)                 ; DEVANAGARI LETTER GGA
     ("_j"   ?ॼ)                 ; DEVANAGARI LETTER JJA
     ("_d"   ?ॾ)                 ; DEVANAGARI LETTER DDDA
     ("_b"   ?ॿ)                 ; DEVANAGARI LETTER BBA
-    ("Hh"   ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
+    ("'h"   ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
     ;; diacritics    
-    ("z"    ?्)                 ; DEVANAGARI SIGN VIRAMA
+    ("x"    ?्)                 ; DEVANAGARI SIGN VIRAMA
     ("Q"    ?़)                 ; DEVANAGARI SIGN NUKTA
     ("M"    ?ं)                 ; DEVANAGARI SIGN ANUSVARA
     ("W"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
