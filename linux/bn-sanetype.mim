@@ -13,75 +13,75 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
 (map
   (characters
     ;; Bengali vowels
-    ("A"    ?)                 ; DEVANAGARI LETTER A
-    ("Aa"   ?)                 ; DEVANAGARI LETTER AA
-    ("I"    ?)                 ; DEVANAGARI LETTER I
-    ("Ii"   ?)                 ; DEVANAGARI LETTER II
-    ("U"    ?)                 ; DEVANAGARI LETTER U
-    ("Uu"   ?)                 ; DEVANAGARI LETTER UU
-    (",R"   ?)                 ; DEVANAGARI LETTER VOCALIC R
-    ("E"    ?)                 ; DEVANAGARI LETTER E
-    ("Ai"   ?)                 ; DEVANAGARI LETTER AI
-    ("O"    ?)                 ; DEVANAGARI LETTER O
-    ("Au"   ?)                 ; DEVANAGARI LETTER AU
+    ("A"    ?)                 ; BENGALI LETTER A
+    ("Aa"   ?)                 ; BENGALI LETTER AA
+    ("I"    ?)                 ; BENGALI LETTER I
+    ("Ii"   ?)                 ; BENGALI LETTER II
+    ("U"    ?)                 ; BENGALI LETTER U
+    ("Uu"   ?)                 ; BENGALI LETTER UU
+    (",R"   ?)                 ; BENGALI LETTER VOCALIC R
+    ("E"    ?)                 ; BENGALI LETTER E
+    ("Ai"   ?)                 ; BENGALI LETTER AI
+    ("O"    ?)                 ; BENGALI LETTER O
+    ("Au"   ?)                 ; BENGALI LETTER AU
     ;; Non-Bengali vowels
-    (",Rr"  ?)                 ; DEVANAGARI LETTER VOCALIC RR
-    (",L"   ?)                 ; DEVANAGARI LETTER VOCALIC L
-    (",Ll"  ?)                 ; DEVANAGARI LETTER VOCALIC LL
-    ("Ae"   ?)                 ; DEVANAGARI LETTER CANDRA A
+    (",Rr"  ?)                 ; BENGALI LETTER VOCALIC RR
+    (",L"   ?)                 ; BENGALI LETTER VOCALIC L
+    (",Ll"  ?)                 ; BENGALI LETTER VOCALIC LL
+    ("Ae"   ?)                 ; BENGALI LETTER CANDRA A
     ;; Bengali vowels
-    ("a"    ?)                 ; DEVANAGARI VOWEL SIGN AA
-    ("i"    ?)                 ; DEVANAGARI VOWEL SIGN I
-    ("ii"   ?)                 ; DEVANAGARI VOWEL SIGN II
-    ("u"    ?)                 ; DEVANAGARI VOWEL SIGN U
-    ("uu"   ?)                 ; DEVANAGARI VOWEL SIGN UU
-    (",r"   ?)                 ; DEVANAGARI VOWEL SIGN VOCALIC R
-    ("e"    ?)                 ; DEVANAGARI VOWEL SIGN E
-    ("ai"   ?)                 ; DEVANAGARI VOWEL SIGN AI
-    ("o"    ?)                 ; DEVANAGARI VOWEL SIGN O
-    ("au"   ?)                 ; DEVANAGARI VOWEL SIGN AU
+    ("a"    ?)                 ; BENGALI VOWEL SIGN AA
+    ("i"    ?)                 ; BENGALI VOWEL SIGN I
+    ("ii"   ?)                 ; BENGALI VOWEL SIGN II
+    ("u"    ?)                 ; BENGALI VOWEL SIGN U
+    ("uu"   ?)                 ; BENGALI VOWEL SIGN UU
+    (",r"   ?)                 ; BENGALI VOWEL SIGN VOCALIC R
+    ("e"    ?)                 ; BENGALI VOWEL SIGN E
+    ("ai"   ?)                 ; BENGALI VOWEL SIGN AI
+    ("o"    ?)                 ; BENGALI VOWEL SIGN O
+    ("au"   ?)                 ; BENGALI VOWEL SIGN AU
     ;; Non-Bengali vowels
-    (",rr"  ?)                 ; DEVANAGARI VOWEL SIGN VOCALIC RR
-    (",l"   ?)                 ; DEVANAGARI VOWEL SIGN VOCALIC L
-    (",ll"  ?)                 ; DEVANAGARI VOWEL SIGN VOCALIC LL
-    ("ae"   ?)                 ; DEVANAGARI VOWEL SIGN CANDRA E
+    (",rr"  ?)                 ; BENGALI VOWEL SIGN VOCALIC RR
+    (",l"   ?)                 ; BENGALI VOWEL SIGN VOCALIC L
+    (",ll"  ?)                 ; BENGALI VOWEL SIGN VOCALIC LL
+    ("ae"   ?)                 ; BENGALI VOWEL SIGN CANDRA E
     ;; Plain consonants
-    ("k"    ?)                 ; DEVANAGARI LETTER KA
-    ("kh"   ?)                 ; DEVANAGARI LETTER KHA
-    ("g"    ?)                 ; DEVANAGARI LETTER GA
-    ("gh"   ?)                 ; DEVANAGARI LETTER GHA
-    ("G"    ?)                 ; DEVANAGARI LETTER NGA
-    ("c"    ?)                 ; DEVANAGARI LETTER CA
-    ("ch"   ?)                 ; DEVANAGARI LETTER CHA
-    ("j"    ?)                 ; DEVANAGARI LETTER JA
-    ("jh"   ?)                 ; DEVANAGARI LETTER JHA
-    (",n"   ?)                 ; DEVANAGARI LETTER NYA
-    ("t"    ?)                 ; DEVANAGARI LETTER TTA
-    ("th"   ?)                 ; DEVANAGARI LETTER TTHA
-    ("d"    ?)                 ; DEVANAGARI LETTER DDA
-    ("dh"   ?)                 ; DEVANAGARI LETTER DDHA
-    ("N"    ?)                 ; DEVANAGARI LETTER NNA
-    ("f"    ?)                 ; DEVANAGARI LETTER TA
-    ("fh"   ?)                 ; DEVANAGARI LETTER THA
-    ("v"    ?)                 ; DEVANAGARI LETTER DA
-    ("vh"   ?)                 ; DEVANAGARI LETTER DHA
-    ("n"    ?)                 ; DEVANAGARI LETTER NA
-    ("p"    ?)                 ; DEVANAGARI LETTER PA
-    ("ph"   ?)                 ; DEVANAGARI LETTER PHA
-    ("b"    ?)                 ; DEVANAGARI LETTER BA
-    ("bh"   ?)                 ; DEVANAGARI LETTER BHA
-    ("m"    ?)                 ; DEVANAGARI LETTER MA
-    ("y"    ?)                 ; DEVANAGARI LETTER YA
-    ("r"    ?)                 ; DEVANAGARI LETTER RA
-    ("l"    ?)                 ; DEVANAGARI LETTER LA
-    ("x"    ?)                 ; DEVANAGARI LETTER SHA
-    ("S"    ?)                 ; DEVANAGARI LETTER SSA
-    ("s"    ?)                 ; DEVANAGARI LETTER SA
-    ("H"    ?)                 ; DEVANAGARI LETTER HA
+    ("k"    ?)                 ; BENGALI LETTER KA
+    ("kh"   ?)                 ; BENGALI LETTER KHA
+    ("g"    ?)                 ; BENGALI LETTER GA
+    ("gh"   ?)                 ; BENGALI LETTER GHA
+    ("G"    ?)                 ; BENGALI LETTER NGA
+    ("c"    ?)                 ; BENGALI LETTER CA
+    ("ch"   ?)                 ; BENGALI LETTER CHA
+    ("j"    ?)                 ; BENGALI LETTER JA
+    ("jh"   ?)                 ; BENGALI LETTER JHA
+    (",n"   ?)                 ; BENGALI LETTER NYA
+    ("t"    ?)                 ; BENGALI LETTER TTA
+    ("th"   ?)                 ; BENGALI LETTER TTHA
+    ("d"    ?)                 ; BENGALI LETTER DDA
+    ("dh"   ?)                 ; BENGALI LETTER DDHA
+    ("N"    ?)                 ; BENGALI LETTER NNA
+    ("f"    ?)                 ; BENGALI LETTER TA
+    ("fh"   ?)                 ; BENGALI LETTER THA
+    ("v"    ?)                 ; BENGALI LETTER DA
+    ("vh"   ?)                 ; BENGALI LETTER DHA
+    ("n"    ?)                 ; BENGALI LETTER NA
+    ("p"    ?)                 ; BENGALI LETTER PA
+    ("ph"   ?)                 ; BENGALI LETTER PHA
+    ("b"    ?)                 ; BENGALI LETTER BA
+    ("bh"   ?)                 ; BENGALI LETTER BHA
+    ("m"    ?)                 ; BENGALI LETTER MA
+    ("y"    ?)                 ; BENGALI LETTER YA
+    ("r"    ?)                 ; BENGALI LETTER RA
+    ("l"    ?)                 ; BENGALI LETTER LA
+    ("x"    ?)                 ; BENGALI LETTER SHA
+    ("S"    ?)                 ; BENGALI LETTER SSA
+    ("s"    ?)                 ; BENGALI LETTER SA
+    ("H"    ?)                 ; BENGALI LETTER HA
     ;; Consonants with nuqta
-    (".d"   ?)                 ; DEVANAGARI LETTER DDDHA
-    (".dh"  ?)                 ; DEVANAGARI LETTER RHA
-    (".y"   ?)                 ; DEVANAGARI LETTER YYA
+    (".d"   ?)                 ; BENGALI LETTER RRA
+    (".dh"  ?)                 ; BENGALI LETTER RHA
+    (".y"   ?)                 ; BENGALI LETTER YYA
     ;; Conjuncts
     ("K" "क्ष")  ("F" "त्र")  ("J" "ज्ञ")  ("X" "श्र")  ("V" "द्य")
     ;; Half-consonants
@@ -92,33 +92,31 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("qt"   "ट्ट") ("qth"  "ट्ठ") ("qd"   "ड्ड") ("qdh"  "ढ्ढ") ("qN"   "ण्ण")
     ("qf"   "त्त") ("qfh"  "त्थ") ("qv"   "द्द") ("qvh"  "द्ध") ("qn"   "न्न")
     ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
-    ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") ("qL"   "ळ्ळ") ("qw"   "व्व")
+    ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") 
     ("qx"   "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
-    ("q.k"  "क़्क़") ("q.kh" "ख़्ख़") ("q.g"  "ग़्ग़") ("q.j"  "ज़्ज़") ("q.d"  "ड़्ड़")
-    ("q.dh" "ड़्ढ़") ("q.n"  "ऩ्ऩ") ("q.ph" "फ़्फ़") ("q.y"  "य़्य़") ("q.r"  "ऱ्ऱ")
-    ("q.L"  "ऴ्ऴ")
+    ("q.d"  "ड़्ड़") ("q.dh" "ड़्ढ़") ("q.y"  "य़्य़")
     ;; diacritics    
-    ("z"    ?)                 ; DEVANAGARI SIGN VIRAMA
-    ("Q"    ?)                 ; DEVANAGARI SIGN NUKTA
-    ("M"    ?)                 ; DEVANAGARI SIGN ANUSVARA
-    ("W"    ?)                 ; DEVANAGARI SIGN CANDRABINDU
-    (":"    ?)                 ; DEVANAGARI SIGN VISARGA
+    ("z"    ?)                 ; BENGALI SIGN VIRAMA
+    ("Q"    ?)                 ; BENGALI SIGN NUKTA
+    ("M"    ?)                 ; BENGALI SIGN ANUSVARA
+    ("W"    ?)                 ; BENGALI SIGN CANDRABINDU
+    (":"    ?)                 ; BENGALI SIGN VISARGA
     ;; punctuation
     ("\\"   ?।)                 ; DEVANAGARI DANDA
     ("|"    ?॥)                 ; DEVANAGARI DOUBLE DANDA
     ;; digits
-    ("0"    ?)                 ; DEVANAGARI DIGIT ZER0
-    ("1"    ?)                 ; DEVANAGARI DIGIT ONE
-    ("2"    ?)                 ; DEVANAGARI DIGIT TWO
-    ("3"    ?)                 ; DEVANAGARI DIGIT THREE
-    ("4"    ?)                 ; DEVANAGARI DIGIT FOUR
-    ("5"    ?)                 ; DEVANAGARI DIGIT FIVE
-    ("6"    ?)                 ; DEVANAGARI DIGIT SIX
-    ("7"    ?)                 ; DEVANAGARI DIGIT SEVEN
-    ("8"    ?)                 ; DEVANAGARI DIGIT EIGHT
-    ("9"    ?)                 ; DEVANAGARI DIGIT NINE
+    ("0"    ?)                 ; BENGALI DIGIT ZER0
+    ("1"    ?)                 ; BENGALI DIGIT ONE
+    ("2"    ?)                 ; BENGALI DIGIT TWO
+    ("3"    ?)                 ; BENGALI DIGIT THREE
+    ("4"    ?)                 ; BENGALI DIGIT FOUR
+    ("5"    ?)                 ; BENGALI DIGIT FIVE
+    ("6"    ?)                 ; BENGALI DIGIT SIX
+    ("7"    ?)                 ; BENGALI DIGIT SEVEN
+    ("8"    ?)                 ; BENGALI DIGIT EIGHT
+    ("9"    ?)                 ; BENGALI DIGIT NINE
     ;; symbols
-    ("&"    ?)                 ;  DEVANAGARI SIGN AVAGRAHA
+    ("&"    ?)                 ;  BENGALI SIGN AVAGRAHA
     (",M"   ?ॐ)                 ; DEVANAGARI OM
     ("$"    ?₹)                 ; INDIAN RUPEE SIGN
     ;; non-printing chars
