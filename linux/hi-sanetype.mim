@@ -130,7 +130,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("Q"    ?़)                 ; DEVANAGARI SIGN NUKTA
     ("M"    ?ं)                 ; DEVANAGARI SIGN ANUSVARA
     ("W"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
-    (":"    ?ः)                 ; DEVANAGARI SIGN VISARGA
+    ("Z"    ?ः)                 ; DEVANAGARI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; digits
     ("0"    ?०)                 ; DEVANAGARI DIGIT ZER0

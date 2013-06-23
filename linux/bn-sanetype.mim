@@ -105,7 +105,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("Q"    ?়)                 ; BENGALI SIGN NUKTA
     ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
     ("W"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
-    (":"    ?ঃ)                 ; BENGALI SIGN VISARGA
+    ("Z"    ?ঃ)                 ; BENGALI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; digits
     ("0"    ?০)                 ; BENGALI DIGIT ZER0
