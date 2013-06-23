@@ -101,21 +101,15 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("s"    ?स)                 ; DEVANAGARI LETTER SA
     ("H"    ?ह)                 ; DEVANAGARI LETTER HA
     ;; Consonants with nuqta
-    (".k"   ?क़)                 ; DEVANAGARI LETTER QA
-    (".kh"  ?ख़)                 ; DEVANAGARI LETTER KHHA
-    (".g"   ?ग़)                 ; DEVANAGARI LETTER GHHA
-    (".j"   ?ज़)                 ; DEVANAGARI LETTER ZA
-    (".d"   ?ड़)                 ; DEVANAGARI LETTER DDDHA
-    (".dh"  ?ढ़)                 ; DEVANAGARI LETTER RHA
-    (".n"   ?ऩ)                 ; DEVANAGARI LETTER NNNA
-    (".ph"  ?फ़)                 ; DEVANAGARI LETTER FA
-    (".y"   ?य़)                 ; DEVANAGARI LETTER YYA
+    ("z"    ?ज़)                 ; DEVANAGARI LETTER ZA
+    ("R"    ?ड़)                 ; DEVANAGARI LETTER DDDHA
+    ("Rh"   ?ढ़)                 ; DEVANAGARI LETTER RHA
+    ("f"    ?फ़)                 ; DEVANAGARI LETTER FA
     (".r"   ?ऱ)                 ; DEVANAGARI LETTER RRA
-    (".L"   ?ऴ)                 ; DEVANAGARI LETTER LLLA
     ;; Conjuncts
     ("K" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
-    ("h" "्ह") ("q" "र्") ("w" "्र") ("Y" "्य")
+    ("h" "्ह") ("q" "र्") ("w" "्र") (".q" "ऱ्") (".w" "्ऱ") ("Y" "्य")
     ;; geminates
     ("Xk"   "क्क") ("Xkh"  "क्ख") ("Xg"   "ग्ग") ("Xgh"  "ग्घ")  ("XG"   "ङ्ङ")
     ("Xc"   "च्च") ("Xch"  "च्छ") ("Xj"   "ज्ज") ("Xjh"  "ज्झ") ("X,n"  "ञ्ञ")
@@ -124,9 +118,7 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("Xp"   "प्प") ("Xph"  "प्फ") ("Xb"   "ब्ब") ("Xbh"  "ब्भ") ("Xm"   "म्म")
     ("Xy"   "य्य") ("Xr"   "र्र") ("Xl"   "ल्ल") ("XL"   "ळ्ळ") ("Xv"   "व्व")
     ("Xsh"  "श्श") ("XS"   "ष्ष") ("Xs"   "स्स") ("XH"   "ह्ह")
-    ("X.k"  "क़्क़") ("X.kh" "ख़्ख़") ("X.g"  "ग़्ग़") ("X.j"  "ज़्ज़") ("X.d"  "ड़्ड़")
-    ("X.dh" "ड़्ढ़") ("X.n"  "ऩ्ऩ") ("X.ph" "फ़्फ़") ("X.y"  "य़्य़") ("X.r"  "ऱ्ऱ")
-    ("X.L"  "ऴ्ऴ")
+    ("Xz"   "ज़्ज़") ("XR"  "ड़्ड़") ("XRh" "ड़्ढ़") ("Xf" "फ़्फ़") ("X.r"  "ऱ्ऱ")
     ;; Implosives
     ("_g"   ?ॻ)                 ; DEVANAGARI LETTER GGA
     ("_j"   ?ॼ)                 ; DEVANAGARI LETTER JJA

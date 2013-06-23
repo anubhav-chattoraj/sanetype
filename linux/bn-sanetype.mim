@@ -81,8 +81,8 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("s"    ?স)                 ; BENGALI LETTER SA
     ("H"    ?হ)                 ; BENGALI LETTER HA
     ;; Consonants with nuqta
-    (".d"   ?ড়)                 ; BENGALI LETTER RRA
-    (".dh"  ?ঢ়)                 ; BENGALI LETTER RHA
+    ("R"    ?ড়)                 ; BENGALI LETTER RRA
+    ("Rh"   ?ঢ়)                 ; BENGALI LETTER RHA
     (".y"   ?য়)                 ; BENGALI LETTER YYA
     ;; Conjuncts
     ("K" "ক্ষ")  ("J" "জ্ঞ")
@@ -96,8 +96,8 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("Xt"   "ত্ত") ("Xth"  "ত্থ") ("Xd"   "দ্দ") ("Xdh"  "দ্ধ") ("Xn"   "ন্ন")
     ("Xp"   "প্প") ("Xph"  "প্ফ") ("Xb"   "ব্ব") ("Xbh"  "ব্ভ") ("Xm"   "ম্ম")
     ("Xy"   "য্য") ("Xr"   "র্র") ("XL" "ৰ্ৰ") ("Xl"   "ল্ল") ("Xv" "ৱ্ৱ")
-    ("Xsh"   "শ্শ") ("XS"   "ষ্ষ") ("Xs"   "স্স") ("XH"   "হ্হ") 
-    ("X.d"  "ড়্ড়") ("X.dh" "ড়্ঢ়") ("X.y"  "য়্য়")
+    ("Xsh"  "শ্শ") ("XS"   "ষ্ষ") ("Xs"   "স্স") ("XH"   "হ্হ") 
+    ("XR"   "ড়্ড়") ("XRh" "ড়্ঢ়") ("X.y"  "য়্য়")
     ;; diacritics    
     ("x"    ?্)                 ; BENGALI SIGN VIRAMA
     ("Q"    ?়)                 ; BENGALI SIGN NUKTA
