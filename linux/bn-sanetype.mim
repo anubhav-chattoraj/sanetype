@@ -73,7 +73,9 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("m"    ?ম)                 ; BENGALI LETTER MA
     ("y"    ?য)                 ; BENGALI LETTER YA
     ("r"    ?র)                 ; BENGALI LETTER RA
+    ("L"    ?ৰ)                 ; BENGALI LETTER RA WITH MIDDLE DIAGONAL
     ("l"    ?ল)                 ; BENGALI LETTER LA
+    ("w"    ?ৱ)                 ; BENGALI LETTER RA WITH LOWER DIAGONAL
     ("x"    ?শ)                 ; BENGALI LETTER SHA
     ("S"    ?ষ)                 ; BENGALI LETTER SSA
     ("s"    ?স)                 ; BENGALI LETTER SA
@@ -87,14 +89,14 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ;; Half-consonants
     ("h" "্হ") ("D" "র্") ("R" "্র") ("Y" "্য") ("T" ?ৎ)
     ;; geminates
-    ("qk"   "क्क") ("qkh"  "क्ख") ("qg"   "ग्ग") ("qgh"  "ग्घ")  ("qG"   "ङ्ङ")
-    ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("q,n"  "ञ्ञ")
-    ("qt"   "ट्ट") ("qth"  "ट्ठ") ("qd"   "ड्ड") ("qdh"  "ढ्ढ") ("qN"   "ण्ण")
-    ("qf"   "त्त") ("qfh"  "त्थ") ("qv"   "द्द") ("qvh"  "द्ध") ("qn"   "न्न")
-    ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
-    ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") 
-    ("qx"   "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
-    ("q.d"  "ड़्ड़") ("q.dh" "ड़्ढ़") ("q.y"  "य़्य़")
+    ("qk"   "ক্ক") ("qkh"  "ক্খ") ("qg"   "গ্গ") ("qgh"  "গ্ঘ")  ("qG"   "ঙ্ঙ")
+    ("qc"   "চ্চ") ("qch"  "চ্ছ") ("qj"   "জ্জ") ("qjh"  "জ্ঝ") ("q,n"  "ঞ্ঞ")
+    ("qt"   "ট্ট") ("qth"  "ট্ঠ") ("qd"   "ড্ড") ("qdh"  "ড্ঢ") ("qN"   "ণ্ণ")
+    ("qf"   "ত্ত") ("qfh"  "ত্থ") ("qv"   "দ্দ") ("qvh"  "দ্ধ") ("qn"   "ন্ন")
+    ("qp"   "প্প") ("qph"  "প্ফ") ("qb"   "ব্ব") ("qbh"  "ব্ভ") ("qm"   "ম্ম")
+    ("qy"   "য্য") ("qr"   "র্র") ("ql"   "ল্ল") 
+    ("qx"   "শ্শ") ("qS"   "ষ্ষ") ("qs"   "স্স") ("qH"   "হ্হ")
+    ("q.d"  "ড়্ড়") ("q.dh" "ড়্ঢ়") ("q.y"  "য়্য়")
     ;; diacritics    
     ("z"    ?্)                 ; BENGALI SIGN VIRAMA
     ("Q"    ?়)                 ; BENGALI SIGN NUKTA
