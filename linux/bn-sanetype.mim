@@ -13,75 +13,75 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
 (map
   (characters
     ;; Bengali vowels
-    ("A"    ?)                 ; BENGALI LETTER A
-    ("Aa"   ?)                 ; BENGALI LETTER AA
-    ("I"    ?)                 ; BENGALI LETTER I
-    ("Ii"   ?)                 ; BENGALI LETTER II
-    ("U"    ?)                 ; BENGALI LETTER U
-    ("Uu"   ?)                 ; BENGALI LETTER UU
-    (",R"   ?)                 ; BENGALI LETTER VOCALIC R
-    ("E"    ?)                 ; BENGALI LETTER E
-    ("Ai"   ?)                 ; BENGALI LETTER AI
-    ("O"    ?)                 ; BENGALI LETTER O
-    ("Au"   ?)                 ; BENGALI LETTER AU
+    ("A"    ?অ)                 ; BENGALI LETTER A
+    ("Aa"   ?আ)                 ; BENGALI LETTER AA
+    ("I"    ?ই)                 ; BENGALI LETTER I
+    ("Ii"   ?ঈ)                 ; BENGALI LETTER II
+    ("U"    ?উ)                 ; BENGALI LETTER U
+    ("Uu"   ?ঊ)                 ; BENGALI LETTER UU
+    (",R"   ?ঋ)                 ; BENGALI LETTER VOCALIC R
+    ("E"    ?এ)                 ; BENGALI LETTER E
+    ("Ai"   ?ঐ)                 ; BENGALI LETTER AI
+    ("O"    ?ও)                 ; BENGALI LETTER O
+    ("Au"   ?ঔ)                 ; BENGALI LETTER AU
     ;; Non-Bengali vowels
-    (",Rr"  ?)                 ; BENGALI LETTER VOCALIC RR
-    (",L"   ?)                 ; BENGALI LETTER VOCALIC L
-    (",Ll"  ?)                 ; BENGALI LETTER VOCALIC LL
-    ("Ae"   ?)                 ; BENGALI LETTER CANDRA A
+    (",Rr"  ?ৠ)                 ; BENGALI LETTER VOCALIC RR
+    (",L"   ?ঌ)                 ; BENGALI LETTER VOCALIC L
+    (",Ll"  ?ৡ)                 ; BENGALI LETTER VOCALIC LL
+    ;("Ae"   ?)                 
     ;; Bengali vowels
-    ("a"    ?)                 ; BENGALI VOWEL SIGN AA
-    ("i"    ?)                 ; BENGALI VOWEL SIGN I
-    ("ii"   ?)                 ; BENGALI VOWEL SIGN II
-    ("u"    ?)                 ; BENGALI VOWEL SIGN U
-    ("uu"   ?)                 ; BENGALI VOWEL SIGN UU
-    (",r"   ?)                 ; BENGALI VOWEL SIGN VOCALIC R
-    ("e"    ?)                 ; BENGALI VOWEL SIGN E
-    ("ai"   ?)                 ; BENGALI VOWEL SIGN AI
-    ("o"    ?)                 ; BENGALI VOWEL SIGN O
-    ("au"   ?)                 ; BENGALI VOWEL SIGN AU
+    ("a"    ?া)                 ; BENGALI VOWEL SIGN AA
+    ("i"    ?ি)                 ; BENGALI VOWEL SIGN I
+    ("ii"   ?ী)                 ; BENGALI VOWEL SIGN II
+    ("u"    ?ু)                 ; BENGALI VOWEL SIGN U
+    ("uu"   ?ূ)                 ; BENGALI VOWEL SIGN UU
+    (",r"   ?ৃ)                 ; BENGALI VOWEL SIGN VOCALIC R
+    ("e"    ?ে)                 ; BENGALI VOWEL SIGN E
+    ("ai"   ?ৈ)                 ; BENGALI VOWEL SIGN AI
+    ("o"    ?ো)                 ; BENGALI VOWEL SIGN O
+    ("au"   ?ৌ)                 ; BENGALI VOWEL SIGN AU
     ;; Non-Bengali vowels
-    (",rr"  ?)                 ; BENGALI VOWEL SIGN VOCALIC RR
-    (",l"   ?)                 ; BENGALI VOWEL SIGN VOCALIC L
-    (",ll"  ?)                 ; BENGALI VOWEL SIGN VOCALIC LL
-    ("ae"   ?)                 ; BENGALI VOWEL SIGN CANDRA E
+    (",rr"  ?ৢ)                 ; BENGALI VOWEL SIGN VOCALIC RR
+    (",l"   ?ৄ)                 ; BENGALI VOWEL SIGN VOCALIC L
+    (",ll"  ?ৣ)                 ; BENGALI VOWEL SIGN VOCALIC LL
+    ;("ae"   ?)                 
     ;; Plain consonants
-    ("k"    ?)                 ; BENGALI LETTER KA
-    ("kh"   ?)                 ; BENGALI LETTER KHA
-    ("g"    ?)                 ; BENGALI LETTER GA
-    ("gh"   ?)                 ; BENGALI LETTER GHA
-    ("G"    ?)                 ; BENGALI LETTER NGA
-    ("c"    ?)                 ; BENGALI LETTER CA
-    ("ch"   ?)                 ; BENGALI LETTER CHA
-    ("j"    ?)                 ; BENGALI LETTER JA
-    ("jh"   ?)                 ; BENGALI LETTER JHA
-    (",n"   ?)                 ; BENGALI LETTER NYA
-    ("t"    ?)                 ; BENGALI LETTER TTA
-    ("th"   ?)                 ; BENGALI LETTER TTHA
-    ("d"    ?)                 ; BENGALI LETTER DDA
-    ("dh"   ?)                 ; BENGALI LETTER DDHA
-    ("N"    ?)                 ; BENGALI LETTER NNA
-    ("f"    ?)                 ; BENGALI LETTER TA
-    ("fh"   ?)                 ; BENGALI LETTER THA
-    ("v"    ?)                 ; BENGALI LETTER DA
-    ("vh"   ?)                 ; BENGALI LETTER DHA
-    ("n"    ?)                 ; BENGALI LETTER NA
-    ("p"    ?)                 ; BENGALI LETTER PA
-    ("ph"   ?)                 ; BENGALI LETTER PHA
-    ("b"    ?)                 ; BENGALI LETTER BA
-    ("bh"   ?)                 ; BENGALI LETTER BHA
-    ("m"    ?)                 ; BENGALI LETTER MA
-    ("y"    ?)                 ; BENGALI LETTER YA
-    ("r"    ?)                 ; BENGALI LETTER RA
-    ("l"    ?)                 ; BENGALI LETTER LA
-    ("x"    ?)                 ; BENGALI LETTER SHA
-    ("S"    ?)                 ; BENGALI LETTER SSA
-    ("s"    ?)                 ; BENGALI LETTER SA
-    ("H"    ?)                 ; BENGALI LETTER HA
+    ("k"    ?ক)                 ; BENGALI LETTER KA
+    ("kh"   ?খ)                 ; BENGALI LETTER KHA
+    ("g"    ?গ)                 ; BENGALI LETTER GA
+    ("gh"   ?ঘ)                 ; BENGALI LETTER GHA
+    ("G"    ?ঙ)                 ; BENGALI LETTER NGA
+    ("c"    ?চ)                 ; BENGALI LETTER CA
+    ("ch"   ?ছ)                 ; BENGALI LETTER CHA
+    ("j"    ?জ)                 ; BENGALI LETTER JA
+    ("jh"   ?ঝ)                 ; BENGALI LETTER JHA
+    (",n"   ?ঞ)                 ; BENGALI LETTER NYA
+    ("t"    ?ট)                 ; BENGALI LETTER TTA
+    ("th"   ?ঠ)                 ; BENGALI LETTER TTHA
+    ("d"    ?ড)                 ; BENGALI LETTER DDA
+    ("dh"   ?ঢ)                 ; BENGALI LETTER DDHA
+    ("N"    ?ণ)                 ; BENGALI LETTER NNA
+    ("f"    ?ত)                 ; BENGALI LETTER TA
+    ("fh"   ?থ)                 ; BENGALI LETTER THA
+    ("v"    ?দ)                 ; BENGALI LETTER DA
+    ("vh"   ?ধ)                 ; BENGALI LETTER DHA
+    ("n"    ?ন)                 ; BENGALI LETTER NA
+    ("p"    ?প)                 ; BENGALI LETTER PA
+    ("ph"   ?ফ)                 ; BENGALI LETTER PHA
+    ("b"    ?ব)                 ; BENGALI LETTER BA
+    ("bh"   ?ভ)                 ; BENGALI LETTER BHA
+    ("m"    ?ম)                 ; BENGALI LETTER MA
+    ("y"    ?য)                 ; BENGALI LETTER YA
+    ("r"    ?র)                 ; BENGALI LETTER RA
+    ("l"    ?ল)                 ; BENGALI LETTER LA
+    ("x"    ?শ)                 ; BENGALI LETTER SHA
+    ("S"    ?ষ)                 ; BENGALI LETTER SSA
+    ("s"    ?স)                 ; BENGALI LETTER SA
+    ("H"    ?হ)                 ; BENGALI LETTER HA
     ;; Consonants with nuqta
-    (".d"   ?)                 ; BENGALI LETTER RRA
-    (".dh"  ?)                 ; BENGALI LETTER RHA
-    (".y"   ?)                 ; BENGALI LETTER YYA
+    (".d"   ?ড়)                 ; BENGALI LETTER RRA
+    (".dh"  ?ঢ়)                 ; BENGALI LETTER RHA
+    (".y"   ?য়)                 ; BENGALI LETTER YYA
     ;; Conjuncts
     ("K" "क्ष")  ("F" "त्र")  ("J" "ज्ञ")  ("X" "श्र")  ("V" "द्य")
     ;; Half-consonants
@@ -96,27 +96,27 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("qx"   "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
     ("q.d"  "ड़्ड़") ("q.dh" "ड़्ढ़") ("q.y"  "य़्य़")
     ;; diacritics    
-    ("z"    ?)                 ; BENGALI SIGN VIRAMA
-    ("Q"    ?)                 ; BENGALI SIGN NUKTA
-    ("M"    ?)                 ; BENGALI SIGN ANUSVARA
-    ("W"    ?)                 ; BENGALI SIGN CANDRABINDU
-    (":"    ?)                 ; BENGALI SIGN VISARGA
+    ("z"    ?্)                 ; BENGALI SIGN VIRAMA
+    ("Q"    ?়)                 ; BENGALI SIGN NUKTA
+    ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
+    ("W"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
+    (":"    ?ঃ)                 ; BENGALI SIGN VISARGA
     ;; punctuation
     ("\\"   ?।)                 ; DEVANAGARI DANDA
     ("|"    ?॥)                 ; DEVANAGARI DOUBLE DANDA
     ;; digits
-    ("0"    ?)                 ; BENGALI DIGIT ZER0
-    ("1"    ?)                 ; BENGALI DIGIT ONE
-    ("2"    ?)                 ; BENGALI DIGIT TWO
-    ("3"    ?)                 ; BENGALI DIGIT THREE
-    ("4"    ?)                 ; BENGALI DIGIT FOUR
-    ("5"    ?)                 ; BENGALI DIGIT FIVE
-    ("6"    ?)                 ; BENGALI DIGIT SIX
-    ("7"    ?)                 ; BENGALI DIGIT SEVEN
-    ("8"    ?)                 ; BENGALI DIGIT EIGHT
-    ("9"    ?)                 ; BENGALI DIGIT NINE
+    ("0"    ?০)                 ; BENGALI DIGIT ZER0
+    ("1"    ?১)                 ; BENGALI DIGIT ONE
+    ("2"    ?২)                 ; BENGALI DIGIT TWO
+    ("3"    ?৩)                 ; BENGALI DIGIT THREE
+    ("4"    ?৪)                 ; BENGALI DIGIT FOUR
+    ("5"    ?৫)                 ; BENGALI DIGIT FIVE
+    ("6"    ?৬)                 ; BENGALI DIGIT SIX
+    ("7"    ?৭)                 ; BENGALI DIGIT SEVEN
+    ("8"    ?৮)                 ; BENGALI DIGIT EIGHT
+    ("9"    ?৯)                 ; BENGALI DIGIT NINE
     ;; symbols
-    ("&"    ?)                 ;  BENGALI SIGN AVAGRAHA
+    ("&"    ?ঽ)                 ; BENGALI SIGN AVAGRAHA
     (",M"   ?ॐ)                 ; DEVANAGARI OM
     ("$"    ?₹)                 ; INDIAN RUPEE SIGN
     ;; non-printing chars

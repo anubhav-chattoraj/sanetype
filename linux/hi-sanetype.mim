@@ -155,7 +155,7 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("8"    ?८)                 ; DEVANAGARI DIGIT EIGHT
     ("9"    ?९)                 ; DEVANAGARI DIGIT NINE
     ;; symbols
-    ("&"    ?ऽ)                 ;  DEVANAGARI SIGN AVAGRAHA
+    ("&"    ?ऽ)                 ; DEVANAGARI SIGN AVAGRAHA
     (",M"   ?ॐ)                 ; DEVANAGARI OM
     (",,"   ?॰)                 ; DEVANAGARI ABBREVIATION SIGN
     ("$"    ?₹)                 ; INDIAN RUPEE SIGN
