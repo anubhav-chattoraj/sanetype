@@ -28,7 +28,8 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     (",Rr"  ?ৠ)                 ; BENGALI LETTER VOCALIC RR
     (",L"   ?ঌ)                 ; BENGALI LETTER VOCALIC L
     (",Ll"  ?ৡ)                 ; BENGALI LETTER VOCALIC LL
-    ("Ae"   "অ্যা")                 
+    ("Ae"   "অ্যা")
+    ("Ee"   "এ্যা")
     ;; Bengali vowels
     ("a"    ?া)                 ; BENGALI VOWEL SIGN AA
     ("i"    ?ি)                 ; BENGALI VOWEL SIGN I
@@ -44,7 +45,8 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     (",rr"  ?ৢ)                 ; BENGALI VOWEL SIGN VOCALIC RR
     (",l"   ?ৄ)                 ; BENGALI VOWEL SIGN VOCALIC L
     (",ll"  ?ৣ)                 ; BENGALI VOWEL SIGN VOCALIC LL
-    ("ae"   "্যা")                 
+    ("ae"   "্যা") 
+    ("ee"   "্যা")
     ;; Plain consonants
     ("k"    ?ক)                 ; BENGALI LETTER KA
     ("kh"   ?খ)                 ; BENGALI LETTER KHA
