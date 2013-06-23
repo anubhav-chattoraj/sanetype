@@ -121,7 +121,9 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ;; symbols
     ("&"    ?ঽ)                 ; BENGALI SIGN AVAGRAHA
     (",M"   ?ॐ)                 ; DEVANAGARI OM
+    (",S"   ?৺)                 ; BENGALI ISSHAR
     ("$"    ?₹)                 ; INDIAN RUPEE SIGN
+    ("#"    ?৳)                 ; BENGALI RUPEE SIGN
     ;; non-printing chars
     ("`"    0x200C)              ; ZERO WIDTH JOINER
     ("~"    0x200D)              ; ZERO WIDTH NON-JOINER
@@ -135,7 +137,7 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ((G-Q) ?Q) ((G-R) ?R) ((G-S) ?S) ((G-T) ?T) ((G-U) ?U) ((G-V) ?V) ((G-W) ?W)
     ((G-X) ?X) ((G-Y) ?Y) ((G-Z) ?Z) ((G-1) ?1) ((G-2) ?2) ((G-3) ?3) ((G-4) ?4)
     ((G-5) ?5) ((G-6) ?6) ((G-7) ?7) ((G-8) ?8) ((G-9) ?9) ((G-0) ?0) ((G-$) ?$)
-    ((G-`) ?`) ((G-~) ?~) ((G-|) ?|) ((G-&) ?&) ((G-') ?') ((G-:) ?:)
+    ((G-`) ?`) ((G-~) ?~) ((G-|) ?|) ((G-&) ?&) ((G-') ?') ((G-:) ?:) ((G-#) ?#)
     ((G-\\) ?\\)))
     
 (state
