@@ -1,4 +1,4 @@
-;; hi-sanetype.mim - Hindi input with Sanetype method.
+;; hi-sanetype.mim - Devanagari input with Sanetype method.
 
 (input-method hi sanetype (version "1.6.2"))
 
