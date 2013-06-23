@@ -28,7 +28,7 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     (",Rr"  ?ৠ)                 ; BENGALI LETTER VOCALIC RR
     (",L"   ?ঌ)                 ; BENGALI LETTER VOCALIC L
     (",Ll"  ?ৡ)                 ; BENGALI LETTER VOCALIC LL
-    ;("Ae"   ?)                 
+    ("Ae"   "অ্যা")                 
     ;; Bengali vowels
     ("a"    ?া)                 ; BENGALI VOWEL SIGN AA
     ("i"    ?ি)                 ; BENGALI VOWEL SIGN I
@@ -44,7 +44,7 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     (",rr"  ?ৢ)                 ; BENGALI VOWEL SIGN VOCALIC RR
     (",l"   ?ৄ)                 ; BENGALI VOWEL SIGN VOCALIC L
     (",ll"  ?ৣ)                 ; BENGALI VOWEL SIGN VOCALIC LL
-    ;("ae"   ?)                 
+    ("ae"   "্যা")                 
     ;; Plain consonants
     ("k"    ?ক)                 ; BENGALI LETTER KA
     ("kh"   ?খ)                 ; BENGALI LETTER KHA
@@ -83,9 +83,9 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     (".dh"  ?ঢ়)                 ; BENGALI LETTER RHA
     (".y"   ?য়)                 ; BENGALI LETTER YYA
     ;; Conjuncts
-    ("K" "क्ष")  ("F" "त्र")  ("J" "ज्ञ")  ("X" "श्र")  ("V" "द्य")
+    ("K" "ক্ষ")  ("F" "ত্র")  ("J" "জ্ঞ")  ("X" "শ্র")  ("V" "দ্য")
     ;; Half-consonants
-    ("h" "्ह") ("D" "र्") ("R" "्र") ("Y" "्य")
+    ("h" "্হ") ("D" "র্") ("R" "্র") ("Y" "্য") ("T" ?ৎ)
     ;; geminates
     ("qk"   "क्क") ("qkh"  "क्ख") ("qg"   "ग्ग") ("qgh"  "ग्घ")  ("qG"   "ङ्ङ")
     ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("q,n"  "ञ्ञ")
@@ -101,6 +101,7 @@ Project page: https://github.com/anubhav-chattoraj/Sanetype
     ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
     ("W"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
     (":"    ?ঃ)                 ; BENGALI SIGN VISARGA
+    ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; punctuation
     ("\\"   ?।)                 ; DEVANAGARI DANDA
     ("|"    ?॥)                 ; DEVANAGARI DOUBLE DANDA
