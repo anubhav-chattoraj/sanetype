@@ -33,11 +33,7 @@ opening a terminal in the `Sanetype` folder and executing
 
     sudo cp -R linux/* m17ndir/
     
-where `m17ndir` is the directory where m17n is installed. 
-
-__For SCIM__: At the end of `mdb.dir` file in this directory, add
-    
-    (input-method hi sanetype "hi-sanetype.mim")
+Here, `m17ndir` is the directory where m17n is installed. 
 
 Restart IBus/SCIM. 
 
