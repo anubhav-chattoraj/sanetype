@@ -89,22 +89,22 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ;; Conjuncts
     ("K" "ক্ষ")  ("J" "জ্ঞ")
     ;; Half-consonants
-    ("h" "্হ") ("q" "র্") ("w" "্র") ("Y" "্য") 
+    ("h" "্হ") ("W" "র্") ("w" "্র") ("Y" "্য") 
     ("f" ?ৎ)                    ; BENGALI LETTER KHANDA TA
     ;; geminates
-    ("Xk"   "ক্ক") ("Xkh"  "ক্খ") ("Xg"   "গ্গ") ("Xgh"  "গ্ঘ")  ("XG"   "ঙ্ঙ")
-    ("Xc"   "চ্চ") ("Xch"  "চ্ছ") ("Xj"   "জ্জ") ("Xjh"  "জ্ঝ") ("X,n"  "ঞ্ঞ")
-    ("XT"   "ট্ট") ("XTh"  "ট্ঠ") ("XD"   "ড্ড") ("XDh"  "ড্ঢ") ("XN"   "ণ্ণ")
-    ("Xt"   "ত্ত") ("Xth"  "ত্থ") ("Xd"   "দ্দ") ("Xdh"  "দ্ধ") ("Xn"   "ন্ন")
-    ("Xp"   "প্প") ("Xph"  "প্ফ") ("Xb"   "ব্ব") ("Xbh"  "ব্ভ") ("Xm"   "ম্ম")
-    ("Xy"   "য্য") ("Xr"   "র্র") ("XL" "ৰ্ৰ") ("Xl"   "ল্ল") ("Xv" "ৱ্ৱ")
-    ("Xsh"  "শ্শ") ("XS"   "ষ্ষ") ("Xs"   "স্স") ("XH"   "হ্হ") 
-    ("XR"   "ড়্ড়") ("XRh" "ড়্ঢ়") ("X.y"  "য়্য়")
+    ("qk"   "ক্ক") ("qkh"  "ক্খ") ("qg"   "গ্গ") ("qgh"  "গ্ঘ")  ("qG"   "ঙ্ঙ")
+    ("qc"   "চ্চ") ("qch"  "চ্ছ") ("qj"   "জ্জ") ("qjh"  "জ্ঝ") ("q,n"  "ঞ্ঞ")
+    ("qT"   "ট্ট") ("qTh"  "ট্ঠ") ("qD"   "ড্ড") ("qDh"  "ড্ঢ") ("qN"   "ণ্ণ")
+    ("qt"   "ত্ত") ("qth"  "ত্থ") ("qd"   "দ্দ") ("qdh"  "দ্ধ") ("qn"   "ন্ন")
+    ("qp"   "প্প") ("qph"  "প্ফ") ("qb"   "ব্ব") ("qbh"  "ব্ভ") ("qm"   "ম্ম")
+    ("qy"   "য্য") ("qr"   "র্র") ("qL" "ৰ্ৰ") ("ql"   "ল্ল") ("qv" "ৱ্ৱ")
+    ("qsh"  "শ্শ") ("qS"   "ষ্ষ") ("qs"   "স্স") ("qH"   "হ্হ") 
+    ("qR"   "ড়্ড়") ("qRh" "ড়্ঢ়") ("q.y"  "য়্য়")
     ;; diacritics    
     ("x"    ?্)                 ; BENGALI SIGN VIRAMA
     ("Q"    ?়)                 ; BENGALI SIGN NUKTA
     ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
-    ("W"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
+    ("X"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
     ("Z"    ?ঃ)                 ; BENGALI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; digits
@@ -129,8 +129,11 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
 (state
   (init
     (characters)
-    (common)))
-    
+    (common)
+    (change_mode (shift escape))))
+  
+(include (t nil sanetype-util) state)
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; mode: emacs-lisp

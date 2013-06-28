@@ -109,27 +109,27 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ;; Conjuncts
     ("K" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
-    ("h" "्ह") ("q" "र्") ("w" "्र") (".q" "ऱ्") (".w" "्ऱ") ("Y" "्य")
+    ("h" "्ह") ("W" "र्") ("w" "्र") (".q" "ऱ्") (".w" "्ऱ") ("Y" "्य")
     ;; geminates
-    ("Xk"   "क्क") ("Xkh"  "क्ख") ("Xg"   "ग्ग") ("Xgh"  "ग्घ")  ("XG"   "ङ्ङ")
-    ("Xc"   "च्च") ("Xch"  "च्छ") ("Xj"   "ज्ज") ("Xjh"  "ज्झ") ("X,n"  "ञ्ञ")
-    ("XT"   "ट्ट") ("XTh"  "ट्ठ") ("XD"   "ड्ड") ("XDh"  "ड्ढ") ("XN"   "ण्ण")
-    ("Xt"   "त्त") ("Xth"  "त्थ") ("Xd"   "द्द") ("Xdh"  "द्ध") ("Xn"   "न्न")
-    ("Xp"   "प्प") ("Xph"  "प्फ") ("Xb"   "ब्ब") ("Xbh"  "ब्भ") ("Xm"   "म्म")
-    ("Xy"   "य्य") ("Xr"   "र्र") ("Xl"   "ल्ल") ("XL"   "ळ्ळ") ("Xv"   "व्व")
-    ("Xsh"  "श्श") ("XS"   "ष्ष") ("Xs"   "स्स") ("XH"   "ह्ह")
-    ("Xz"   "ज़्ज़") ("XR"  "ड़्ड़") ("XRh" "ड़्ढ़") ("Xf" "फ़्फ़") ("X.r"  "ऱ्ऱ")
+    ("qk"   "क्क") ("qkh"  "क्ख") ("qg"   "ग्ग") ("qgh"  "ग्घ")  ("qG"   "ङ्ङ")
+    ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("q,n"  "ञ्ञ")
+    ("qT"   "ट्ट") ("qTh"  "ट्ठ") ("qD"   "ड्ड") ("qDh"  "ड्ढ") ("qN"   "ण्ण")
+    ("qt"   "त्त") ("qth"  "त्थ") ("qd"   "द्द") ("qdh"  "द्ध") ("qn"   "न्न")
+    ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
+    ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") ("qL"   "ळ्ळ") ("qv"   "व्व")
+    ("qsh"  "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
+    ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़") ("q.r"  "ऱ्ऱ")
     ;; Implosives
     ("_g"   ?ॻ)                 ; DEVANAGARI LETTER GGA
     ("_j"   ?ॼ)                 ; DEVANAGARI LETTER JJA
     ("_d"   ?ॾ)                 ; DEVANAGARI LETTER DDDA
     ("_b"   ?ॿ)                 ; DEVANAGARI LETTER BBA
-    ("'h"   ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
+    ("hh"   ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
     ;; diacritics    
     ("x"    ?्)                 ; DEVANAGARI SIGN VIRAMA
     ("Q"    ?़)                 ; DEVANAGARI SIGN NUKTA
     ("M"    ?ं)                 ; DEVANAGARI SIGN ANUSVARA
-    ("W"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
+    ("X"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
     ("Z"    ?ः)                 ; DEVANAGARI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; digits
@@ -154,7 +154,10 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
 (state
   (init
     (characters)
-    (common)))
+    (common)
+    (change_mode (shift escape))))
+  
+(include (t nil sanetype-util) state)
     
 ;; Local Variables:
 ;; coding: utf-8
