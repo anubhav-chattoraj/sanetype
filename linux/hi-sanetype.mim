@@ -36,7 +36,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("Ae"   ?ॲ)                 ; DEVANAGARI LETTER CANDRA A
     ("Oe"   ?ॳ)                 ; DEVANAGARI LETTER OE
     ("Ooe"  ?ॴ)                 ; DEVANAGARI LETTER OOE
-    (",W"   ?ॵ)                 ; DEVANAGARI LETTER AW
+    ("Aw"   ?ॵ)                 ; DEVANAGARI LETTER AW
     ("Ue"   ?ॶ)                 ; DEVANAGARI LETTER UE
     ("Uue"  ?ॷ)                 ; DEVANAGARI LETTER UUE
     ;; Hindi vowels
@@ -62,7 +62,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("ae"   ?ॅ)                 ; DEVANAGARI VOWEL SIGN CANDRA E
     ("oe"   ?ऺ)                 ; DEVANAGARI VOWEL SIGN OE
     ("ooe"  ?ऻ)                 ; DEVANAGARI VOWEL SIGN OOE
-    (",w"   ?ॏ)                 ; DEVANAGARI VOWEL SIGN AW
+    ("aw"   ?ॏ)                 ; DEVANAGARI VOWEL SIGN AW
     ("ue"   ?ॖ)                 ; DEVANAGARI VOWEL SIGN UE
     ("uue"  ?ॗ)                 ; DEVANAGARI VOWEL SIGN UUE
     ;; Plain consonants
