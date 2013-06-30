@@ -120,10 +120,10 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("qsh"  "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
     ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़") ("q.r"  "ऱ्ऱ")
     ;; Implosives
-    ("_g"   ?ॻ)                 ; DEVANAGARI LETTER GGA
-    ("_j"   ?ॼ)                 ; DEVANAGARI LETTER JJA
-    ("_d"   ?ॾ)                 ; DEVANAGARI LETTER DDDA
-    ("_b"   ?ॿ)                 ; DEVANAGARI LETTER BBA
+    (",g"   ?ॻ)                 ; DEVANAGARI LETTER GGA
+    (",j"   ?ॼ)                 ; DEVANAGARI LETTER JJA
+    (",D"   ?ॾ)                 ; DEVANAGARI LETTER DDDA
+    (",b"   ?ॿ)                 ; DEVANAGARI LETTER BBA
     ("hh"   ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
     ;; diacritics    
     ("x"    ?्)                 ; DEVANAGARI SIGN VIRAMA
