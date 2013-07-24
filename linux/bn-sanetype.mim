@@ -89,7 +89,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ;; Conjuncts
     ("K" "ক্ষ")  ("J" "জ্ঞ")
     ;; Half-consonants
-    ("h" "্হ") ("W" "র্") ("w" "্র") ("Y" "্য") 
+    ("h" "্হ") ("W" "র্") ("w" "্র") ("Y" "্য") ("V" "্ৱ")
     ("f" ?ৎ)                    ; BENGALI LETTER KHANDA TA
     ;; geminates
     ("qk"   "ক্ক") ("qkh"  "ক্খ") ("qg"   "গ্গ") ("qgh"  "গ্ঘ")  ("qG"   "ঙ্ঙ")

@@ -105,11 +105,11 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("R"    ?ड़)                 ; DEVANAGARI LETTER DDDHA
     ("Rh"   ?ढ़)                 ; DEVANAGARI LETTER RHA
     ("f"    ?फ़)                 ; DEVANAGARI LETTER FA
-    (".r"   ?ऱ)                 ; DEVANAGARI LETTER RRA
     ;; Conjuncts
     ("K" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
-    ("h" "्ह") ("W" "र्") ("w" "्र") (".W" "ऱ्") (".w" "्ऱ") ("Y" "्य")
+    ("h" "्ह") ("W" "र्") ("w" "्र") ("Y" "्य") ("V" "्व")
+    ("<" "ऱ्")                 ; eyelash ra
     ;; geminates
     ("qk"   "क्क") ("qkh"  "क्ख") ("qg"   "ग्ग") ("qgh"  "ग्घ")  ("qG"   "ङ्ङ")
     ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("q,n"  "ञ्ञ")

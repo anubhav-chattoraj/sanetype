@@ -11,8 +11,8 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
 (map
   (common
     ; punctuation
-    ("\\"   ?।)                 ; DEVANAGARI DANDA
-    ("|"    ?॥)                 ; DEVANAGARI DOUBLE DANDA
+    (">"    ?।)                 ; DEVANAGARI DANDA
+    (">>"   ?॥)                 ; DEVANAGARI DOUBLE DANDA
     ;; symbols
     ("$"    ?₹)                 ; INDIAN RUPEE SIGN
     ;; non-printing chars
