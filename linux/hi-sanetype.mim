@@ -41,6 +41,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("Uue"  ?ॷ)                 ; DEVANAGARI LETTER UUE
     ;; Hindi vowels
     ("a"    ?ा)                 ; DEVANAGARI VOWEL SIGN AA
+    ("aa"   ?ा)                 ; DEVANAGARI VOWEL SIGN AA
     ("i"    ?ि)                 ; DEVANAGARI VOWEL SIGN I
     ("ii"   ?ी)                 ; DEVANAGARI VOWEL SIGN II
     ("u"    ?ु)                 ; DEVANAGARI VOWEL SIGN U
@@ -130,7 +131,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("Q"    ?़)                 ; DEVANAGARI SIGN NUKTA
     ("M"    ?ं)                 ; DEVANAGARI SIGN ANUSVARA
     ("X"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
-    ("Z"    ?ः)                 ; DEVANAGARI SIGN VISARGA
+    (":"    ?ः)                 ; DEVANAGARI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; digits
     ("0"    ?०)                 ; DEVANAGARI DIGIT ZER0

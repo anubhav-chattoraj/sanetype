@@ -32,6 +32,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("Ee"   "এ্যা")
     ;; Bengali vowels
     ("a"    ?া)                 ; BENGALI VOWEL SIGN AA
+    ("aa"   ?া)                 ; BENGALI VOWEL SIGN AA
     ("i"    ?ি)                 ; BENGALI VOWEL SIGN I
     ("ii"   ?ী)                 ; BENGALI VOWEL SIGN II
     ("u"    ?ু)                 ; BENGALI VOWEL SIGN U
@@ -75,7 +76,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("m"    ?ম)                 ; BENGALI LETTER MA
     ("y"    ?য)                 ; BENGALI LETTER YA
     ("r"    ?র)                 ; BENGALI LETTER RA
-    ("L"    ?ৰ)                 ; BENGALI LETTER RA WITH MIDDLE DIAGONAL
+    ("<"    ?ৰ)                 ; BENGALI LETTER RA WITH MIDDLE DIAGONAL
     ("l"    ?ল)                 ; BENGALI LETTER LA
     ("v"    ?ৱ)                 ; BENGALI LETTER RA WITH LOWER DIAGONAL
     ("sh"   ?শ)                 ; BENGALI LETTER SHA
@@ -105,7 +106,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("Q"    ?়)                 ; BENGALI SIGN NUKTA
     ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
     ("X"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
-    ("Z"    ?ঃ)                 ; BENGALI SIGN VISARGA
+    (":"    ?ঃ)                 ; BENGALI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; digits
     ("0"    ?০)                 ; BENGALI DIGIT ZER0
