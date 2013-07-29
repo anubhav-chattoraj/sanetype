@@ -21,7 +21,8 @@ other operating systems that support those frameworks.
 
 # Input
 
-Input is (mostly) phonetic. See the wiki page for examples.
+Input is (mostly) phonetic. See the 
+[list of keybindings](http://anubhav-chattoraj.github.io/Sanetype/)
 
 # Installation
 
