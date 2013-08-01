@@ -6,20 +6,60 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 80em;
-      height: 30em;
+      width: 90%;
+      height: 90%;
     }
   </style>
 </head>
 
 <body>
-  <textarea sanetype="dev" rows=30 cols=100 ></textarea>
+  <textarea data-sanetype="dev" rows=30 cols=100 ></textarea>
   
   <script type="text/javascript">
-    var elements = getAllElementsWithAttribute("sanetype")
+    var sanetype_handle = function(e, map) {
+      var removeHere = function(el, str) {
+        el.value = el.value.substring(0, el.selectionStart - (str.length - 1)) + 
+          e.value.substring(el.SelectionEnd, el.value.length);
+        el.selectionStart -= (str.length - 1);
+        el.selectionEnd   = el.selectionStart;
+      }
+      
+      var insertHere = function(el, str) {
+        el.value = el.value.substring(0, el.selectionStart) + str + 
+          el.value.substring(el.selectionEnd, el.value.length);
+        e.selectionStart += str.length;
+        e.selectionEnd = e.selectionStart;
+      }
+      
+      var t = e.target;
+      var char = String.fromCharCode(e.charcode); // e.charcode is undefined. Fix this.
+      if (typeof t.dataset.next == 'undefined') {
+        t.dataset.next = '';
+      }
+      
+      t.dataset.next += char;
+      console.log("char "+char);
+      var match = map[char];
+      console.log("match "+match);
+      if(match != null) {
+        removeHere(t, t.dataset.next);
+        insertHere(t, match);
+        t.dataset.next = '';
+      }
+    }
+    
+    var dev = {
+      map: {
+        k: 'क', kh: 'ख', g: 'ग', gh: 'घ'
+      },
+      
+      handle: function(e) { return sanetype_handle(e, dev.map); }
+    }
+    
+    var elements = document.querySelectorAll("[data-sanetype]");
     for (var i = 0; i < elements.length; i++) {
-      if (elements[i].sanetype == 'dev') {
-        elements[i].onkeypress = dev.keypress
+      if (elements[i].dataset.sanetype == 'dev') {
+        elements[i].addEventListener('keypress', dev.handle, false);
       }
     }
   </script>
