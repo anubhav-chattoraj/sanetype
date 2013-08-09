@@ -19,7 +19,7 @@
     var sanetype_handle = function(e, map) {
       var removeHere = function(el, str) {
         el.value = el.value.substring(0, el.selectionStart - (str.length - 1)) + 
-          e.value.substring(el.SelectionEnd, el.value.length);
+          el.value.substring(el.SelectionEnd, el.value.length);
         el.selectionStart -= (str.length - 1);
         el.selectionEnd   = el.selectionStart;
       }
@@ -27,12 +27,12 @@
       var insertHere = function(el, str) {
         el.value = el.value.substring(0, el.selectionStart) + str + 
           el.value.substring(el.selectionEnd, el.value.length);
-        e.selectionStart += str.length;
-        e.selectionEnd = e.selectionStart;
+        el.selectionStart += str.length;
+        el.selectionEnd = el.selectionStart;
       }
       
       var t = e.target;
-      var char = String.fromCharCode(e.charcode); // e.charcode is undefined. Fix this.
+      var char = String.fromCharCode(e.charCode); 
       if (typeof t.dataset.next == 'undefined') {
         t.dataset.next = '';
       }
@@ -53,7 +53,7 @@
         k: 'क', kh: 'ख', g: 'ग', gh: 'घ'
       },
       
-      handle: function(e) { return sanetype_handle(e, dev.map); }
+      handle: function(e) { sanetype_handle(e, dev.map); }
     }
     
     var elements = document.querySelectorAll("[data-sanetype]");
