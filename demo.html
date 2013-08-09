@@ -21,6 +21,7 @@
       var removeHere = function(el, str) { 
         var start = el.selectionStart;
         var end = el.selectionEnd;
+        // if str has n characters, remove last n-1 characters
         el.value = el.value.substring(0, start - (str.length - 1)) + el.value.substring(end, el.value.length);
         el.selectionStart = start - str.length + 1;
         el.selectionEnd = el.selectionStart;
@@ -36,24 +37,47 @@
       
       var t = e.target;
       var char = String.fromCharCode(e.charCode); 
-      
-      if(typeof t.dataset.next == 'undefined' || script.follow.indexOf(t.dataset.next) == -1) {
+      if(char == 'q') { // geminates
+        t.dataset.next = char;
+        return;
+      }
+      if(typeof t.dataset.next == 'undefined') {
         t.dataset.next = '';
       }
-      t.dataset.next += char;
-      var match = script.get(t.dataset.next);
       
-      if(match == null && script.follow.indexOf(t.dataset.next) == -1) {
+      var geminate = t.dataset.next.charAt(0) == 'q';
+      bufferStr = t.dataset.next; 
+      if(geminate) bufferStr = bufferStr.substring(1, bufferStr.length);
+      if(script.follow.indexOf(bufferStr) == -1) {
+        bufferStr = ''; t.dataset.next = '';
+      }
+      t.dataset.next += char; bufferStr += char;
+      var match = script.get(bufferStr);
+      
+      if(match == null && script.follow.indexOf(bufferStr) == -1) {
         // ignore the characters previously stored in the buffer
         t.dataset.next = char; match = script.get(char); 
       }
       if(match == null) {
-        if (script.follow.indexOf(t.dataset.next) == -1)
+        if (script.follow.indexOf(bufferStr) == -1)
           t.dataset.next = '';
       } else {
         e.preventDefault();
-        removeHere(t, t.dataset.next);
-        insertHere(t, match);
+        if(geminate){
+          if(script.unaspirated.indexOf(bufferStr) != -1 || script.follow.indexOf(bufferStr) != -1 ) {
+            removeHere(t, t.dataset.next);
+            insertHere(t, match + '्'); 
+          }
+          if(script.follow.indexOf(bufferStr) == -1){ // unambiguous, commit now
+            insertHere(t, match);
+            t.dataset.next = '';
+          } else { // next call will commit the second part of the geminate 
+            t.dataset.next = bufferStr;
+          }
+        } else {
+          removeHere(t, t.dataset.next);
+          insertHere(t, match);
+        }
       }
     }
     
@@ -75,6 +99,7 @@
       follow: [',', 'A', 'I', 'U', ',R', ',L', 'O', 'Oo', 'Uu', 
         'a', 'i', 'u',  ',r', ',l', 'o', 'oo', 'uu',
         'k', 'g', 'c', 'j', 'T', 'D', 'R', 't', 'd', 'p', 'b', 's', 'h', '>'],
+      unaspirated: ['क', 'ग', 'च', 'ज', 'ट', 'ड', 'त', 'द', 'प', 'ब'], 
       init: function(settings) {
         var a = dev.add;
         a('A', 'अ'); a('a', 'ा'); a('Aa', 'आ'); a('aa', 'ा');
