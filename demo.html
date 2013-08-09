@@ -18,12 +18,11 @@
   
   <script type="text/javascript">
     var sanetype_handle = function(e, script) {
-      var removeHere = function(el, str) { 
+      var removeHere = function(el, numChars) { 
         var start = el.selectionStart;
         var end = el.selectionEnd;
-        // if str has n characters, remove last n-1 characters
-        el.value = el.value.substring(0, start - (str.length - 1)) + el.value.substring(end, el.value.length);
-        el.selectionStart = start - str.length + 1;
+        el.value = el.value.substring(0, start - numChars) + el.value.substring(end, el.value.length);
+        el.selectionStart = start - numChars;
         el.selectionEnd = el.selectionStart;
       }
       
@@ -56,7 +55,7 @@
       
       if(match == null && script.follow.indexOf(bufferStr) == -1) {
         // ignore the characters previously stored in the buffer
-        t.dataset.next = char; match = script.get(char); 
+        t.dataset.next = char; bufferStr = char; match = script.get(char); 
       }
       if(match == null) {
         if (script.follow.indexOf(bufferStr) == -1)
@@ -64,18 +63,19 @@
       } else {
         e.preventDefault();
         if(geminate){
+          // TODO: ONLY oral plosives get geminated properly; fix this
           if(script.unaspirated.indexOf(bufferStr) != -1 || script.follow.indexOf(bufferStr) != -1 ) {
-            removeHere(t, t.dataset.next);
+            removeHere(t, 1);
             insertHere(t, match + '्'); 
           }
+          insertHere(t, match);
           if(script.follow.indexOf(bufferStr) == -1){ // unambiguous, commit now
-            insertHere(t, match);
             t.dataset.next = '';
           } else { // next call will commit the second part of the geminate 
             t.dataset.next = bufferStr;
           }
         } else {
-          removeHere(t, t.dataset.next);
+          removeHere(t, bufferStr.length - 1);
           insertHere(t, match);
         }
       }
