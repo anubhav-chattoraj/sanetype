@@ -16,7 +16,7 @@
   <textarea data-sanetype="dev" rows=30 cols=100 ></textarea>
   
   <script type="text/javascript">
-    var sanetype_handle = function(e, map, follow) {
+    var sanetype_handle = function(e, script) {
       var removeHere = function(el, str) { 
         var start = el.selectionStart;
         var end = el.selectionEnd;
@@ -36,14 +36,16 @@
       var t = e.target;
       var char = String.fromCharCode(e.charCode); 
       
-      if(typeof t.dataset.next == 'undefined' || typeof follow[t.dataset.next] == 'undefined' 
-          || typeof follow[t.dataset.next][char] == 'undefined') {
+      if(typeof t.dataset.next == 'undefined' || script.follow.indexOf(t.dataset.next) == -1) {
         t.dataset.next = '';
       }
       t.dataset.next += char;
-      var match = map[t.dataset.next];
-      if(match == null && typeof[follow][t.dataset.next] == 'undefined') {
-        t.dataset.next = ''
+      var match = script.get(t.dataset.next);
+      if(match == null) { t.dataset.next = char; match = script.get(char); }
+      
+      console.log("NEXT: "+t.dataset.next + " MATCH: "+match);
+      if(match == null && script.follow.indexOf(t.dataset.next) == -1) {
+        t.dataset.next = '';
       } else {
         e.preventDefault();
         removeHere(t, t.dataset.next);
@@ -51,22 +53,40 @@
       }
     }
     
-    var dev = {
-      map: {
-        k: 'क', kh: 'ख', g: 'ग', gh: 'घ', G: 'ङ'
-      },
-      
-      follow: {
-        k: { h: null }, g: { h: null }
-      },
-      
-      handle: function(e) { sanetype_handle(e, dev.map, dev.follow); }
+    var addToMap = function(map, key, value) {
+      map.keys.push(key);
+      map.values.push(value);
+    }
+    var getFromMap = function(map, key) {
+      for(var i = 0; i < map.keys.length; i++) {
+        console.log(map.keys[i] + " " + map.values[i]);
+        if(map.keys[i] == key)  return map.values[i];
+      }
+      return null;
     }
     
+    var dev = {
+      map: { keys: [], values: [] },
+      add: function(key, value) { addToMap(dev.map, key, value); }, 
+      get: function(key) { return getFromMap(dev.map, key); },
+      follow: ['k', 'g', 'c', 'j', 'T', 'D', 'R', 't', 'd', 'p', 'b', ','],
+      init: function(settings) {
+        dev.add('k', 'क'); dev.add('kh', 'ख'); dev.add('g', 'ग'); dev.add('gh', 'घ'); dev.add('G', 'ङ');
+        dev.add('c', 'च'); dev.add('ch', 'छ'); dev.add('j', 'ज'); dev.add('jh', 'झ'); dev.add(',n', 'ञ');
+      }
+    }
+    
+    initialized = [];
+    var init_sanetype = function(script) {
+      if (initialized.indexOf(script) == -1) {
+        script.init(); initialized.push(script);
+      }
+    }
     var elements = document.querySelectorAll("[data-sanetype]");
     for (var i = 0; i < elements.length; i++) {
       if (elements[i].dataset.sanetype == 'dev') {
-        elements[i].addEventListener('keypress', dev.handle, false);
+        init_sanetype(dev);
+        elements[i].addEventListener('keypress', function(e) { sanetype_handle(e, dev) }, false);
       }
     }
   </script>
