@@ -43,7 +43,8 @@
       t.dataset.next += char;
       var match = script.get(t.dataset.next);
       
-      if(match == null && script.follow.indexOf(t.dataset.next) == -1) { 
+      if(match == null && script.follow.indexOf(t.dataset.next) == -1) {
+        // ignore the characters previously stored in the buffer
         t.dataset.next = char; match = script.get(char); 
       }
       if(match == null) {
@@ -73,7 +74,7 @@
       get: function(key) { return getFromMap(dev.map, key); },
       follow: [',', 'A', 'I', 'U', ',R', ',L', 'O', 'Oo', 'Uu', 
         'a', 'i', 'u',  ',r', ',l', 'o', 'oo', 'uu',
-        'k', 'g', 'c', 'j', 'T', 'D', 'R', 't', 'd', 'p', 'b', 's', 'h'],
+        'k', 'g', 'c', 'j', 'T', 'D', 'R', 't', 'd', 'p', 'b', 's', 'h', '>'],
       init: function(settings) {
         var a = dev.add;
         a('A', 'अ'); a('a', 'ा'); a('Aa', 'आ'); a('aa', 'ा');
