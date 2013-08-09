@@ -16,44 +16,51 @@
   <textarea data-sanetype="dev" rows=30 cols=100 ></textarea>
   
   <script type="text/javascript">
-    var sanetype_handle = function(e, map) {
-      var removeHere = function(el, str) {
-        el.value = el.value.substring(0, el.selectionStart - (str.length - 1)) + 
-          el.value.substring(el.SelectionEnd, el.value.length);
-        el.selectionStart -= (str.length - 1);
-        el.selectionEnd   = el.selectionStart;
+    var sanetype_handle = function(e, map, follow) {
+      var removeHere = function(el, str) { 
+        var start = el.selectionStart;
+        var end = el.selectionEnd;
+        el.value = el.value.substring(0, start - (str.length - 1)) + el.value.substring(end, el.value.length);
+        el.selectionStart = start - str.length + 1;
+        el.selectionEnd = el.selectionStart;
       }
       
-      var insertHere = function(el, str) {
-        el.value = el.value.substring(0, el.selectionStart) + str + 
-          el.value.substring(el.selectionEnd, el.value.length);
-        el.selectionStart += str.length;
+      var insertHere = function(el, str) { 
+        var start = el.selectionStart;
+        var end = el.selectionEnd;
+        el.value = el.value.substring(0, start) + str + el.value.substring(end, el.value.length);
+        el.selectionStart = start + str.length;
         el.selectionEnd = el.selectionStart;
       }
       
       var t = e.target;
       var char = String.fromCharCode(e.charCode); 
-      if (typeof t.dataset.next == 'undefined') {
+      
+      if(typeof t.dataset.next == 'undefined' || typeof follow[t.dataset.next] == 'undefined' 
+          || typeof follow[t.dataset.next][char] == 'undefined') {
         t.dataset.next = '';
       }
-      
       t.dataset.next += char;
-      console.log("char "+char);
-      var match = map[char];
-      console.log("match "+match);
-      if(match != null) {
+      var match = map[t.dataset.next];
+      if(match == null && typeof[follow][t.dataset.next] == 'undefined') {
+        t.dataset.next = ''
+      } else {
+        e.preventDefault();
         removeHere(t, t.dataset.next);
         insertHere(t, match);
-        t.dataset.next = '';
       }
     }
     
     var dev = {
       map: {
-        k: 'क', kh: 'ख', g: 'ग', gh: 'घ'
+        k: 'क', kh: 'ख', g: 'ग', gh: 'घ', G: 'ङ'
       },
       
-      handle: function(e) { sanetype_handle(e, dev.map); }
+      follow: {
+        k: { h: null }, g: { h: null }
+      },
+      
+      handle: function(e) { sanetype_handle(e, dev.map, dev.follow); }
     }
     
     var elements = document.querySelectorAll("[data-sanetype]");
