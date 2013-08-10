@@ -37,8 +37,10 @@
       var t = e.target;
       var char = String.fromCharCode(e.charCode); 
       if(typeof t.dataset.next == 'undefined') t.dataset.next = '';
-      if(typeof t.dataset.geminate == 'undefined') t.dataset.geminate = false;
+      if(typeof t.dataset.geminate == 'undefined') t.dataset.geminate = 0;
       var geminate = t.dataset.geminate;
+      
+      if(char.match(/^[a-zA-Z]$/) || script.map.keys.indexOf(char) != -1) e.preventDefault();
       
       if(char == 'q') { // geminates
         t.dataset.geminate = true;
@@ -58,29 +60,26 @@
       } else {
         var followed = t.dataset.next.length > 1;
       }
-      if(char.match(/^[a-zA-Z]$/)) { // letter of the alphabet
-        e.preventDefault();
-      }
+      
       if(match == null) {
         if (script.follow.indexOf(t.dataset.next) == -1)
           t.dataset.next = '';
-      } else { /*
-        if(geminate){
+      } else {
+        if(geminate === '1'){
           // TODO: ONLY oral plosives get geminated properly; fix this
           if(script.unaspirated.indexOf(t.dataset.next) != -1 || script.follow.indexOf(t.dataset.next) != -1 ) {
-            removeHere(t, 1);
             insertHere(t, match + '्'); 
           }
-          insertHere(t, match);
+          //insertHere(t, match);
           if(script.follow.indexOf(t.dataset.next) == -1){ // unambiguous, commit now
             t.dataset.next = '';
           } else { // next call will commit the second part of the geminate 
-            t.dataset.geminate = false;
+            t.dataset.geminate = 0;
           }
-        } else { */
+        } else { 
           if(followed) removeHere(t, 1);
           insertHere(t, match);
-        // } 
+        } 
       }
     }
     
