@@ -38,7 +38,6 @@
       var char = String.fromCharCode(e.charCode); 
       if(typeof t.dataset.next == 'undefined') t.dataset.next = '';
       if(typeof t.dataset.geminate == 'undefined') t.dataset.geminate ='no';
-      var geminate = t.dataset.geminate;
       
       if(char.match(/^[a-zA-Z]$/) || script.map.keys.indexOf(char) != -1) e.preventDefault();
       
@@ -47,32 +46,44 @@
         return;
       }
       
-      bufferStr = t.dataset.next; 
-      if(script.follow.indexOf(bufferStr) == -1) {
+      if(script.follow.indexOf(t.dataset.next) == -1) {
         t.dataset.next = '';
       }
       t.dataset.next += char;
       var match = script.get(t.dataset.next);
       
-      if(match == null && script.follow.indexOf(t.dataset.next) == -1) {
+      if(match == null && script.follow.indexOf(t.dataset.next) === -1) {
         // ignore the characters previously stored in the buffer
         t.dataset.next = char; match = script.get(char); 
+        var followed = false;
+        if(t.dataset.geminate === '2') t.dataset.geminate = 'no'; 
       } else {
         var followed = t.dataset.next.length > 1;
       }
       
       if(match == null) {
-        if (script.follow.indexOf(t.dataset.next) == -1)
+        if (script.follow.indexOf(t.dataset.next) === -1)
           t.dataset.next = '';
       } else {
-        if(geminate === '1'){
-          if(script.unaspirated.indexOf(match) != -1 || script.follow.indexOf(t.dataset.next) == -1) {
-            // unaspirated: next call will properly insert the second part of the geminate
-            // no follow: unambiguous, can be committed now
-            insertHere(t, match + '्' + match); 
+        if(t.dataset.geminate === '1'){
+          insertHere(t, match + '्' + match); 
+          if(script.unaspirated.indexOf(match) !== -1) {
+            // next call will properly insert the second part of geminate
             t.dataset.geminate = 'no';
+          } else if(script.follow.indexOf(t.dataset.next) === -1) {
+            // unambiguous
+            t.dataset.geminate = 'no';
+            t.dataset.next = '';
+          } else { // ambiguous; commit now, fix later
+            t.dataset.geminate = '2';
           }
-        } else { 
+        } else if (t.dataset.geminate === '2') {
+          if(followed) { // if not followed, last commit was correct
+            removeHere(t, 3); // FIX THIS: 3 will not always be appropriate
+            insertHere(t, match + '्' + match);
+          }
+          t.dataset.geminate = 'no';
+        }else { 
           if(followed) removeHere(t, 1);
           insertHere(t, match);
         } 
@@ -97,7 +108,7 @@
       follow: [',', 'A', 'I', 'U', ',R', ',L', 'O', 'Oo', 'Uu', 
         'a', 'i', 'u',  ',r', ',l', 'o', 'oo', 'uu',
         'k', 'g', 'c', 'j', 'T', 'D', 'R', 't', 'd', 'p', 'b', 's', 'h', '>'],
-      unaspirated: ['क', 'ग', 'च', 'ज', 'ट', 'ड', 'त', 'द', 'प', 'ब'], 
+      unaspirated: ['क', 'ग', 'च', 'ज', 'ट', 'ड', 'ड़', 'त', 'द', 'प', 'ब'], 
       init: function(settings) {
         var a = dev.add;
         a('A', 'अ'); a('a', 'ा'); a('Aa', 'आ'); a('aa', 'ा');
