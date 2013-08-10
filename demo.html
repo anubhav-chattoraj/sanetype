@@ -17,6 +17,8 @@
   <textarea data-sanetype="dev" rows=30 cols=100 ></textarea>
   
   <script type="text/javascript">
+  // TODO Make so that only consonants can be geminated
+  // TODO Ignore keypresses when control pressed 
     var sanetype_handle = function(e, script) {
       var t = e.target;
       
@@ -49,16 +51,21 @@
       if(script.follow.indexOf(t.dataset.buffer) === -1) {
         t.dataset.buffer = '';
       }
+      var prevMatch = script.get(t.dataset.buffer);
+      var numCharsToDelete;
+      if(prevMatch === null){
+        if (t.dataset.buffer.match(/^[a-zA-Z]+$/) === null) // contains punctuation marks; reflected on screen
+          numCharsToDelete = t.dataset.buffer.length; 
+        else numCharsToDelete = 0; 
+      } else numCharsToDelete = prevMatch.length;
+      
       t.dataset.buffer += char;
       var match = script.get(t.dataset.buffer);
       
       if(match == null && script.follow.indexOf(t.dataset.buffer) === -1) {
         // ignore the characters previously stored in the buffer
-        t.dataset.buffer = char; match = script.get(char); 
-        var followed = false;
-        if(t.dataset.geminate === '2') t.dataset.geminate = 'no'; 
-      } else {
-        var followed = t.dataset.buffer.length > 1;
+        numCharsToDelete = 0; t.dataset.buffer = char; match = script.get(char); 
+        if(t.dataset.geminate === 'change') t.dataset.geminate = 'no'; 
       }
       
       if(char.match(/^[a-zA-Z]$/) || script.map.keys.indexOf(t.dataset.buffer) !== -1) e.preventDefault();
@@ -68,6 +75,7 @@
           t.dataset.buffer = '';
       } else {
         if(t.dataset.geminate === '1'){
+          if(prevMatch === null) removeHere(numCharsToDelete);
           insertHere(match + '्' + match); 
           if(script.unaspirated.indexOf(match) !== -1) {
             // next call will properly insert the second part of geminate
@@ -77,16 +85,16 @@
             t.dataset.geminate = 'no';
             t.dataset.buffer = '';
           } else { // ambiguous; commit now, fix later
-            t.dataset.geminate = '2';
+            t.dataset.geminate = 'change';
           }
-        } else if (t.dataset.geminate === '2') {
-          if(followed) { // if not followed, last commit was correct
-            removeHere(3); // TODO FIX THIS: 3 will not always be appropriate
+        } else if (t.dataset.geminate === 'change') {
+          if(numCharsToDelete !== 0) { // if control doesn't flow here, last commit was correct
+            removeHere(2*numCharsToDelete + 1);
             insertHere(match + '्' + match);
           }
           t.dataset.geminate = 'no';
         }else { 
-          if(followed) removeHere(1);
+          removeHere(numCharsToDelete);
           insertHere(match);
         } 
       }
