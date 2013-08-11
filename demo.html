@@ -37,6 +37,7 @@
       }
       
       var char = String.fromCharCode(e.charCode); 
+      
       if(e.ctrlKey) {
         t.dataset.buffer = ''; t.dataset.prevMatch = '';
         return; 
@@ -62,7 +63,7 @@
       
       if(char.match(/^[a-zA-Z]$/) || script.map.keys.indexOf(t.dataset.buffer) !== -1) 
         e.preventDefault();
-      else if(script.follow.indexOf(char) !== -1) // char might need to be deleted next turn
+      else if(script.follow.indexOf(t.dataset.buffer) !== -1) // char might need to be deleted next turn
         t.dataset.prevMatch += char;
       
       
@@ -122,6 +123,9 @@
         a(',g', 'ॻ'); a(',j', 'ॼ'); a(',D', 'ॾ'); a(',b', 'ॿ'); a('hh', 'ॽ');
         // diacritics
         a('X', 'ँ'); a('M', 'ं'); a(':', 'ः'); a('Q', '़'); a('x', '्'); a('\'', 'ʼ');
+        // digits
+        a('1', '१'); a('2', '२'); a('3', '३'); a('4', '४'); a('5', '५'); 
+        a('6', '६'); a('7', '७'); a('8', '८'); a('9', '९'); a('0', '०');
         // other symbols
         a('>', '।'); a('>>', '॥'); a('$', '₹'); a('&', 'ऽ'); a(',M', 'ॐ'); a(',,', '॰');
         // geminates
