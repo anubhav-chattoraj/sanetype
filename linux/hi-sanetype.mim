@@ -106,6 +106,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("R"    ?ड़)                 ; DEVANAGARI LETTER DDDHA
     ("Rh"   ?ढ़)                 ; DEVANAGARI LETTER RHA
     ("f"    ?फ़)                 ; DEVANAGARI LETTER FA
+    ("zh"   ?ॹ)                 ; DEVANAGARI LETTER ZHA
     ;; Conjuncts
     ("K" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
@@ -125,7 +126,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
     ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") ("qL"   "ळ्ळ") ("qv"   "व्व") (q< "ऱ्ऱ्")
     ("qsh"  "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
-    ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़")
+    ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़") ("qzh" "ॹ्ॹ")
     ("q,g" "ॻ्ॻ") ("q,j" "ॼ्ॼ") ("q,D" "ॾ्ॾ") ("q,b" "ॿ्ॿ") ("qhh" "ॽ्ॽ")
     ;; diacritics    
     ("x"    ?्)                 ; DEVANAGARI SIGN VIRAMA
