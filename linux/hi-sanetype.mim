@@ -111,21 +111,22 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ;; Half-consonants
     ("h" "्ह") ("W" "र्") ("w" "्र") ("Y" "्य") ("V" "्व")
     ("<" "ऱ्")                 ; eyelash ra
-    ;; geminates
-    ("qk"   "क्क") ("qkh"  "क्ख") ("qg"   "ग्ग") ("qgh"  "ग्घ")  ("qG"   "ङ्ङ")
-    ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("q,n"  "ञ्ञ")
-    ("qT"   "ट्ट") ("qTh"  "ट्ठ") ("qD"   "ड्ड") ("qDh"  "ड्ढ") ("qN"   "ण्ण")
-    ("qt"   "त्त") ("qth"  "त्थ") ("qd"   "द्द") ("qdh"  "द्ध") ("qn"   "न्न")
-    ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
-    ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") ("qL"   "ळ्ळ") ("qv"   "व्व")
-    ("qsh"  "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
-    ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़")
     ;; Implosives
     (",g"   ?ॻ)                 ; DEVANAGARI LETTER GGA
     (",j"   ?ॼ)                 ; DEVANAGARI LETTER JJA
     (",D"   ?ॾ)                 ; DEVANAGARI LETTER DDDA
     (",b"   ?ॿ)                 ; DEVANAGARI LETTER BBA
     ("hh"   ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
+    ;; geminates
+    ("qk"   "क्क") ("qkh"  "क्ख") ("qg"   "ग्ग") ("qgh"  "ग्घ")  ("qG"   "ङ्ङ")
+    ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("q,n"  "ञ्ञ")
+    ("qT"   "ट्ट") ("qTh"  "ट्ठ") ("qD"   "ड्ड") ("qDh"  "ड्ढ") ("qN"   "ण्ण")
+    ("qt"   "त्त") ("qth"  "त्थ") ("qd"   "द्द") ("qdh"  "द्ध") ("qn"   "न्न")
+    ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
+    ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") ("qL"   "ळ्ळ") ("qv"   "व्व") (q< "ऱ्ऱ्")
+    ("qsh"  "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
+    ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़")
+    ("q,g" "ॻ्ॻ") ("q,j" "ॼ्ॼ") ("q,D" "ॾ्ॾ") ("q,b" "ॿ्ॿ") ("qhh" "ॽ्ॽ")
     ;; diacritics    
     ("x"    ?्)                 ; DEVANAGARI SIGN VIRAMA
     ("Q"    ?़)                 ; DEVANAGARI SIGN NUKTA
