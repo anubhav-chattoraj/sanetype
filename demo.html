@@ -17,7 +17,6 @@
   <textarea data-sanetype="dev" rows=30 cols=100 ></textarea>
   
   <script type="text/javascript">
-  // TODO Make so that only consonants can be geminated
   // TODO Ignore keypresses when control pressed 
     var sanetype_handle = function(e, script) {
       var t = e.target;
@@ -39,14 +38,7 @@
       }
       
       var char = String.fromCharCode(e.charCode); 
-      if(typeof t.dataset.buffer === 'undefined') t.dataset.buffer = '';
-      if(typeof t.dataset.geminate === 'undefined') t.dataset.geminate ='no';
-       
-      if(char === 'q') { // geminates
-        e.preventDefault();
-        t.dataset.geminate = '1';
-        return;
-      }
+      if(typeof t.dataset.buffer === 'undefined') t.dataset.buffer = '';      
       
       if(script.follow.indexOf(t.dataset.buffer) === -1) {
         t.dataset.buffer = '';
@@ -54,9 +46,10 @@
       var prevMatch = script.get(t.dataset.buffer);
       var numCharsToDelete;
       if(prevMatch === null){
-        if (t.dataset.buffer.match(/^[a-zA-Z]+$/) === null) // contains punctuation marks; reflected on screen
-          numCharsToDelete = t.dataset.buffer.length; 
-        else numCharsToDelete = 0; 
+          var alphabetic = t.dataset.buffer.match(/[a-zA-z]/g);
+          if (alphabetic === null) var numAlphabetic = 0;
+          else var numAlphabetic = alphabetic.length;
+          numCharsToDelete = t.dataset.buffer.length - numAlphabetic;
       } else numCharsToDelete = prevMatch.length;
       
       t.dataset.buffer += char;
@@ -74,29 +67,8 @@
         if (script.follow.indexOf(t.dataset.buffer) === -1)
           t.dataset.buffer = '';
       } else {
-        if(t.dataset.geminate === '1'){
-          if(prevMatch === null) removeHere(numCharsToDelete);
-          insertHere(match + '्' + match); 
-          if(script.unaspirated.indexOf(match) !== -1) {
-            // next call will properly insert the second part of geminate
-            t.dataset.geminate = 'no';
-          } else if(script.follow.indexOf(t.dataset.buffer) === -1) {
-            // unambiguous
-            t.dataset.geminate = 'no';
-            t.dataset.buffer = '';
-          } else { // ambiguous; commit now, fix later
-            t.dataset.geminate = 'change';
-          }
-        } else if (t.dataset.geminate === 'change') {
-          if(numCharsToDelete !== 0) { // if control doesn't flow here, last commit was correct
-            removeHere(2*numCharsToDelete + 1);
-            insertHere(match + '्' + match);
-          }
-          t.dataset.geminate = 'no';
-        }else { 
-          removeHere(numCharsToDelete);
-          insertHere(match);
-        } 
+        removeHere(numCharsToDelete);
+        insertHere(match);
       }
     }
     
@@ -117,10 +89,11 @@
       get: function(key) { return getFromMap(dev.map, key); },
       follow: [',', 'A', 'I', 'U', ',R', ',L', 'O', 'Oo', 'Uu', 
         'a', 'i', 'u',  ',r', ',l', 'o', 'oo', 'uu',
-        'k', 'g', 'c', 'j', 'T', 'D', 'R', 't', 'd', 'p', 'b', 's', 'h', '>'],
-      unaspirated: ['क', 'ग', 'च', 'ज', 'ट', 'ड', 'ड़', 'त', 'द', 'प', 'ब'], 
+        'k', 'g', 'c', 'j', 'T', 'D', 'R', 't', 'd', 'p', 'b', 's', 'h', '>',
+        'q', 'qk', 'qg', 'qc', 'qj', 'qT', 'qD', 'qR', 'qt', 'qd', 'qp', 'qb', 'qs', 'qh', 'q,'],
       init: function(settings) {
         var a = dev.add;
+        // vowels
         a('A', 'अ'); a('a', 'ा'); a('Aa', 'आ'); a('aa', 'ा');
         a('I', 'इ'); a('i', 'ि'); a('Ii', 'ई'); a('ii', 'ी');
         a('U', 'उ'); a('u', 'ु'); a('Uu', 'ऊ'); a('uu', 'ू');
@@ -131,6 +104,7 @@
         a('Ue', 'ॶ'); a('ue', 'ॖ'); a('Uue', 'ॷ'); a('uue', 'ॗ');
         a('Oe', 'ॳ'); a('oe', 'ऺ'); a('Ooe', 'ॴ'); a('ooe', 'ऻ');
         a('Aw', 'ॵ'); a('aw', 'ॏ'); a('Ee', 'ऍ'); a('ee', 'ॅ');
+        // consonants
         a('k', 'क'); a('kh', 'ख'); a('g', 'ग'); a('gh', 'घ'); a('G', 'ङ');
         a('c', 'च'); a('ch', 'छ'); a('j', 'ज'); a('jh', 'झ'); a(',n', 'ञ'); a('z', 'ज़');
         a('T', 'ट'); a('Th', 'ठ'); a('D', 'ड'); a('Dh', 'ढ'); a('N', 'ण'); a('R', 'ड़'); a('Rh', 'ढ़');
@@ -139,10 +113,22 @@
         a('y', 'य'); a('r', 'र'); a('l', 'ल'); a('v', 'व'); a('L', 'ळ');
         a('sh', 'श'); a('S', 'ष'); a('s', 'स'); a('H', 'ह');
         a('K', 'क्ष'); a('J', 'ज्ञ');
-        a('w', '्र'); a('W', 'र्'); a('<', 'ऱ्'); a('Y', '्य'); a('V', '्व'); a('h', '्ह');
+        a('w', '्र'); a('W', 'र्'); ; a('Y', '्य'); a('V', '्व'); a('h', '्ह');
         a(',g', 'ॻ'); a(',j', 'ॼ'); a(',D', 'ॾ'); a(',b', 'ॿ'); a('hh', 'ॽ');
+        // diacritics
         a('X', 'ँ'); a('M', 'ं'); a(':', 'ः'); a('Q', '़'); a('x', '्'); a('\'', 'ʼ');
+        // other symbols
         a('>', '।'); a('>>', '॥'); a('$', '₹'); a('&', 'ऽ'); a(',M', 'ॐ'); a(',,', '॰');
+        // geminates
+        a('qk', 'क्क'); a('qkh', 'क्ख'); a('qg', 'ग्ग'); a('qgh', 'ग्घ'); a('qG', 'ङ्ङ');
+        a('qc', 'च्च'); a('qch', 'च्छ'); a('qj', 'ज्ज'); a('qjh', 'ज्झ'); a('q,n', 'ञ्ञ'); a('qz', 'ज़्ज़');
+        a('qT', 'ट्ट'); a('qTh', 'ट्ठ'); a('qD', 'ड्ड'); a('qDh', 'ड्ढ'); a('qN', 'ण्ण'); a('qR', 'ड़्ड़'); a('qRh', 'ड़्ढ़');
+        a('qt', 'त्त'); a('qth', 'त्थ'); a('qd', 'द्द'); a('qdh', 'द्ध'); a('qn', 'न्न');
+        a('qp', 'प्प'); a('qph', 'प्फ'); a('qb', 'ब्ब'); a('qbh', 'ब्भ'); a('qm', 'म्म'); a('qf', 'फ़्फ़');
+        a('qy', 'य्य'); a('qr', 'र्र'); a('ql', 'ल्ल'); a('qv', 'व्व'); a('qL', 'ळ्ळ');
+        a('qsh', 'श्श'); a('qS', 'ष्ष'); a('qs', 'स्स'); a('qH', 'ह्ह');
+        a('qK', 'क्ष्क्ष'); a('qJ', 'ज्ञ्ज्ञ'); a('q<', 'ऱ्ऱ्')
+        a('q,g', 'ॻ्ॻ'); a('q,j', 'ॼ्ॼ'); a('q,D', 'ॾ्ॾ'); a('q,b', 'ॿ्ॿ'); a('qhh', 'ॽ्ॽ');
       }
     }
     
