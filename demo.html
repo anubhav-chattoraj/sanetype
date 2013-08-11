@@ -38,37 +38,38 @@
       }
       
       var char = String.fromCharCode(e.charCode); 
-      if(typeof t.dataset.buffer === 'undefined') t.dataset.buffer = '';      
+      if(typeof t.dataset.buffer === 'undefined') t.dataset.buffer = '';
+      if(typeof t.dataset.prevMatch === 'undefined') t.dataset.prevMatch = '';
       
       if(script.follow.indexOf(t.dataset.buffer) === -1) {
         t.dataset.buffer = '';
       }
-      var prevMatch = script.get(t.dataset.buffer);
-      var numCharsToDelete;
-      if(prevMatch === null){
-          var alphabetic = t.dataset.buffer.match(/[a-zA-z]/g);
-          if (alphabetic === null) var numAlphabetic = 0;
-          else var numAlphabetic = alphabetic.length;
-          numCharsToDelete = t.dataset.buffer.length - numAlphabetic;
-      } else numCharsToDelete = prevMatch.length;
       
       t.dataset.buffer += char;
       var match = script.get(t.dataset.buffer);
       
       if(match == null && script.follow.indexOf(t.dataset.buffer) === -1) {
         // ignore the characters previously stored in the buffer
-        numCharsToDelete = 0; t.dataset.buffer = char; match = script.get(char); 
+        t.dataset.prevMatch = ''; 
+        t.dataset.buffer = char; match = script.get(char); 
         if(t.dataset.geminate === 'change') t.dataset.geminate = 'no'; 
       }
+      var numCharsToDelete = t.dataset.prevMatch.length;
       
-      if(char.match(/^[a-zA-Z]$/) || script.map.keys.indexOf(t.dataset.buffer) !== -1) e.preventDefault();
+      if(char.match(/^[a-zA-Z]$/) || script.map.keys.indexOf(t.dataset.buffer) !== -1) 
+        e.preventDefault();
+      else if(script.follow.indexOf(char) !== -1) // char might need to be deleted next turn
+        t.dataset.prevMatch += char;
       
-      if(match == null) {
-        if (script.follow.indexOf(t.dataset.buffer) === -1)
-          t.dataset.buffer = '';
-      } else {
+      
+      if(match !== null) {
         removeHere(numCharsToDelete);
         insertHere(match);
+        if (script.follow.indexOf(t.dataset.buffer) === -1) {
+          t.dataset.buffer = '';
+          t.dataset.prevMatch = '';
+        } else
+          t.dataset.prevMatch = match;
       }
     }
     
