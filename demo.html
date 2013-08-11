@@ -17,7 +17,6 @@
   <textarea data-sanetype="dev" rows=30 cols=100 ></textarea>
   
   <script type="text/javascript">
-  // TODO Ignore keypresses when control pressed 
     var sanetype_handle = function(e, script) {
       var t = e.target;
       
@@ -38,6 +37,11 @@
       }
       
       var char = String.fromCharCode(e.charCode); 
+      if(e.ctrlKey) {
+        t.dataset.buffer = ''; t.dataset.prevMatch = '';
+        return; 
+      }
+      
       if(typeof t.dataset.buffer === 'undefined') t.dataset.buffer = '';
       if(typeof t.dataset.prevMatch === 'undefined') t.dataset.prevMatch = '';
       
