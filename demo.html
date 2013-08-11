@@ -38,7 +38,7 @@
       
       var char = String.fromCharCode(e.charCode); 
       
-      if(e.ctrlKey) {
+      if(e.ctrlKey || e.altKey) {
         t.dataset.buffer = ''; t.dataset.prevMatch = '';
         return; 
       }
@@ -57,7 +57,6 @@
         // ignore the characters previously stored in the buffer
         t.dataset.prevMatch = ''; 
         t.dataset.buffer = char; match = script.get(char); 
-        if(t.dataset.geminate === 'change') t.dataset.geminate = 'no'; 
       }
       var numCharsToDelete = t.dataset.prevMatch.length;
       
