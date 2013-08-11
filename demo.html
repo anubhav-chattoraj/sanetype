@@ -45,6 +45,25 @@
       
       if(typeof t.dataset.buffer === 'undefined') t.dataset.buffer = '';
       if(typeof t.dataset.prevMatch === 'undefined') t.dataset.prevMatch = '';
+      if(typeof t.dataset.latin === 'undefined') t.dataset.latin = 'false';
+      
+      if(char === 'q') {
+        if(t.dataset.buffer === 'q') {
+          e.preventDefault();
+          t.dataset.buffer = '';
+          if(t.dataset.latin === 'true') {
+            removeHere(1);
+            t.dataset.latin = 'false';
+          } else {
+            t.dataset.latin = 'true';
+          }
+          return;
+        } else if(t.dataset.latin === 'true') {
+          t.dataset.buffer = 'q';
+          return;
+        }
+      }
+      if(t.dataset.latin === 'true') return;
       
       if(script.follow.indexOf(t.dataset.buffer) === -1) {
         t.dataset.buffer = '';
@@ -60,7 +79,7 @@
       }
       var numCharsToDelete = t.dataset.prevMatch.length;
       
-      if(char.match(/^[a-zA-Z]$/) || script.map.keys.indexOf(t.dataset.buffer) !== -1) 
+      if(char.match(/^[a-zA-Z]$/) || match !== null) 
         e.preventDefault();
       else if(script.follow.indexOf(t.dataset.buffer) !== -1) // char might need to be deleted next turn
         t.dataset.prevMatch += char;
@@ -133,9 +152,8 @@
         a('qT', 'ट्ट'); a('qTh', 'ट्ठ'); a('qD', 'ड्ड'); a('qDh', 'ड्ढ'); a('qN', 'ण्ण'); a('qR', 'ड़्ड़'); a('qRh', 'ड़्ढ़');
         a('qt', 'त्त'); a('qth', 'त्थ'); a('qd', 'द्द'); a('qdh', 'द्ध'); a('qn', 'न्न');
         a('qp', 'प्प'); a('qph', 'प्फ'); a('qb', 'ब्ब'); a('qbh', 'ब्भ'); a('qm', 'म्म'); a('qf', 'फ़्फ़');
-        a('qy', 'य्य'); a('qr', 'र्र'); a('ql', 'ल्ल'); a('qv', 'व्व'); a('qL', 'ळ्ळ');
+        a('qy', 'य्य'); a('qr', 'र्र'); a('ql', 'ल्ल'); a('qv', 'व्व'); a('q<', 'ऱ्ऱ्'); a('qL', 'ळ्ळ');
         a('qsh', 'श्श'); a('qS', 'ष्ष'); a('qs', 'स्स'); a('qH', 'ह्ह');
-        a('qK', 'क्ष्क्ष'); a('qJ', 'ज्ञ्ज्ञ'); a('q<', 'ऱ्ऱ्')
         a('q,g', 'ॻ्ॻ'); a('q,j', 'ॼ्ॼ'); a('q,D', 'ॾ्ॾ'); a('q,b', 'ॿ्ॿ'); a('qhh', 'ॽ्ॽ');
       }
     }
