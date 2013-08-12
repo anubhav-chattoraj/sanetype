@@ -93,27 +93,13 @@
       }
     }
     
-    var addToMap = function(map, key, value) {
-      map.keys.push(key);
-      map.values.push(value);
-    }
-    var getFromMap = function(map, key) {
-      for(var i = 0; i < map.keys.length; i++) {
-        if(map.keys[i] == key)  return map.values[i];
-      }
-      return null;
-    }
-    
     var dev = {
-      map: { keys: [], values: [] },
-      add: function(key, value) { addToMap(dev.map, key, value); }, 
-      get: function(key) { return getFromMap(dev.map, key); },
       follow: [',', 'A', 'I', 'U', ',R', ',L', 'O', 'Oo', 'Uu', 
         'a', 'i', 'u',  ',r', ',l', 'o', 'oo', 'uu',
         'k', 'g', 'c', 'j', 'z', 'T', 'D', 'R', 't', 'd', 'p', 'b', 's', 'h', '>',
         'q', 'qk', 'qg', 'qc', 'qj', 'qT', 'qD', 'qR', 'qt', 'qd', 'qp', 'qb', 'qs', 'qz', 'qh', 'q,'],
-      init: function(settings) {
-        var a = dev.add;
+      init: function(add) {
+        var a = add; 
         // vowels
         a('A', 'अ'); a('a', 'ा'); a('Aa', 'आ'); a('aa', 'ा');
         a('I', 'इ'); a('i', 'ि'); a('Ii', 'ई'); a('ii', 'ी');
@@ -155,18 +141,35 @@
         a('qy', 'य्य'); a('qr', 'र्र'); a('ql', 'ल्ल'); a('qv', 'व्व'); a('q<', 'ऱ्ऱ्'); a('qL', 'ळ्ळ');
         a('qsh', 'श्श'); a('qS', 'ष्ष'); a('qs', 'स्स'); a('qH', 'ह्ह');
         a('q,g', 'ॻ्ॻ'); a('q,j', 'ॼ्ॼ'); a('q,D', 'ॾ्ॾ'); a('q,b', 'ॿ्ॿ'); a('qhh', 'ॽ्ॽ');
-        // Latin punctuation: Carried over from ASCII
-        a('!', '!'); a('@', '@'); a('#', '#'); a('%', '%'); a('^', '^'); a('&', '&'); a('*', '*');
-        a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
-        a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
-        a(';', ';'); a('"', '"'); a(',', ','); a('.', '.'); a('/', '/'); a('?', '?');
       }
     }
     
     initialized = [];
     var init_sanetype = function(script) {
+      var addToMap = function(map, key, value) {
+        map.keys.push(key);
+        map.values.push(value);
+      }
+      var getFromMap = function(map, key) {
+        for(var i = 0; i < map.keys.length; i++) {
+          if(map.keys[i] == key)  return map.values[i];
+        }
+        return null;
+      }
+      
       if (initialized.indexOf(script) === -1) {
-        script.init(); initialized.push(script);
+        script.map = { keys: [], values: [] };
+        script.get = function(key) { return getFromMap(script.map, key); };
+        var a = function(key, value) { addToMap(script.map, key, value); };
+        script.init(a); 
+        // adds ASCII punctuation to the script's map
+        // these will be overridden if script specifies alternate values for these keys
+        a('!', '!'); a('@', '@'); a('#', '#'); a('$', '$'); a('%', '%'); a('^', '^'); a('&', '&'); 
+        a('*', '*'); a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
+        a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
+        a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
+        a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
+        initialized.push(script);
       }
     }
     var elements = document.querySelectorAll("[data-sanetype]");
