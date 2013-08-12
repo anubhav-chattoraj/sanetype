@@ -102,6 +102,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("s"    ?स)                 ; DEVANAGARI LETTER SA
     ("H"    ?ह)                 ; DEVANAGARI LETTER HA
     ;; Consonants with nuqta
+    ("X"    ?ख़)                 ; DEVANAGARI LETTER KHHA
     ("z"    ?ज़)                 ; DEVANAGARI LETTER ZA
     ("R"    ?ड़)                 ; DEVANAGARI LETTER DDDHA
     ("Rh"   ?ढ़)                 ; DEVANAGARI LETTER RHA
@@ -126,15 +127,16 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
     ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") ("qL"   "ळ्ळ") ("qv"   "व्व") (q< "ऱ्ऱ्")
     ("qsh"  "श्श") ("qS"   "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
-    ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़") ("qzh" "ॹ्ॹ")
+    ("qX"   "ख़्ख़") ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़") ("qzh" "ॹ्ॹ")
     ("q,g" "ॻ्ॻ") ("q,j" "ॼ्ॼ") ("q,D" "ॾ्ॾ") ("q,b" "ॿ्ॿ") ("qhh" "ॽ्ॽ")
     ;; diacritics    
     ("x"    ?्)                 ; DEVANAGARI SIGN VIRAMA
     ("Q"    ?़)                 ; DEVANAGARI SIGN NUKTA
     ("M"    ?ं)                 ; DEVANAGARI SIGN ANUSVARA
-    ("X"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
+    ("C"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
     (":"    ?ः)                 ; DEVANAGARI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
+    ("^"    ?ॱ)                 ; DEVANAGARI SIGN HIGH SPACING DOT
     ;; digits
     ("0"    ?०)                 ; DEVANAGARI DIGIT ZER0
     ("1"    ?१)                 ; DEVANAGARI DIGIT ONE
@@ -147,7 +149,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("8"    ?८)                 ; DEVANAGARI DIGIT EIGHT
     ("9"    ?९)                 ; DEVANAGARI DIGIT NINE
     ;; symbols
-    ("&"    ?ऽ)                 ; DEVANAGARI SIGN AVAGRAHA
+    ("*"    ?ऽ)                 ; DEVANAGARI SIGN AVAGRAHA
     (",M"   ?ॐ)                 ; DEVANAGARI OM
     (",,"   ?॰)))               ; DEVANAGARI ABBREVIATION SIGN
     
