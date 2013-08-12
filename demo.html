@@ -72,27 +72,24 @@
       t.dataset.buffer += char;
       var match = script.get(t.dataset.buffer);
       
-      if(match == null && script.follow.indexOf(t.dataset.buffer) === -1) {
+      if(match === null && script.follow.indexOf(t.dataset.buffer) === -1) {
         // ignore the characters previously stored in the buffer
         t.dataset.prevMatch = ''; 
         t.dataset.buffer = char; match = script.get(char); 
       }
       var numCharsToDelete = t.dataset.prevMatch.length;
-      
-      if(char.match(/^[a-zA-Z]$/) || match !== null) 
+       
+      if(match !== null || script.follow.indexOf(t.dataset.buffer) !== -1) {
         e.preventDefault();
-      else if(script.follow.indexOf(t.dataset.buffer) !== -1) // char might need to be deleted next turn
-        t.dataset.prevMatch += char;
-      
-      
-      if(match !== null) {
-        removeHere(numCharsToDelete);
-        insertHere(match);
-        if (script.follow.indexOf(t.dataset.buffer) === -1) {
-          t.dataset.buffer = '';
-          t.dataset.prevMatch = '';
-        } else
-          t.dataset.prevMatch = match;
+        if(match !== null) {
+          removeHere(numCharsToDelete);
+          insertHere(match);
+          if (script.follow.indexOf(t.dataset.buffer) === -1) {
+            t.dataset.buffer = '';
+            t.dataset.prevMatch = '';
+          } else
+            t.dataset.prevMatch = match;
+        }
       }
     }
     
@@ -158,6 +155,11 @@
         a('qy', 'य्य'); a('qr', 'र्र'); a('ql', 'ल्ल'); a('qv', 'व्व'); a('q<', 'ऱ्ऱ्'); a('qL', 'ळ्ळ');
         a('qsh', 'श्श'); a('qS', 'ष्ष'); a('qs', 'स्स'); a('qH', 'ह्ह');
         a('q,g', 'ॻ्ॻ'); a('q,j', 'ॼ्ॼ'); a('q,D', 'ॾ्ॾ'); a('q,b', 'ॿ्ॿ'); a('qhh', 'ॽ्ॽ');
+        // Latin punctuation: Carried over from ASCII
+        a('!', '!'); a('@', '@'); a('#', '#'); a('%', '%'); a('^', '^'); a('&', '&'); a('*', '*');
+        a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
+        a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
+        a(';', ';'); a('"', '"'); a(',', ','); a('.', '.'); a('/', '/'); a('?', '?');
       }
     }
     
