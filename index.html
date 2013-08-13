@@ -1,7 +1,16 @@
 <head>
   <meta charset="UTF-8">
-  <title>Devnāgri keybindings for Sanetype</title>
+  <title>Sanetype for Devnāgri</title>
   <style type="text/css">    
+    textarea {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+      height: 75%;
+      font-size: 15pt;
+    }
+    
     table td {
       margin-right:5px;
       margin-left:5px;
@@ -11,11 +20,13 @@
     dt { clear:left; float: left; width: 100px; }
     dd { margin-left: 100px; }
     dt, dd {min-height:1.5em;}
+    
   </style>
 </head>
 
 <body>
-
+  <textarea data-sanetype="dev" rows=30 cols=100 ></textarea>
+  
   <h2>Hindi/Marāṭhi vowels हिंदी/मराठी स्वर</h2>
     <table>
       <tr>
@@ -71,7 +82,7 @@
         <td><strong>ॉ</strong></td><td>ao</td>
       </tr>
     </table>
-    
+
   <h2>Hindi/Marāṭhi consonants हिंदी/मराठी व्यंजन</h2>
     <table>
       <tr>
@@ -249,4 +260,5 @@
       <dt><strong>ॽ</strong></dt><dd>hh</dd>
     </dl>
     
+  <script src="sanetype.js"></script>
 </body>
