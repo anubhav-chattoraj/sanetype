@@ -102,10 +102,10 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("qsh"  "শ্শ") ("qS"   "ষ্ষ") ("qs"   "স্স") ("qH"   "হ্হ") 
     ("qR"   "ড়্ড়") ("qRh" "ড়্ঢ়") ("q.y"  "য়্য়")
     ;; diacritics    
-    ("x"    ?্)                 ; BENGALI SIGN VIRAMA
+    (";"    ?্)                 ; BENGALI SIGN VIRAMA
     ("Q"    ?়)                 ; BENGALI SIGN NUKTA
     ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
-    ("X"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
+    ("C"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
     (":"    ?ঃ)                 ; BENGALI SIGN VISARGA
     ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; digits
