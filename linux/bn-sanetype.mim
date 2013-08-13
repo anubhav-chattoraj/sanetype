@@ -120,10 +120,10 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("8"    ?৮)                 ; BENGALI DIGIT EIGHT
     ("9"    ?৯)                 ; BENGALI DIGIT NINE
     ;; symbols
-    ("&"    ?ঽ)                 ; BENGALI SIGN AVAGRAHA
+    ("@"    ?ঽ)                 ; BENGALI SIGN AVAGRAHA
     (",M"   ?ॐ)                 ; DEVANAGARI OM
     (",S"   ?৺)                 ; BENGALI ISSHAR
-    ("#"    ?৳)))               ; BENGALI RUPEE SIGN
+    ("^"    ?৳)))               ; BENGALI RUPEE SIGN
     
 (include (t nil sanetype-util) map)
 
