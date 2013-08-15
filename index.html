@@ -1,14 +1,18 @@
 <head>
   <meta charset="UTF-8">
-  <title>Sanetype for Devnāgri</title>
+  <title>Sanetype for Devnāgrī</title>
   <style type="text/css">    
     textarea {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 90%;
-      height: 75%;
+      width: 98%;
+      height: 120%;
       font-size: 15pt;
+    }
+    
+    h1 {
+      text-align: center;
     }
     
     table td {
@@ -21,13 +25,46 @@
     dd { margin-left: 100px; }
     dt, dd {min-height:1.5em;}
     
+    .col12 {
+      clear: left;
+      width: 50%;
+      float: left;
+    }
+    
+    .col22 {
+      clear: right; 
+      width: 50%;
+      float: right;
+    }
+    
   </style>
 </head>
 
 <body>
+  <h1>Sanetype देवनागरी</h1>
+  
+  <div class="col12">
+      <p> 
+        Type in the box using English letters. They will get changed to Devnāgrī. <br/>
+        Example: <br/>
+        <em>gMgadhr Hii shk;timan Hai&gt;</em> <br/>
+        turns into <br/>
+        <strong>गंगाधर ही शक्तिमान है।</strong> <br/>
+        <a href="#keymaps">All keymaps</a> </p>
+  </div>
+  <div class="col22">
+      <p> अंग्रेज़ी अक्षरों में कुछ टाइप करें। ये अक्षर देवनागरी में बदल जाएँगे।<br/>
+        उदाहरण: <br/>
+        <em>gMgadhr Hii shk;timan Hai&gt;</em> <br/>
+        बदलके ये बन जाता है: </br>
+        <strong>गंगाधर ही शक्तिमान है।</strong> <br/>
+        <a href="#keymaps">सभी अक्षरों के देवनागरी अर्थ</a> </p>
+  </div>
+  
   <textarea data-sanetype="dev" rows=30 cols=100 ></textarea>
   
-  <h2>Hindi/Marāṭhi vowels हिंदी/मराठी स्वर</h2>
+  <a id="keymaps"/>
+  <h2>Hindī/Marāṭhī vowels हिंदी/मराठी स्वर</h2>
     <table>
       <tr>
         <td><strong>अ</strong></td><td>A</td>
@@ -83,7 +120,7 @@
       </tr>
     </table>
 
-  <h2>Hindi/Marāṭhi consonants हिंदी/मराठी व्यंजन</h2>
+  <h2>Hindī/Marāṭhī consonants हिंदी/मराठी व्यंजन</h2>
     <table>
       <tr>
         <td><strong>क</strong></td><td>k</td>
