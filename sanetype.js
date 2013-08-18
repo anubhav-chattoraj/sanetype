@@ -66,11 +66,12 @@ var sanetype = {
   },
   
   handleKeyPress: function(e, script) {
-    var t = e.target;
+    if(e.altKey) return;    // already handled by handleKeyDown
     
+    var t = e.target;
     var char = String.fromCharCode(e.charCode); 
     
-    if(e.ctrlKey || e.altKey) {
+    if(e.ctrlKey) {
       t.dataset.buffer = ''; t.dataset.prevMatch = '';
       return; 
     }
@@ -119,9 +120,55 @@ var sanetype = {
         if (script.follow.indexOf(t.dataset.buffer) === -1) {
           t.dataset.buffer = '';
           t.dataset.prevMatch = '';
-        } else
+        } else {
           t.dataset.prevMatch = match;
+        }
       }
+    }
+  },
+  
+  handleKeyDown: function(e) {
+    console.log("keycode: "+e.keyCode);
+    // needed to handle alt; Chrome doesn't generate keypress for alt key
+    if(e.altKey) {
+      e.preventDefault();
+      if(e.which == 8) sanetype.removeHere(e.target, 1); // backspace
+      else {
+        var char = sanetype.altCodes.get(e.keyCode, e.shiftKey);
+        if(char !== null) sanetype.insertHere(e.target, char); 
+      }
+    }
+  },
+  
+  altCodes: {
+    keyCodes: [], 
+    unshifted: [],
+    shifted: [],
+    get: function(keyCode, shiftPressed) {
+      var self = sanetype.altCodes;
+      for(var i = 0; i < self.keyCodes.length; i++)
+        if (self.keyCodes[i] == keyCode) {
+          if(shiftPressed) return self.shifted[i];
+          else return self.unshifted[i];
+        }
+      return null;
+    },
+    init: function() {
+      var self = sanetype.altCodes;
+      var a = function(k, u, s) {
+        self.keyCodes.push(k); self.unshifted.push(u); self.shifted.push(s);
+      }
+      a(13,'\n','\n'); a(32,' ',' ');  a(48,'0',')'); a(49,'1','!'); a(50,'2','@'); a(51,'3','#'); 
+      a(52,'4','$'); a(53,'5','%'); a(54,'6','^'); a(55,'7','&'); a(56,'8','*'); a(57,'9','('); 
+      a(65,'a','A'); a(66,'b','B'); a(67,'c','C'); a(68,'d','D'); a(69,'e','E'); a(70,'f','F'); a(71,'g','G'); 
+      a(72,'h','H'); a(73,'i','I'); a(74,'j','J'); a(75,'k','K'); a(76,'l','L'); a(77,'m','M'); a(78,'n','N');
+      a(79,'o','O'); a(80,'p','P'); a(81,'q','Q'); a(82,'r','R'); a(83,'s','S'); a(84,'t','T'); a(85,'u','U'); 
+      a(86,'v','V'); a(87,'w','W'); a(88,'x','X'); a(89,'y','Y'); a(90,'z','Z'); 
+      a(186,';',':'); a(187,'=','+'); a(188,',','<'); a(189,'-','_'); a(190,'.','>'); a(191,'/','?'); 
+      a(192,'`','~'); a(219,'[','{'); a(220,'\\','|'); a(221,']','}'); a(222,'\'','"'); 
+      a(96,'0','0'); a(97,'1','1'); a(98,'2','2'); a(99,'3','3'); a(100,'4','4'); 
+      a(101,'5','5'); a(102,'6','6'); a(103,'7','7'); a(104,'8','8'); a(105,'9','9'); 
+      a(106,'*','*'); a(107,'+','+'); a(109,'-','-'); a(110,'.','.'); a(111,'/','/'); 
     }
   },
   
@@ -160,9 +207,11 @@ var sanetype = {
     for (var i = 0; i < elements.length; i++) {
       if (elements[i].dataset.sanetype === 'dev') {
         initScript(dev);
+        elements[i].addEventListener('keydown', sanetype.handleKeyDown, false);
         elements[i].addEventListener('keypress', function(e) { sanetype.handleKeyPress(e, dev) }, false);
       }
     }
+    sanetype.altCodes.init();
   }       
 }
 
