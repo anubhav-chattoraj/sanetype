@@ -15,8 +15,8 @@
 */
 
 var dev = {
-  follow: [',', 'A', 'I', 'U', ',R', ',L', 'O', 'Oo', 'Uu', 
-    'a', 'i', 'u',  ',r', ',l', 'o', 'oo', 'uu',
+  follow: [',', 'A', 'I', 'U', ',R', ',L', 'E', 'O', 'Oo', 'Uu', 
+    'a', 'i', 'u',  ',r', ',l', 'e', 'o', 'oo', 'uu',
     'k', 'g', 'c', 'j', 'z', 'T', 'D', 'R', 't', 'd', 'p', 'b', 's', 'h', '>',
     'q', 'qk', 'qg', 'qc', 'qj', 'qT', 'qD', 'qR', 'qt', 'qd', 'qp', 'qb', 'qs', 'qz', 'qh', 'q,'],
   init: function(add) {
