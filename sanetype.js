@@ -131,11 +131,15 @@ var sanetype = {
     console.log("keycode: "+e.keyCode);
     // needed to handle alt; Chrome doesn't generate keypress for alt key
     if(e.altKey) {
-      e.preventDefault();
-      if(e.which == 8) sanetype.removeHere(e.target, 1); // backspace
-      else {
+      if(e.which == 8) {
+        e.preventDefault();
+        sanetype.removeHere(e.target, 1); // backspace
+      } else {
         var char = sanetype.altCodes.get(e.keyCode, e.shiftKey);
-        if(char !== null) sanetype.insertHere(e.target, char); 
+        if(char !== null) { 
+          e.preventDefault(); 
+          sanetype.insertHere(e.target, char); 
+        }
       }
     }
   },
