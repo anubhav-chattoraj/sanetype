@@ -48,118 +48,122 @@ var dev = {
   }
 }
 
-var sanetype_handle = function(e, script) {
-  var t = e.target;
+var sanetype = {
+  removeHere: function(target, numChars) { 
+    var start = target.selectionStart;
+    var end = target.selectionEnd;
+    target.value = target.value.substring(0, start - numChars) + target.value.substring(end, target.value.length);
+    target.selectionStart = start - numChars;
+    target.selectionEnd = target.selectionStart;
+  },
   
-  var removeHere = function(numChars) { 
-    var start = t.selectionStart;
-    var end = t.selectionEnd;
-    t.value = t.value.substring(0, start - numChars) + t.value.substring(end, t.value.length);
-    t.selectionStart = start - numChars;
-    t.selectionEnd = t.selectionStart;
-  }
+  insertHere: function(target, str) { 
+    var start = target.selectionStart;
+    var end = target.selectionEnd;
+    target.value = target.value.substring(0, start) + str + target.value.substring(end, target.value.length);
+    target.selectionStart = start + str.length;
+    target.selectionEnd = target.selectionStart;
+  },
   
-  var insertHere = function(str) { 
-    var start = t.selectionStart;
-    var end = t.selectionEnd;
-    t.value = t.value.substring(0, start) + str + t.value.substring(end, t.value.length);
-    t.selectionStart = start + str.length;
-    t.selectionEnd = t.selectionStart;
-  }
-  
-  var char = String.fromCharCode(e.charCode); 
-  
-  if(e.ctrlKey || e.altKey) {
-    t.dataset.buffer = ''; t.dataset.prevMatch = '';
-    return; 
-  }
-  
-  if(typeof t.dataset.buffer === 'undefined') t.dataset.buffer = '';
-  if(typeof t.dataset.prevMatch === 'undefined') t.dataset.prevMatch = '';
-  if(typeof t.dataset.latin === 'undefined') t.dataset.latin = 'false';
-  
-  if(char === 'q') {
-    if(t.dataset.buffer === 'q') {
-      e.preventDefault();
-      t.dataset.buffer = '';
-      if(t.dataset.latin === 'true') {
-        removeHere(1);
-        t.dataset.latin = 'false';
-      } else {
-        t.dataset.latin = 'true';
-      }
-      return;
-    } else if(t.dataset.latin === 'true') {
-      t.dataset.buffer = 'q';
-      return;
-    }
-  }
-  if(t.dataset.latin === 'true') return;
-  
-  if(script.follow.indexOf(t.dataset.buffer) === -1) {
-    t.dataset.buffer = '';
-  }
-  
-  t.dataset.buffer += char;
-  var match = script.get(t.dataset.buffer);
-  
-  if(match === null && script.follow.indexOf(t.dataset.buffer) === -1) {
-    // ignore the characters previously stored in the buffer
-    t.dataset.prevMatch = ''; 
-    t.dataset.buffer = char; match = script.get(char); 
-  }
-  var numCharsToDelete = t.dataset.prevMatch.length;
+  handleKeyPress: function(e, script) {
+    var t = e.target;
     
-  if(match !== null || script.follow.indexOf(t.dataset.buffer) !== -1) {
-    e.preventDefault();
-    if(match !== null) {
-      removeHere(numCharsToDelete);
-      insertHere(match);
-      if (script.follow.indexOf(t.dataset.buffer) === -1) {
+    var char = String.fromCharCode(e.charCode); 
+    
+    if(e.ctrlKey || e.altKey) {
+      t.dataset.buffer = ''; t.dataset.prevMatch = '';
+      return; 
+    }
+    
+    if(typeof t.dataset.buffer === 'undefined') t.dataset.buffer = '';
+    if(typeof t.dataset.prevMatch === 'undefined') t.dataset.prevMatch = '';
+    if(typeof t.dataset.latin === 'undefined') t.dataset.latin = 'false';
+    
+    if(char === 'q') {
+      if(t.dataset.buffer === 'q') {
+        e.preventDefault();
         t.dataset.buffer = '';
-        t.dataset.prevMatch = '';
-      } else
-        t.dataset.prevMatch = match;
+        if(t.dataset.latin === 'true') {
+          sanetype.removeHere(t, 1);
+          t.dataset.latin = 'false';
+        } else {
+          t.dataset.latin = 'true';
+        }
+        return;
+      } else if(t.dataset.latin === 'true') {
+        t.dataset.buffer = 'q';
+        return;
+      }
     }
-  }
+    if(t.dataset.latin === 'true') return;
+    
+    if(script.follow.indexOf(t.dataset.buffer) === -1) {
+      t.dataset.buffer = '';
+    }
+    
+    t.dataset.buffer += char;
+    var match = script.get(t.dataset.buffer);
+    
+    if(match === null && script.follow.indexOf(t.dataset.buffer) === -1) {
+      // ignore the characters previously stored in the buffer
+      t.dataset.prevMatch = ''; 
+      t.dataset.buffer = char; match = script.get(char); 
+    }
+    var numCharsToDelete = t.dataset.prevMatch.length;
+      
+    if(match !== null || script.follow.indexOf(t.dataset.buffer) !== -1) {
+      e.preventDefault();
+      if(match !== null) {
+        sanetype.removeHere(t, numCharsToDelete);
+        sanetype.insertHere(t, match);
+        if (script.follow.indexOf(t.dataset.buffer) === -1) {
+          t.dataset.buffer = '';
+          t.dataset.prevMatch = '';
+        } else
+          t.dataset.prevMatch = match;
+      }
+    }
+  },
+  
+  init: function(e, script) {
+    var initialized = [];
+
+    var addToMap = function(map, key, value) {
+      map.keys.push(key);
+      map.values.push(value);
+    }
+    var getFromMap = function(map, key) {
+      for(var i = 0; i < map.keys.length; i++) {
+        if(map.keys[i] == key)  return map.values[i];
+      }
+      return null;
+    }
+    
+    var initScript = function(script) {
+      if (initialized.indexOf(script) === -1) {
+        script.map = { keys: [], values: [] };
+        script.get = function(key) { return getFromMap(script.map, key); };
+        var a = function(key, value) { addToMap(script.map, key, value); };
+        script.init(a); 
+        // adds ASCII punctuation to the script's map
+        // these will be overridden if script specifies alternate values for these keys
+        a('!', '!'); a('@', '@'); a('#', '#'); a('$', '$'); a('%', '%'); a('^', '^'); a('&', '&'); 
+        a('*', '*'); a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
+        a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
+        a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
+        a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
+        initialized.push(script);
+      }
+    }
+    
+    var elements = document.querySelectorAll("[data-sanetype]");
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[i].dataset.sanetype === 'dev') {
+        initScript(dev);
+        elements[i].addEventListener('keypress', function(e) { sanetype.handleKeyPress(e, dev) }, false);
+      }
+    }
+  }       
 }
 
-var init_sanetype = function(script) {
-  if(typeof init_sanetype.initialized === 'undefined') {
-    init_sanetype.initialized = [];
-  }
-  
-  var addToMap = function(map, key, value) {
-    map.keys.push(key);
-    map.values.push(value);
-  }
-  var getFromMap = function(map, key) {
-    for(var i = 0; i < map.keys.length; i++) {
-      if(map.keys[i] == key)  return map.values[i];
-    }
-    return null;
-  }
-  
-  if (init_sanetype.initialized.indexOf(script) === -1) {
-    script.map = { keys: [], values: [] };
-    script.get = function(key) { return getFromMap(script.map, key); };
-    var a = function(key, value) { addToMap(script.map, key, value); };
-    script.init(a); 
-    // adds ASCII punctuation to the script's map
-    // these will be overridden if script specifies alternate values for these keys
-    a('!', '!'); a('@', '@'); a('#', '#'); a('$', '$'); a('%', '%'); a('^', '^'); a('&', '&'); 
-    a('*', '*'); a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
-    a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
-    a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
-    a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
-    init_sanetype.initialized.push(script);
-  }
-}
-
-var elements = document.querySelectorAll("[data-sanetype]");
-for (var i = 0; i < elements.length; i++) {
-  if (elements[i].dataset.sanetype === 'dev') {
-    init_sanetype(dev);
-    elements[i].addEventListener('keypress', function(e) { sanetype_handle(e, dev) }, false);
-  }
-}
+sanetype.init();
