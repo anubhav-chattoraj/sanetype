@@ -214,15 +214,15 @@ var sanetype = {
         unshifted: [],
         shifted: [],
         get: function(keyCode, shiftPressed) {
-        var self = sanetype.altCodes;
-        for(var i = 0; i < self.keyCodes.length; i++)
-            if (self.keyCodes[i] == keyCode) {
-                if(shiftPressed) 
-                    return self.shifted[i];
-                else return 
-                    self.unshifted[i];
-            }
-        return null;
+            var self = sanetype.altCodes;
+            for(var i = 0; i < self.keyCodes.length; i++)
+                if (self.keyCodes[i] == keyCode) {
+                    if(shiftPressed) 
+                        return self.shifted[i];
+                    else 
+                        return self.unshifted[i];
+                }
+            return null;
         },
         init: function() {
             var self = sanetype.altCodes;
