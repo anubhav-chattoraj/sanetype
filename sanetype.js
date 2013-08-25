@@ -179,8 +179,8 @@ var sanetype = {
         var numCharsToDelete = $(t).data('prevMatch').length;
         
         if(match !== null || script.follow.indexOf($(t).data('buffer')) !== -1) {
-        e.preventDefault();
-        if(match !== null) {
+            e.preventDefault();
+            if(match !== null) {
                 sanetype.removeHere(t, numCharsToDelete);
                 sanetype.insertHere(t, match);
                 if (script.follow.indexOf($(t).data('buffer')) === -1) {
@@ -189,7 +189,7 @@ var sanetype = {
                 } else {
                     $(t).data('prevMatch', match);
                 }
-        }
+            }
         }
     },
   
