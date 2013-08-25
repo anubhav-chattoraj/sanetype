@@ -7,3 +7,6 @@ The software is available in source form at
 This software contains code derived from hiragana.js, copyright by Drew Devault.
 Hiragana.js is available at
     https://github.com/SirCmpwn/hiragana.js
+
+This software contains code copyright by Tim Down and available at
+    http://stackoverflow.com/a/4207763/1321855
