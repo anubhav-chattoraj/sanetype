@@ -289,4 +289,6 @@ var sanetype = {
     }       
 }
 
-sanetype.init();
+$(document).ready(function() {
+    sanetype.init();
+});
