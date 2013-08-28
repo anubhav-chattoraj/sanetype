@@ -61,7 +61,7 @@ function getInputSelection(el) {
     };
 }
 
-var dev = {
+var devnagri = {
     follow: [',', 'A', 'I', 'U', ',R', ',L', 'E', 'O', 'Oo', 'Uu', 
         'a', 'i', 'u',  ',r', ',l', 'e', 'o', 'oo', 'uu',
         'k', 'g', 'c', 'j', 'z', 'T', 'D', 'R', 't', 'd', 'p', 'b', 'S', 's', 'h', '>',
@@ -113,6 +113,55 @@ var dev = {
 }
 
 var sanetype = {
+    scripts: {}, // should be populated by calling sanetype.registerScript()
+    
+    registerScript: function(scriptName, script) {
+        sanetype.scripts[scriptName] = script;
+    },
+    
+    init: function() {
+        var initialized = [];
+
+        var addToMap = function(map, key, value) {
+            map.keys.push(key);
+            map.values.push(value);
+        }
+        var getFromMap = function(map, key) {
+            for(var i = 0; i < map.keys.length; i++) {
+                if(map.keys[i] == key)  return map.values[i];
+            }
+            return null;
+        }
+        
+        var initScript = function(script) {
+            if (initialized.indexOf(script) === -1) {
+                script.map = { keys: [], values: [] };
+                script.get = function(key) { return getFromMap(script.map, key); };
+                var a = function(key, value) { addToMap(script.map, key, value); };
+                script.init(a); 
+                // adds ASCII punctuation to the script's map
+                // these will be overridden if script specifies alternate values for these keys
+                a('!', '!'); a('@', '@'); a('#', '#'); a('$', '$'); a('%', '%'); a('^', '^'); a('&', '&'); 
+                a('*', '*'); a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
+                a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
+                a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
+                a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
+                initialized.push(script);
+            }
+        }
+        
+        $("[data-sanetype]").each(function(index) {
+            var scriptName = $(this).data("sanetype");
+            var script = sanetype.scripts[scriptName];
+            if (typeof script !== 'undefined') {
+                initScript(script);
+                $(this).on('keydown', sanetype.handleKeyDown);
+                $(this).on('keypress', function(e) { sanetype.handleKeyPress(e, script) });
+            }
+        })
+        sanetype.altCodes.init();
+    },
+    
     removeHere: function(target, numChars) { 
         var selection = getInputSelection(target);
         var start = selection.start;
@@ -245,50 +294,10 @@ var sanetype = {
             a(101,'5','5'); a(102,'6','6'); a(103,'7','7'); a(104,'8','8'); a(105,'9','9'); 
             a(106,'*','*'); a(107,'+','+'); a(109,'-','-'); a(110,'.','.'); a(111,'/','/'); 
         }
-    },
-  
-    init: function(e, script) {
-        var initialized = [];
-
-        var addToMap = function(map, key, value) {
-            map.keys.push(key);
-            map.values.push(value);
-        }
-        var getFromMap = function(map, key) {
-            for(var i = 0; i < map.keys.length; i++) {
-                if(map.keys[i] == key)  return map.values[i];
-            }
-            return null;
-        }
-        
-        var initScript = function(script) {
-            if (initialized.indexOf(script) === -1) {
-                script.map = { keys: [], values: [] };
-                script.get = function(key) { return getFromMap(script.map, key); };
-                var a = function(key, value) { addToMap(script.map, key, value); };
-                script.init(a); 
-                // adds ASCII punctuation to the script's map
-                // these will be overridden if script specifies alternate values for these keys
-                a('!', '!'); a('@', '@'); a('#', '#'); a('$', '$'); a('%', '%'); a('^', '^'); a('&', '&'); 
-                a('*', '*'); a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
-                a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
-                a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
-                a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
-                initialized.push(script);
-            }
-        }
-        
-        $("[data-sanetype]").each(function(index) {
-            if ($(this).data("sanetype") === 'dev') {
-                initScript(dev);
-                $(this).on('keydown', sanetype.handleKeyDown);
-                $(this).on('keypress', function(e) { sanetype.handleKeyPress(e, dev) });
-            }
-        })
-        sanetype.altCodes.init();
-    }       
+    }
 }
 
 $(document).ready(function() {
+    sanetype.registerScript('dev', devnagri);
     sanetype.init();
 });
