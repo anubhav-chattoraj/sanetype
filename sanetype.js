@@ -14,123 +14,86 @@
     limitations under the License.
 */
 
-function getInputSelection(el) {
-    // from http://stackoverflow.com/a/4207763/1321855
-    var start = 0, end = 0, normalizedValue, range,
-        textInputRange, len, endRange;
+var sanetype = (function($) {
+    function addToMap(map, key, value) {
+        map.keys.push(key);
+        map.values.push(value);
+    }
+    
+    function getFromMap(map, key) {
+        for(var i = 0; i < map.keys.length; i++) {
+            if(map.keys[i] === key)  return map.values[i];
+        }
+        return null;
+    }
+    
+    function getInputSelection(el) {
+        // from http://stackoverflow.com/a/4207763/1321855
+        var start = 0, end = 0, normalizedValue, range,
+            textInputRange, len, endRange;
 
-    if (typeof el.selectionStart == "number" && typeof el.selectionEnd == "number") {
-        start = el.selectionStart;
-        end = el.selectionEnd;
-    } else { // Internet Explorer
-        el.focus();
-        range = document.selection.createRange();
+        if (typeof el.selectionStart === "number" && typeof el.selectionEnd === "number") {
+            start = el.selectionStart;
+            end = el.selectionEnd;
+        } else { // Internet Explorer
+            el.focus();
+            range = document.selection.createRange();
 
-        if (range && range.parentElement() == el) {
-            len = el.value.length;
-            normalizedValue = el.value.replace(/\r\n/g, "\n");
+            if (range && range.parentElement() === el) {
+                len = el.value.length;
+                normalizedValue = el.value.replace(/\r\n/g, "\n");
 
-            // Create a working TextRange that lives only in the input
-            textInputRange = el.createTextRange();
-            textInputRange.moveToBookmark(range.getBookmark());
+                // Create a working TextRange that lives only in the input
+                textInputRange = el.createTextRange();
+                textInputRange.moveToBookmark(range.getBookmark());
 
-            // Check if the start and end of the selection are at the very end
-            // of the input, since moveStart/moveEnd doesn't return what we want
-            // in those cases
-            endRange = el.createTextRange();
-            endRange.collapse(false);
+                // Check if the start and end of the selection are at the very end
+                // of the input, since moveStart/moveEnd doesn't return what we want
+                // in those cases
+                endRange = el.createTextRange();
+                endRange.collapse(false);
 
-            if (textInputRange.compareEndPoints("StartToEnd", endRange) > -1) {
-                start = end = len;
-            } else {
-                start = -textInputRange.moveStart("character", -len);
-                start += normalizedValue.slice(0, start).split("\n").length - 1;
-
-                if (textInputRange.compareEndPoints("EndToEnd", endRange) > -1) {
-                    end = len;
+                if (textInputRange.compareEndPoints("StartToEnd", endRange) > -1) {
+                    start = end = len;
                 } else {
-                    end = -textInputRange.moveEnd("character", -len);
-                    end += normalizedValue.slice(0, end).split("\n").length - 1;
+                    start = -textInputRange.moveStart("character", -len);
+                    start += normalizedValue.slice(0, start).split("\n").length - 1;
+
+                    if (textInputRange.compareEndPoints("EndToEnd", endRange) > -1) {
+                        end = len;
+                    } else {
+                        end = -textInputRange.moveEnd("character", -len);
+                        end += normalizedValue.slice(0, end).split("\n").length - 1;
+                    }
                 }
             }
         }
+
+        return {
+            start: start,
+            end: end
+        };
     }
-
-    return {
-        start: start,
-        end: end
-    };
-}
-
-var sanetype = {
-    scripts: {}, // should be populated by calling sanetype.registerScript()
     
-    registerScript: function(scriptName, script) {
-        sanetype.scripts[scriptName] = script;
-    },
-    
-    init: function() {
-        var initialized = [];
-
-        var addToMap = function(map, key, value) {
-            map.keys.push(key);
-            map.values.push(value);
-        }
-        var getFromMap = function(map, key) {
-            for(var i = 0; i < map.keys.length; i++) {
-                if(map.keys[i] == key)  return map.values[i];
-            }
-            return null;
-        }
-        
-        var initScript = function(script) {
-            if (initialized.indexOf(script) === -1) {
-                script.map = { keys: [], values: [] };
-                script.get = function(key) { return getFromMap(script.map, key); };
-                var a = function(key, value) { addToMap(script.map, key, value); };
-                script.init(a); 
-                // adds ASCII punctuation to the script's map
-                // these will be overridden if script specifies alternate values for these keys
-                a('!', '!'); a('@', '@'); a('#', '#'); a('$', '$'); a('%', '%'); a('^', '^'); a('&', '&'); 
-                a('*', '*'); a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
-                a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
-                a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
-                a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
-                initialized.push(script);
-            }
-        }
-        
-        $("[data-sanetype]").each(function(index) {
-            var scriptName = $(this).data("sanetype");
-            var script = sanetype.scripts[scriptName];
-            if (typeof script !== 'undefined') {
-                initScript(script);
-                $(this).on('keydown', sanetype.handleKeyDown);
-                $(this).on('keypress', function(e) { sanetype.handleKeyPress(e, script) });
-            }
-        })
-        sanetype.altCodes.init();
-    },
-    
-    removeHere: function(target, numChars) { 
+    function removeHere(target, numChars) { 
         var selection = getInputSelection(target);
         var start = selection.start;
         var end = selection.end;
         target.value = target.value.substring(0, start - numChars) + target.value.substring(end, target.value.length);
         target.selectionStart = start - numChars;
         target.selectionEnd = target.selectionStart;
-    },
+    }
     
-    insertHere: function(target, str) { 
+    function insertHere(target, str) { 
         var selection = getInputSelection(target);
         var start = selection.start;
         var end = selection.end;
         target.value = target.value.substring(0, start) + str + target.value.substring(end, target.value.length);
         target.selectionStart = start + str.length;
         target.selectionEnd = target.selectionStart;
-    },
-  
-    handleKeyPress: function(e, script) {
+    }
+
+    function handleKeyPress(e, script) {
         if(e.altKey) return;    // already handled by handleKeyDown
         
         var t = e.target;
@@ -150,7 +113,7 @@ var sanetype = {
                 e.preventDefault();
                 $(t).data('buffer', '');
                 if($(t).data('latin') === 'true') {
-                    sanetype.removeHere(t, 1);
+                    removeHere(t, 1);
                     $(t).data('latin', 'false');
                 } else {
                     $(t).data('latin', 'true');
@@ -180,8 +143,8 @@ var sanetype = {
         if(match !== null || script.follow.indexOf($(t).data('buffer')) !== -1) {
             e.preventDefault();
             if(match !== null) {
-                sanetype.removeHere(t, numCharsToDelete);
-                sanetype.insertHere(t, match);
+                removeHere(t, numCharsToDelete);
+                insertHere(t, match);
                 if (script.follow.indexOf($(t).data('buffer')) === -1) {
                     $(t).data('buffer', '');
                     $(t).data('prevMatch', '');
@@ -190,32 +153,32 @@ var sanetype = {
                 }
             }
         }
-    },
-  
-    handleKeyDown: function(e) {
+    }
+
+    function handleKeyDown(e) {
         // needed to handle alt; Chrome doesn't generate keypress for alt key
         if(e.altKey) {
-            if(e.which == 8) {
+            if(e.which === 8) {
                 e.preventDefault();
-                sanetype.removeHere(e.target, 1); // backspace
+                removeHere(e.target, 1); // backspace
             } else {
-                var char = sanetype.altCodes.get(e.keyCode, e.shiftKey);
+                var char = altCodes.get(e.keyCode, e.shiftKey);
                 if(char !== null) { 
                     e.preventDefault(); 
-                    sanetype.insertHere(e.target, char); 
+                    insertHere(e.target, char); 
                 }
             }
         }
-    },
-  
-    altCodes: {
+    }
+
+    var altCodes = {
         keyCodes: [], 
         unshifted: [],
         shifted: [],
         get: function(keyCode, shiftPressed) {
-            var self = sanetype.altCodes;
+            var self = altCodes;
             for(var i = 0; i < self.keyCodes.length; i++)
-                if (self.keyCodes[i] == keyCode) {
+                if (self.keyCodes[i] === keyCode) {
                     if(shiftPressed) 
                         return self.shifted[i];
                     else 
@@ -224,7 +187,7 @@ var sanetype = {
             return null;
         },
         init: function() {
-            var self = sanetype.altCodes;
+            var self = altCodes;
             var a = function(k, u, s) {
                 self.keyCodes.push(k);
                 self.unshifted.push(u);
@@ -245,8 +208,42 @@ var sanetype = {
             a(106,'*','*'); a(107,'+','+'); a(109,'-','-'); a(110,'.','.'); a(111,'/','/'); 
         }
     }
-}
-
-$(document).ready(function() {
-    sanetype.init();
-});
+    
+    var initialized = [];
+    $(document).ready( function() {
+        function initScript(script) {
+            if (initialized.indexOf(script) === -1) {
+                script.map = { keys: [], values: [] };
+                script.get = function(key) { return getFromMap(script.map, key); };
+                var a = function(key, value) { addToMap(script.map, key, value); };
+                script.init(a); 
+                // adds ASCII punctuation to the script's map
+                // these will be overridden if script specifies alternate values for these keys
+                a('!', '!'); a('@', '@'); a('#', '#'); a('$', '$'); a('%', '%'); a('^', '^'); a('&', '&'); 
+                a('*', '*'); a('(', '('); a(')', ')'); a('-', '-'); a('_', '_'); a('=', '='); a('+', '+');
+                a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
+                a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
+                a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
+                initialized.push(script);
+            }
+        }
+        
+        $("[data-sanetype]").each(function(index) {
+            var scriptName = $(this).data("sanetype");
+            var script = scripts[scriptName];
+            if (typeof script !== 'undefined') {
+                initScript(script);
+                $(this).on('keydown', handleKeyDown);
+                $(this).on('keypress', function(e) { handleKeyPress(e, script) });
+            }
+        })
+        altCodes.init();
+    });
+    
+    var scripts = {};
+    return {
+        registerScript: function(scriptName, script) {
+            scripts[scriptName] = script;
+        }
+    }
+})(jQuery);
