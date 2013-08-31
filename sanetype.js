@@ -22,7 +22,7 @@ var sanetype = (function($) {
     
     function getFromMap(map, key) {
         for(var i = 0; i < map.keys.length; i++) {
-            if(map.keys[i] === key)  return map.values[i];
+            if(map.keys[i] === key) { return map.values[i]; }
         }
         return null;
     }
@@ -94,21 +94,23 @@ var sanetype = (function($) {
     }
 
     function handleKeyPress(e, script) {
-        if(e.altKey) return;    // already handled by handleKeyDown
+        if(e.altKey) { // already handled by handleKeyDown
+            return;
+        }
         
         var t = e.target;
-        var char = String.fromCharCode(e.charCode); 
+        var thisChar = String.fromCharCode(e.charCode); 
         
         if(e.ctrlKey) {
             $(t).data('buffer', ''); $(t).data('prevMatch', '');
             return; 
         }
         
-        if(typeof $(t).data('buffer') === 'undefined') $(t).data('buffer', '');
-        if(typeof $(t).data('prevMatch') === 'undefined') $(t).data('prevMatch', '');
-        if(typeof $(t).data('latin') === 'undefined') $(t).data('latin', 'false');
+        if(typeof $(t).data('buffer') === 'undefined') { $(t).data('buffer', ''); }
+        if(typeof $(t).data('prevMatch') === 'undefined') { $(t).data('prevMatch', ''); }
+        if(typeof $(t).data('latin') === 'undefined') { $(t).data('latin', 'false'); }
         
-        if(char === 'q') {
+        if(thisChar === 'q') {
             if($(t).data('buffer') === 'q') {
                 e.preventDefault();
                 $(t).data('buffer', '');
@@ -124,19 +126,19 @@ var sanetype = (function($) {
                 return;
             }
         }
-        if($(t).data('latin') === 'true') return;
+        if($(t).data('latin') === 'true') { return; }
         
         if(script.follow.indexOf($(t).data('buffer')) === -1) {
             $(t).data('buffer', '');
         }
         
-        $(t).data('buffer', $(t).data('buffer')+char);
+        $(t).data('buffer', $(t).data('buffer')+thisChar);
         var match = script.get($(t).data('buffer'));
         
         if(match === null && script.follow.indexOf($(t).data('buffer')) === -1) {
             // ignore the characters previously stored in the buffer
             $(t).data('prevMatch', ''); 
-            $(t).data('buffer', char); match = script.get(char); 
+            $(t).data('buffer', thisChar); match = script.get(thisChar); 
         }
         var numCharsToDelete = $(t).data('prevMatch').length;
         
@@ -162,10 +164,10 @@ var sanetype = (function($) {
                 e.preventDefault();
                 removeHere(e.target, 1); // backspace
             } else {
-                var char = altCodes.get(e.keyCode, e.shiftKey);
-                if(char !== null) { 
+                var thisChar = altCodes.get(e.keyCode, e.shiftKey);
+                if(thisChar !== null) { 
                     e.preventDefault(); 
-                    insertHere(e.target, char); 
+                    insertHere(e.target, thisChar); 
                 }
             }
         }
@@ -177,18 +179,20 @@ var sanetype = (function($) {
         shifted: [],
         get: function(keyCode, shiftPressed) {
             var self = altCodes;
-            for(var i = 0; i < self.keyCodes.length; i++)
+            for(var i = 0; i < self.keyCodes.length; i++) {
                 if (self.keyCodes[i] === keyCode) {
-                    if(shiftPressed) 
+                    if(shiftPressed) {
                         return self.shifted[i];
-                    else 
+                    } else  {
                         return self.unshifted[i];
+                    }
                 }
+            }
             return null;
         },
         init: function() {
             var self = altCodes;
-            var a = function(k, u, s) {
+            function a(k, u, s) {
                 self.keyCodes.push(k);
                 self.unshifted.push(u);
                 self.shifted.push(s);
@@ -207,7 +211,7 @@ var sanetype = (function($) {
             a(101,'5','5'); a(102,'6','6'); a(103,'7','7'); a(104,'8','8'); a(105,'9','9'); 
             a(106,'*','*'); a(107,'+','+'); a(109,'-','-'); a(110,'.','.'); a(111,'/','/'); 
         }
-    }
+    };
     
     var initialized = [];
     $(document).ready( function() {
@@ -234,9 +238,9 @@ var sanetype = (function($) {
             if (typeof script !== 'undefined') {
                 initScript(script);
                 $(this).on('keydown', handleKeyDown);
-                $(this).on('keypress', function(e) { handleKeyPress(e, script) });
+                $(this).on('keypress', function(e) { handleKeyPress(e, script); });
             }
-        })
+        });
         altCodes.init();
     });
     
@@ -245,5 +249,5 @@ var sanetype = (function($) {
         registerScript: function(scriptName, script) {
             scripts[scriptName] = script;
         }
-    }
+    };
 })(jQuery);
