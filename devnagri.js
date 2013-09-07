@@ -15,10 +15,6 @@
 */
 
 var devnagri = {
-    follow: [',', 'A', 'I', 'U', ',R', ',L', 'E', 'O', 'Oo', 'Uu', 
-        'a', 'i', 'u',  ',r', ',l', 'e', 'o', 'oo', 'uu',
-        'k', 'g', 'c', 'j', 'z', 'T', 'D', 'R', 't', 'd', 'p', 'b', 'S', 's', 'h', '>',
-        'q', 'qk', 'qg', 'qc', 'qj', 'qT', 'qD', 'qR', 'qt', 'qd', 'qp', 'qb', 'qS', 'qs', 'qz', 'qh', 'q,'],
     init: function(add) {
         var a = add; 
         // vowels

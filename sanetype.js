@@ -128,26 +128,26 @@ var sanetype = (function($) {
         }
         if($(t).data('latin') === 'true') { return; }
         
-        if(script.follow.indexOf($(t).data('buffer')) === -1) {
+        if(!($(t).data('buffer') in script.follow)) {
             $(t).data('buffer', '');
         }
         
         $(t).data('buffer', $(t).data('buffer')+thisChar);
         var match = script.get($(t).data('buffer'));
         
-        if(match === null && script.follow.indexOf($(t).data('buffer')) === -1) {
+        if(match === null && !($(t).data('buffer') in script.follow)) {
             // ignore the characters previously stored in the buffer
             $(t).data('prevMatch', ''); 
             $(t).data('buffer', thisChar); match = script.get(thisChar); 
         }
         var numCharsToDelete = $(t).data('prevMatch').length;
         
-        if(match !== null || script.follow.indexOf($(t).data('buffer')) !== -1) {
+        if(match !== null || $(t).data('buffer') in script.follow) {
             e.preventDefault();
             if(match !== null) {
                 removeHere(t, numCharsToDelete);
                 insertHere(t, match);
-                if (script.follow.indexOf($(t).data('buffer')) === -1) {
+                if (!($(t).data('buffer') in script.follow)) {
                     $(t).data('buffer', '');
                     $(t).data('prevMatch', '');
                 } else {
@@ -216,10 +216,16 @@ var sanetype = (function($) {
     var initialized = [];
     $(document).ready( function() {
         function initScript(script) {
+            script.follow = {};
             if (initialized.indexOf(script) === -1) {
                 script.map = { keys: [], values: [] };
                 script.get = function(key) { return getFromMap(script.map, key); };
-                var a = function(key, value) { addToMap(script.map, key, value); };
+                var a = function(key, value) { 
+                    if(key.length > 1) {
+                        script.follow[key.substring(0, key.length-1)] = true;
+                    }
+                    addToMap(script.map, key, value); 
+                };
                 script.init(a); 
                 // adds ASCII punctuation to the script's map
                 // these will be overridden if script specifies alternate values for these keys
