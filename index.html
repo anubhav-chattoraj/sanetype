@@ -18,70 +18,30 @@
 <head>
     <meta charset="UTF-8">
     <title>देवनागरी | Sanetype</title>
-    
-    <style type="text/css">    
-        textarea {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 98%;
-            height: 120%;
-            font-size: 15pt;
-        }
-        
-        h1 {
-            text-align: center;
-        }
-        
-        table td {
-            margin-right:5px;
-            margin-left:5px;
-            padding:5px;
-            width:200px;
-        }
-        dt { clear:left; float: left; width: 100px; }
-        dd { margin-left: 100px; }
-        dt, dd {min-height:1.5em;}
-        
-        .col12 {
-            clear: left;
-            width: 50%;
-            float: left;
-        }
-        
-        .col22 {
-            clear: right; 
-            width: 50%;
-            float: left;
-        }
-        
-        .col11 {
-            clear: both;
-            width: 100%;
-        }
-        
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>   
     </style>
 </head>
 
 <body>
   <h1>Sanetype देवनागरी</h1>
   
-  <div class="col12">
-        <p> 
-            <b>Sanetype</b> is a Devnāgrī keyboard where most Devnāgrī letters are on the same keys as
-            similar English letters. <br/>
-        </p>
-        <p>
-            Example: The keystrokes<br/>
-            <em>gMgadhr Hii shk;timan Hai&gt;</em> <br/>
-            produce <br/>
-            <strong>गंगाधर ही शक्तिमान है।</strong> <br/>
-        </p>
-        <p>
-            <a href="#keys">All keybindings</a> 
-        </p>
-  </div>
-  <div class="col22">
+    <div class="col-md-5 col-md-offset-1">
+            <p> 
+                <b>Sanetype</b> is a Devnāgrī keyboard where most Devnāgrī letters are on the same keys as
+                similar English letters. <br/>
+            </p>
+            <p>
+                Example: The keystrokes<br/>
+                <em>gMgadhr Hii shk;timan Hai&gt;</em> <br/>
+                produce <br/>
+                <strong>गंगाधर ही शक्तिमान है।</strong> <br/>
+            </p>
+            <p>
+                <a href="#keys">All keybindings</a> 
+            </p>
+    </div>
+    <div class="col-md-5">
         <p> 
             <b>सेनटाइप</b> एक देवनागरी कुंजीपटल (कीबोर्ड) है जिसमें ज़्यादातर देवनागरी अक्षर मिलते-जुलते अंग्रेज़ी अक्षर वाली कुंजी पर रखे गए हैं।<br/>
         </p>
@@ -96,10 +56,10 @@
         </p>
   </div>
   
-  <textarea data-sanetype="dev" rows=20 cols=100 ></textarea>
+    <textarea class="col-md-10 col-md-offset-1" data-sanetype="dev" rows=20 cols=100 ></textarea>
   
-  <a id="keys"><h1>Keybindings कुंजियाँ</h1></a>
-  <div class="col12">
+    <a id="keys"><h1>Keybindings कुंजियाँ</h1></a>
+    <div class="col-md-6">
     <h2>Hindī/Marāṭhī vowels<br/>हिंदी/मराठी स्वर</h2>
       <table>
         <tr>
@@ -214,8 +174,7 @@
             <dt>ZWNJ</dt><dd>~</dd>
         </dl>
   </div>
-
-  <div class="col22">
+    <div class="col-md-6">
     <h2>Hindī/Marāṭhī consonants<br/>हिंदी/मराठी व्यंजन</h2>
       <table>
         <tr>
@@ -303,7 +262,7 @@
       </dl>
   </div>
   
-  <div class = "col11">
+  <div>
     <h2>Diacritics विशेषक चिह्न</h2>
       <table>
         <tr>
@@ -344,7 +303,7 @@
       </table>
   </div>
   
-    <div class="col12">
+    <div class="col-md-6">
         <h2>Special keys</h2>
         <p>
             <strong>q</strong> doubles the next letter. Example: <br/>
@@ -361,7 +320,7 @@
             This method can also be used to type punctuation marks like ;:'&lt;&gt;
         </p>
     </div>
-    <div class = "col22">
+    <div class = "col-md-6">
         <h2>विशेष कुंजियाँ</h2>
         <p>
             <strong>q</strong> से अगले अक्षर का द्वित्व हो जाता है। जैसे: <br/>
