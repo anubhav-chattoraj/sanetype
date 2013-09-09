@@ -31,4 +31,4 @@ Preferences dialog, or to SCIM from the IMEngine Global Setup.
 ## Windows
 
 At present, there is no version for Windows. Use the 
-[live demo](http://anubhav-chattoraj.github.io/Sanetype/) instead.
+[live demo](http://anubhav-chattoraj.github.io/sanetype/) instead.
