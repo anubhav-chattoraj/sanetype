@@ -10,3 +10,8 @@ Hiragana.js is available at
 
 This software contains code copyright by Tim Down and available at
     http://stackoverflow.com/a/4207763/1321855
+    
+This software includes the Annapurna SIL font, copyright SIL International, and 
+made available under under the SIL Open Font License version 1.1. Further
+information is available at
+    http://scripts.sil.org/AnnapurnaSIL
