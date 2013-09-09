@@ -213,11 +213,11 @@ var sanetype = (function($) {
         }
     };
     
-    var initialized = [];
+    var initialized = {};
     $(document).ready( function() {
         function initScript(script) {
             script.follow = {};
-            if (initialized.indexOf(script) === -1) {
+            if (!(script in initialized)) {
                 script.map = { keys: [], values: [] };
                 script.get = function(key) { return getFromMap(script.map, key); };
                 var a = function(key, value) { 
@@ -234,7 +234,7 @@ var sanetype = (function($) {
                 a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
                 a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
                 a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
-                initialized.push(script);
+                initialized[script] = true;
             }
         }
         
