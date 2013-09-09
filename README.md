@@ -1,12 +1,9 @@
 # What is this?
 
-An input mechanism for the Devanagari script, used to write Hindi, Marathi, and 
-a few other languages. 
+An input mechanism for the Devanagari script, used to write Hindi, Marathi, 
+Nepali, and a few other languages. 
 
 [Live demo here](http://anubhav-chattoraj.github.io/Sanetype/).
-
-Inspired by the [BolNagri](http://indlinux.org/wiki/index.php/BolNagri) keyboard
-layout.
 
 # Installation
 
