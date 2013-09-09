@@ -21,15 +21,31 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>   
     <style type="text/css">
+        @font-face {
+            font-family: AnnapurnaSILW;
+            font-weight: bold;
+            src: url("fonts/AnnapurnaSIL-B.woff") format("woff");
+        }
+        @font-face {
+            font-family: AnnapurnaSILW;
+            src: url("fonts/AnnapurnaSIL-R.woff") format("woff");
+        }
+        
+        :lang(hi) {
+            font-family: AnnapurnaSILW;
+        }
         p:lang(hi), span:lang(hi), textarea:lang(hi) {
             font-size: 1.25em;
+        } 
+        h1 span:lang(hi), h2 span:lang(hi) {
+            font-size: 1.0em;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="text-center">Sanetype देवनागरी</h1>
+        <h1 class="text-center">Sanetype <span lang="hi">देवनागरी</span></h1>
         <section id="intro">
             <div class="col-md-6">
                     <p> 
@@ -65,10 +81,10 @@
         <textarea lang="hi" class="col-md-12 col-xs-12 col-sm-12 col-lg-12" data-sanetype="dev" rows=20 cols=100 ></textarea>
     
         <section id="keys">
-            <h1 class="text-center">Keybindings कुंजियाँ</h1>
+            <h1 class="text-center">Keybindings <span lang="hi">कुंजियाँ</span></h1>
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Hindī/Marāṭhī vowels<br/>हिंदी/मराठी स्वर</h2>
+                    <h2>Hindī/Marāṭhī vowels<br/><span lang="hi">हिंदी/मराठी स्वर</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr>
                         <td><span lang="hi">अ</strong></td><td>A</td>
@@ -124,7 +140,7 @@
                         </tr>
                     </table>
                 
-                    <h2>Vowels from other languages<br/>अन्य भाषाओं के स्वर</h2>
+                    <h2>Vowels from other languages<br/><span lang="hi">अन्य भाषाओं के स्वर</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr>
                         <td><span lang="hi">ॠ</strong></td><td>,Rr</td>
@@ -178,7 +194,7 @@
                 </div>
             
                 <div class="col-md-6">
-                    <h2>Hindī/Marāṭhī consonants<br/>हिंदी/मराठी व्यंजन</h2>
+                    <h2>Hindī/Marāṭhī consonants<br/><span lang="hi">हिंदी/मराठी व्यंजन</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr>
                         <td><span lang="hi">क</strong></td><td>k</td>
@@ -236,7 +252,7 @@
                         </tr>
                     </table>
                     
-                    <h2>Conjuncts &amp; half-consonants<br/>संयुक्ताक्षर व अर्धव्यंजन</h2>
+                    <h2>Conjuncts &amp; half-consonants<br/><span lang="hi">संयुक्ताक्षर व अर्धव्यंजन</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr><td><span lang="hi">क्ष</strong></td><td>K</td></tr>
                         <tr><td><span lang="hi">त्र</strong></td><td>tw</td></tr>
@@ -249,7 +265,7 @@
                         <tr><td><span lang="hi">्ह</strong></td><td>h</td></tr>
                     </table>
                     
-                    <h2>Consonants from other languages<br/>अन्य भाषाओं के व्यंजन</h2>
+                    <h2>Consonants from other languages<br/><span lang="hi">अन्य भाषाओं के व्यंजन</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr><td><span lang="hi">ॻ</strong></td><td>,g</td></tr>
                         <tr><td><span lang="hi">ॼ</strong></td><td>,j</td></tr>
@@ -262,12 +278,12 @@
             
             <div class="row">
                 <div class="col-md-6">
-                    <h2>Punctuation<br/>विरामचिह्न</h2>
+                    <h2>Punctuation<br/><span lang="hi">विरामचिह्न</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr><td><span lang="hi">।</strong></td><td>&gt;</td></tr>
                         <tr><td><span lang="hi">॥</strong></td><td>&gt;&gt;</td></tr>
                     </table>
-                    <h2>Diacritics विशेषक चिह्न</h2>
+                    <h2>Diacritics<br/><span lang="hi">विशेषक चिह्न</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr>
                         <td><span lang="hi">्</strong></td><td>;</td><td>halant/virāma</td><td><span lang="hi">हलंत/विराम</span></td>
@@ -289,12 +305,12 @@
                     </table>
                 </div>
                 <div class="col-md-6">
-                    <h2>Unicode control characters<br/>यूनिकोड कंट्रोल चिह्न</h2>
+                    <h2>Unicode control characters<br/><span lang="hi">यूनिकोड कंट्रोल चिह्न</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr><td>ZWJ</td><td>`</td></tr>
                         <tr><td>ZWNJ</td><td>~</td></tr>
                     </table>
-                    <h2>Other symbols अन्य चिह्न</h2>
+                    <h2>Other symbols<br/><span lang="hi">अन्य चिह्न</span></h2>
                     <table class="table table-striped table-bordered table-condensed">
                         <tr>
                         <td><span lang="hi">₹</strong></td><td>$</td><td>Indian Rupee sign</td>
@@ -318,9 +334,9 @@
                     <h2>Special keys</h2>
                     <p>
                         <strong>q</strong> doubles the next letter. Example: <br/>
-                        <strong>qk</strong>  &rarr; क्क<br/>
-                        <strong>qkh</strong> &rarr; क्ख<br/>
-                        <strong>qsh</strong> &rarr; श्श<br/>
+                        <strong>qk</strong>  &rarr; <span lang="hi">क्क</span><br/>
+                        <strong>qkh</strong> &rarr; <span lang="hi">क्ख</span><br/>
+                        <strong>qsh</strong> &rarr; <span lang="hi">श्श</span><br/>
                         and so on.
                     </p>
                     
@@ -334,10 +350,10 @@
                 <div class = "col-md-6" lang="hi">
                     <h2>विशेष कुंजियाँ</h2>
                     <p>
-                        <strong">q</strong> से अगले अक्षर का द्वित्व हो जाता है। जैसे: <br/>
-                        <strong>qk</strong>  &rarr; क्क<br/>
-                        <strong>qkh</strong> &rarr; क्ख<br/>
-                        <strong>qsh</strong> &rarr; श्श<br/>
+                        <strong lang="en">q</strong> से अगले अक्षर का द्वित्व हो जाता है। जैसे: <br/>
+                        <strong lang="en">qk</strong>  &rarr; क्क<br/>
+                        <strong lang="en">qkh</strong> &rarr; क्ख<br/>
+                        <strong lang="en">qsh</strong> &rarr; श्श<br/>
                         इत्यादि। 
                     </p>
                     
