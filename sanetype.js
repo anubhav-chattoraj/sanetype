@@ -93,11 +93,7 @@ var sanetype = (function($) {
         target.selectionEnd = target.selectionStart;
     }
 
-    function handleKeyPress(e, script) {
-        if(e.altKey) { // already handled by handleKeyDown
-            return;
-        }
-        
+    function handleKeyPress(e, script) {        
         var t = e.target;
         var thisChar = String.fromCharCode(e.charCode); 
         
@@ -156,62 +152,6 @@ var sanetype = (function($) {
             }
         }
     }
-
-    function handleKeyDown(e) {
-        // needed to handle alt; Chrome doesn't generate keypress for alt key
-        if(e.altKey) {
-            if(e.which === 8) {
-                e.preventDefault();
-                removeHere(e.target, 1); // backspace
-            } else {
-                var thisChar = altCodes.get(e.keyCode, e.shiftKey);
-                if(thisChar !== null) { 
-                    e.preventDefault(); 
-                    insertHere(e.target, thisChar); 
-                }
-            }
-        }
-    }
-
-    var altCodes = {
-        keyCodes: [], 
-        unshifted: [],
-        shifted: [],
-        get: function(keyCode, shiftPressed) {
-            var self = altCodes;
-            for(var i = 0; i < self.keyCodes.length; i++) {
-                if (self.keyCodes[i] === keyCode) {
-                    if(shiftPressed) {
-                        return self.shifted[i];
-                    } else  {
-                        return self.unshifted[i];
-                    }
-                }
-            }
-            return null;
-        },
-        init: function() {
-            var self = altCodes;
-            function a(k, u, s) {
-                self.keyCodes.push(k);
-                self.unshifted.push(u);
-                self.shifted.push(s);
-            }
-            a(13,'\n','\n'); a(32,' ',' ');  a(48,'0',')'); a(49,'1','!'); a(50,'2','@'); a(51,'3','#'); 
-            a(52,'4','$'); a(53,'5','%'); a(54,'6','^'); a(55,'7','&'); a(56,'8','*'); a(57,'9','('); 
-            a(65,'a','A'); a(66,'b','B'); a(67,'c','C'); a(68,'d','D'); a(69,'e','E'); a(70,'f','F'); 
-            a(71,'g','G'); a(72,'h','H'); a(73,'i','I'); a(74,'j','J'); a(75,'k','K'); a(76,'l','L'); 
-            a(77,'m','M'); a(78,'n','N'); a(79,'o','O'); a(80,'p','P'); a(81,'q','Q'); a(82,'r','R'); 
-            a(83,'s','S'); a(84,'t','T'); a(85,'u','U'); a(86,'v','V'); a(87,'w','W'); a(88,'x','X'); 
-            a(89,'y','Y'); a(90,'z','Z'); 
-            a(59, ';', ':'); a(61, '=', '+'); a(173, '-', '_'); 
-            a(186,';',':'); a(187,'=','+'); a(188,',','<'); a(189,'-','_'); a(190,'.','>'); a(191,'/','?'); 
-            a(192,'`','~'); a(219,'[','{'); a(220,'\\','|'); a(221,']','}'); a(222,'\'','"'); 
-            a(96,'0','0'); a(97,'1','1'); a(98,'2','2'); a(99,'3','3'); a(100,'4','4'); 
-            a(101,'5','5'); a(102,'6','6'); a(103,'7','7'); a(104,'8','8'); a(105,'9','9'); 
-            a(106,'*','*'); a(107,'+','+'); a(109,'-','-'); a(110,'.','.'); a(111,'/','/'); 
-        }
-    };
     
     var initialized = {};
     $(document).ready( function() {
@@ -234,6 +174,30 @@ var sanetype = (function($) {
                 a('[', '['); a(']', ']'); a('{', '{'); a('}', '}'); a('\\', '\\'); a('|', '|');
                 a(';', ';'); a(':', ':'); a("'", "'"); a('"', '"'); 
                 a(',', ','); a('.', '.'); a('<', '<'); a('>', '>'); a('/', '/'); a('?', '?');
+                // adds ASCII characters to backslash sequences
+                a('\\a', 'a');  a('\\b', 'b');  a('\\c', 'c');  a('\\d', 'd');  
+                a('\\e', 'e');  a('\\f', 'f');  a('\\g', 'g');  a('\\h', 'h');  
+                a('\\i', 'i');  a('\\j', 'j');  a('\\k', 'k');  a('\\l', 'l');  
+                a('\\m', 'm');  a('\\n', 'n');  a('\\o', 'o');  a('\\p', 'p');  
+                a('\\q', 'q');  a('\\r', 'r');  a('\\s', 's');  a('\\t', 't');  
+                a('\\u', 'u');  a('\\v', 'v');  a('\\w', 'w');  a('\\x', 'x');  
+                a('\\y', 'y');  a('\\z', 'z');  
+                a('\\A', 'A');  a('\\B', 'B');  a('\\C', 'C');  a('\\D', 'D');  
+                a('\\E', 'E');  a('\\F', 'F');  a('\\G', 'G');  a('\\H', 'H');  
+                a('\\I', 'I');  a('\\J', 'J');  a('\\K', 'K');  a('\\L', 'L');  
+                a('\\M', 'M');  a('\\N', 'N');  a('\\O', 'O');  a('\\P', 'P');  
+                a('\\Q', 'Q');  a('\\R', 'R');  a('\\S', 'S');  a('\\T', 'T');  
+                a('\\U', 'U');  a('\\V', 'V');  a('\\W', 'W');  a('\\X', 'X');  
+                a('\\Y', 'Y');  a('\\Z', 'Z'); 
+                a('\\[', '['); a('\\]', ']'); a('\\{', '{'); a('\\}', '}'); a('\\\\', '\\'); a('\\|', '|');
+                a('\\;', ';'); a('\\:', ':'); a("\\'", "'"); a('\\"', '"'); 
+                a('\\,', ','); a('\\.', '.'); a('\\<', '<'); a('\\>', '>'); a('\\/', '/'); a('\\?', '?');
+                a('\\0', '0');  a('\\1', '1');  a('\\2', '2');  a('\\3', '3');  a('\\4', '4');  
+                a('\\5', '5');  a('\\6', '6');  a('\\7', '7');  a('\\8', '8');  a('\\9', '9');  
+                a('\\!', '!');  a('\\@', '@');  a('\\#', '#');  a('\\$', '$');  a('\\%', '%');  
+                a('\\^', '^');  a('\\&', '&');  a('\\*', '*');  a('\\(', '(');  a('\\)', ')'); 
+                a('\\-', '-'); a('\\_', '_');  a('\\=', '='); a('\\+', '+'); 
+                a('\\`', '`');  a('\\~', '~');
                 initialized[script] = true;
             }
         }
@@ -243,11 +207,9 @@ var sanetype = (function($) {
             var script = scripts[scriptName];
             if (typeof script !== 'undefined') {
                 initScript(script);
-                $(this).on('keydown', handleKeyDown);
                 $(this).on('keypress', function(e) { handleKeyPress(e, script); });
             }
         });
-        altCodes.init();
     });
     
     var scripts = {};
