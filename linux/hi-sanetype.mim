@@ -90,7 +90,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("ch"   ?छ)                 ; DEVANAGARI LETTER CHA
     ("j"    ?ज)                 ; DEVANAGARI LETTER JA
     ("jh"   ?झ)                 ; DEVANAGARI LETTER JHA
-    (",n"   ?ञ)                 ; DEVANAGARI LETTER NYA
+    ("Y"    ?ञ)                 ; DEVANAGARI LETTER NYA
     ("T"    ?ट)                 ; DEVANAGARI LETTER TTA
     ("Th"   ?ठ)                 ; DEVANAGARI LETTER TTHA
     ("D"    ?ड)                 ; DEVANAGARI LETTER DDA
@@ -135,7 +135,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     (",h"   ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
     ;; geminates
     ("qk"   "क्क") ("qkh"  "क्ख") ("qg"   "ग्ग") ("qgh"  "ग्घ")  ("qG"   "ङ्ङ")
-    ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("q,n"  "ञ्ञ")
+    ("qc"   "च्च") ("qch"  "च्छ") ("qj"   "ज्ज") ("qjh"  "ज्झ") ("qY"  "ञ्ञ")
     ("qT"   "ट्ट") ("qTh"  "ट्ठ") ("qD"   "ड्ड") ("qDh"  "ड्ढ") ("qN"   "ण्ण")
     ("qt"   "त्त") ("qth"  "त्थ") ("qd"   "द्द") ("qdh"  "द्ध") ("qn"   "न्न")
     ("qp"   "प्प") ("qph"  "प्फ") ("qb"   "ब्ब") ("qbh"  "ब्भ") ("qm"   "म्म")
