@@ -156,8 +156,8 @@ var sanetype = (function($) {
     var initialized = {};
     $(document).ready( function() {
         function initScript(script) {
-            script.follow = {};
             if (!(script in initialized)) {
+                script.follow = {};
                 script.map = { keys: [], values: [] };
                 script.get = function(key) { return getFromMap(script.map, key); };
                 var a = function(key, value) { 
