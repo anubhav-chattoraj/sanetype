@@ -142,7 +142,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("qy"   "य्य") ("qr"   "र्र") ("ql"   "ल्ल") ("qL"   "ळ्ळ") ("qv"   "व्व") (q< "ऱ्ऱ्")
     ("qsh"  "श्श") ("qS"   "ष्ष") ("qSh" "ष्ष") ("qs"   "स्स") ("qH"   "ह्ह")
     ("qx"   "ख़्ख़") ("qz"   "ज़्ज़") ("qR"  "ड़्ड़") ("qRh" "ड़्ढ़") ("qf" "फ़्फ़") ("qzh" "ॹ्ॹ")
-    ("q,g" "ॻ्ॻ") ("q,j" "ॼ्ॼ") ("q,D" "ॾ्ॾ") ("q,b" "ॿ्ॿ") ("qhh" "ॽ्ॽ")
+    ("q,g" "ॻ्ॻ") ("q,j" "ॼ्ॼ") ("q,D" "ॾ्ॾ") ("q,b" "ॿ्ॿ") ("q,h" "ॽ्ॽ")
     ;; diacritics    
     (";"    ?्)                 ; DEVANAGARI SIGN VIRAMA
     ("Q"    ?़)                 ; DEVANAGARI SIGN NUKTA
