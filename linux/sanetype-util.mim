@@ -50,10 +50,4 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ((G-`) ?`) ((G-~) ?~) 
     ((G-[) ?[) ((G-]) ?]) ((G-\\) ?\\) ((G-{) ?{)   ((G-}) ?})   ((G-|) ?|)   
     ((G-') ?') ((G-:) ?:) ((G-\") ?\") ((G-\;) ?\;) 
-    ((G-,) ?,) ((G-.) ?.) ((G-/) ?/)   ((G-<) ?<)   ((G->) ?>)   ((G-?) ??))
-  (change_mode ("qq")))
-  
-(state 
-  (escape
-    (change_mode (shift init))
-    (nil (unhandle))))
+    ((G-,) ?,) ((G-.) ?.) ((G-/) ?/)   ((G-<) ?<)   ((G->) ?>)   ((G-?) ??)))

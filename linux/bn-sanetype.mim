@@ -135,10 +135,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
 (state
   (init
     (characters)
-    (common)
-    (change_mode (shift escape))))
-  
-(include (t nil sanetype-util) state)
+    (common)))
 
 ;; Local Variables:
 ;; coding: utf-8
