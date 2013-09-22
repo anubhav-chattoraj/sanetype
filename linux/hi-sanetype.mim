@@ -121,7 +121,6 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("R"    ?ड़)                 ; DEVANAGARI LETTER DDDHA
     ("Rh"   ?ढ़)                 ; DEVANAGARI LETTER RHA
     ("f"    ?फ़)                 ; DEVANAGARI LETTER FA
-    ("zh"   ?ॹ)                 ; DEVANAGARI LETTER ZHA
     ;; Conjuncts
     ("K" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
