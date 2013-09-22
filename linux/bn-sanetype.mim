@@ -106,18 +106,9 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ;; Half-consonants
     ("h" "্হ") ("W" "র্") ("w" "্র") ("Y" "্য") ("V" "্ৱ")
     ("f" ?ৎ)                    ; BENGALI LETTER KHANDA TA
-    ;; geminates
-    ("qk"   "ক্ক") ("qkh"  "ক্খ") ("qg"   "গ্গ") ("qgh"  "গ্ঘ")  ("qG"   "ঙ্ঙ")
-    ("qc"   "চ্চ") ("qch"  "চ্ছ") ("qj"   "জ্জ") ("qjh"  "জ্ঝ") ("q,n"  "ঞ্ঞ")
-    ("qT"   "ট্ট") ("qTh"  "ট্ঠ") ("qD"   "ড্ড") ("qDh"  "ড্ঢ") ("qN"   "ণ্ণ")
-    ("qt"   "ত্ত") ("qth"  "ত্থ") ("qd"   "দ্দ") ("qdh"  "দ্ধ") ("qn"   "ন্ন")
-    ("qp"   "প্প") ("qph"  "প্ফ") ("qb"   "ব্ব") ("qbh"  "ব্ভ") ("qm"   "ম্ম")
-    ("qy"   "য্য") ("qr"   "র্র") ("qL" "ৰ্ৰ") ("ql"   "ল্ল") ("qv" "ৱ্ৱ")
-    ("qsh"  "শ্শ") ("qS"   "ষ্ষ") ("qSh" "ষ্ষ") ("qs"   "স্স") ("qH"   "হ্হ") 
-    ("qR"   "ড়্ড়") ("qRh" "ড়্ঢ়") ("q.y"  "য়্য়")
     ;; diacritics    
     (";"    ?্)                 ; BENGALI SIGN VIRAMA
-    ("Q"    ?়)                 ; BENGALI SIGN NUKTA
+    ("q"    ?়)                 ; BENGALI SIGN NUKTA
     ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
     ("C"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
     (":"    ?ঃ)                 ; BENGALI SIGN VISARGA
