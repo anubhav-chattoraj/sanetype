@@ -116,11 +116,15 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("s"    ?स)                 ; DEVANAGARI LETTER SA
     ("H"    ?ह)                 ; DEVANAGARI LETTER HA
     ;; Consonants with nuqta
-    ("x"    ?ख़)                 ; DEVANAGARI LETTER KHHA
-    ("z"    ?ज़)                 ; DEVANAGARI LETTER ZA
-    ("R"    ?ड़)                 ; DEVANAGARI LETTER DDDHA
-    ("Rh"   ?ढ़)                 ; DEVANAGARI LETTER RHA
-    ("f"    ?फ़)                 ; DEVANAGARI LETTER FA
+    ("x"    "ख़")
+    ("z"    "ज़़")
+    ("R"    "ड़")
+    ("Rh"   "ढ़")
+    ("f"    "फ़")
+    ;; The following consonants are encoded separately because their NFC forms are precomposed
+    ("nq"   ?ऩ)                 ; DEVANAGARI LETTER NNNA
+    ("rq"   ?ऱ)                 ; DEVANAGARI LETTER RRA
+    ("Lq"   ?ऴ)                 ; DEVANAGARI LETTER LLLA
     ;; Conjuncts
     ("K" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
