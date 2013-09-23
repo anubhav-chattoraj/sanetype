@@ -114,7 +114,10 @@ var sanetype = (function($) {
                     removeHere(t, 1);
                     $(t).data('latin', 'false');
                 } else {
+                    removeHere(t, $(t).data('prevMatch').length);
                     $(t).data('latin', 'true');
+                    $(t).data('buffer', 'false');
+                    $(t).data('prevMatch', '');
                 }
                 return;
             } else if($(t).data('latin') === 'true') {
@@ -158,6 +161,7 @@ var sanetype = (function($) {
         function initScript(script) {
             if (!(script in initialized)) {
                 script.follow = {};
+                script.follow['q'] = true; // qq switches to Latin mode
                 script.map = { keys: [], values: [] };
                 script.get = function(key) { return getFromMap(script.map, key); };
                 var a = function(key, value) { 
