@@ -117,7 +117,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("H"    ?ह)                 ; DEVANAGARI LETTER HA
     ;; Consonants with nuqta
     ("x"    "ख़")
-    ("z"    "ज़़")
+    ("z"    "ज़")
     ("R"    "ड़")
     ("Rh"   "ढ़")
     ("f"    "फ़")
