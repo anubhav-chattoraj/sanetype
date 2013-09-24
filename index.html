@@ -19,6 +19,7 @@
     <meta charset="UTF-8">
     <title>देवनागरी | Sanetype</title>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link href="/css/jquery.ime.css" rel="stylesheet" />
     <style type="text/css">
         p:lang(hi), span:lang(hi), textarea:lang(hi) {
             font-size: 1.25em;
@@ -352,8 +353,17 @@
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="sanetype.js"></script>
-    <script src="devnagri.js"></script>
+    
+    <script src="/libs/rangy/rangy-core.js"></script>
+    <script src="/js/jquery.ime.js"></script>
+    <script src="/js/jquery.ime.selector.js"></script>
+    <script src="/js/jquery.ime.preferences.js"></script>
+    <script src="/js/jquery.ime.inputmethods.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('textarea').ime();
+        });
+    </script>
     
     <script type="text/javascript">
         var _gaq = _gaq || [];
