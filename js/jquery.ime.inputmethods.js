@@ -110,6 +110,10 @@
 			name: 'normalformer',
 			source: 'rules/da/da-normforms.js'
 		},
+		'devanagari-sanetype': {
+			name: "सेनटाइप",
+			source: 'rules/hi/devanagari-sanetype.js'
+		},
 		'doi-inscript2': {
 			name: 'इनस्क्रिप्ट २',
 			source: 'rules/doi/doi-inscript2.js'
@@ -573,7 +577,7 @@
 		},
 		'ahr': {
 			autonym: 'अहिराणी',
-			inputmethods: [ 'mr-transliteration', 'mr-inscript' ]
+			inputmethods: [ 'mr-transliteration', 'mr-inscript', 'devanagari-sanetype' ]
 		},
 		'am': {
 			autonym: 'አማርኛ',
@@ -601,11 +605,11 @@
 		},
 		'bh': {
 			autonym: 'भोजपुरी',
-			inputmethods: [ 'hi-transliteration' ]
+			inputmethods: [ 'hi-transliteration', 'devanagari-sanetype' ]
 		},
 		'bho': {
 			autonym: 'भोजपुरी',
-			inputmethods: [ 'hi-transliteration' ]
+			inputmethods: [ 'hi-transliteration', 'devanagari-sanetype' ]
 		},
 		'bn': {
 			autonym: 'বাংলা',
@@ -613,7 +617,7 @@
 		},
 		'brx': {
 			autonym: 'बोड़ो',
-			inputmethods: [ 'brx-inscript', 'brx-inscript2' ]
+			inputmethods: [ 'brx-inscript', 'brx-inscript2', 'devanagari-sanetype' ]
 		},
 		'ckb': {
 			autonym: 'کوردی',
@@ -641,7 +645,7 @@
 		},
 		'doi': {
 			autonym: 'डोगरी',
-			inputmethods: [ 'doi-inscript2' ]
+			inputmethods: [ 'doi-inscript2', 'devanagari-sanetype' ]
 		},
 		'en': {
 			autonym: 'English',
@@ -669,7 +673,7 @@
 		},
 		'gom': {
 			autonym: 'कोंकणी',
-			inputmethods: [ 'hi-transliteration', 'hi-inscript', 'gom-inscript2' ]
+			inputmethods: [ 'hi-transliteration', 'hi-inscript', 'gom-inscript2', 'devanagari-sanetype' ]
 		},
 		'gu': {
 			autonym: 'ગુજરાતી',
@@ -681,7 +685,7 @@
 		},
 		'hi': {
 			autonym: 'हिन्दी',
-			inputmethods: [ 'hi-transliteration', 'hi-inscript', 'hi-bolnagri', 'hi-phonetic', 'hi-inscript2' ]
+			inputmethods: [ 'devanagari-sanetype', 'hi-transliteration', 'hi-inscript', 'hi-bolnagri', 'hi-phonetic', 'hi-inscript2',  ]
 		},
 		'hr': {
 			autonym: 'Hrvatski',
@@ -693,7 +697,7 @@
 		},
 		'hne': {
 			autonym: 'छत्तीसगढ़ी',
-			inputmethods: [ 'hi-transliteration' ]
+			inputmethods: [ 'hi-transliteration', 'devanagari-sanetype' ]
 		},
 		'is': {
 			autonym: 'Íslenska',
@@ -725,7 +729,7 @@
 		},
 		'ks': {
 			autonym: 'कॉशुर / کٲشُر',
-			inputmethods: [ 'ks-inscript', 'ks-kbd' ]
+			inputmethods: [ 'ks-inscript', 'ks-kbd', 'devanagari-sanetype' ]
 		},
 		'ky': {
 			autonym: 'Кыргыз',
@@ -753,7 +757,7 @@
 		},
 		'mai': {
 			autonym: 'मैथिली',
-			inputmethods: [ 'mai-inscript', 'mai-inscript2' ]
+			inputmethods: [ 'mai-inscript', 'mai-inscript2', 'devanagari-sanetype' ]
 		},
 		'mh': {
 			autonym: 'Kajin M̧ajeļ',
@@ -773,7 +777,7 @@
 		},
 		'mr': {
 			autonym: 'मराठी',
-			inputmethods: [ 'mr-transliteration', 'mr-inscript2', 'mr-inscript', 'mr-phonetic' ]
+			inputmethods: [ 'mr-transliteration', 'mr-inscript2', 'mr-inscript', 'mr-phonetic', 'devanagari-sanetype' ]
 		},
 		'my': {
 			autonym: 'မြန်မာ',
@@ -781,11 +785,11 @@
 		},
 		'ne': {
 			autonym: 'नेपाली',
-			inputmethods: [ 'ne-transliteration', 'ne-inscript2', 'ne-inscript', 'ne-rom', 'ne-trad' ]
+			inputmethods: [ 'ne-transliteration', 'ne-inscript2', 'ne-inscript', 'ne-rom', 'ne-trad', 'devanagari-sanetype' ]
 		},
 		'new': {
 			autonym: 'नेपाल भाषा',
-			inputmethods: [ 'hi-transliteration', 'hi-inscript' ]
+			inputmethods: [ 'hi-transliteration', 'hi-inscript', 'devanagari-sanetype' ]
 		},
 		'nb': {
 			autonym: 'Norsk (bokmål)',
@@ -817,15 +821,15 @@
 		},
 		'sa': {
 			autonym: 'संस्कृत',
-			inputmethods: [ 'sa-transliteration', 'sa-inscript2', 'sa-inscript', 'sa-iast' ]
+			inputmethods: [ 'sa-transliteration', 'sa-inscript2', 'sa-inscript', 'sa-iast', 'devanagari-sanetype' ]
 		},
 		'sat': {
 			autonym: 'संताली',
-			inputmethods: [ 'sat-inscript2']
+			inputmethods: [ 'sat-inscript2', 'devanagari-sanetype']
 		},
 		'sd': {
 			autonym: 'सिंधी',
-			inputmethods: [ 'sd-inscript2' ]
+			inputmethods: [ 'sd-inscript2', 'devanagari-sanetype' ]
 		},
 		'se': {
 			autonym: 'Davvisámegiella',
