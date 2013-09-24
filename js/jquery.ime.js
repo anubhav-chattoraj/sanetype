@@ -46,7 +46,7 @@
 		 * @returns {string} transliterated string
 		 */
 		transliterate: function ( input, context, altGr ) {
-			var patterns, regex, rule, replacement, i;
+			var patterns, regex, rule, replacement, i, replace, clearContext;
 
 			if ( altGr ) {
 				patterns = this.inputmethod.patterns_x || [];
@@ -55,9 +55,14 @@
 			}
 
 			if ( $.isFunction( patterns ) ) {
-				return patterns.call( this, input, context );
+				return {
+					replacement: patterns.call( this, input, context ),
+					clearContext: false
+				};
 			}
-
+			
+			replace = false;
+			clearContext = false;
 			for ( i = 0; i < patterns.length; i++ ) {
 				rule = patterns[i];
 				regex = new RegExp( rule[0] + '$' );
@@ -70,19 +75,33 @@
 				// Input string match test
 				if ( regex.test( input ) ) {
 					// Context test required?
-					if ( rule.length === 3 ) {
+					if ( rule.length > 2 ) {
 						if ( new RegExp( rule[1] + '$' ).test( context ) ) {
-							return input.replace( regex, replacement );
+							replace = true;
+							if(rule.length > 3) {
+								clearContext = rule[2];
+							}
 						}
 					} else {
 						// No context test required. Just replace.
-						return input.replace( regex, replacement );
+						replace = true;
 					}
+					break;
 				}
 			}
-
-			// No matches, return the input
-			return input;
+			
+			if(replace) {
+				return {
+					replacement: input.replace( regex, replacement ),
+					clearContext: clearContext
+				};
+			} else {
+				// No matches, return the input
+				return {
+					replacement: input,
+					clearContext: clearContext
+				};
+			}
 		},
 
 		/**
@@ -92,7 +111,7 @@
 		 */
 		keypress: function ( e ) {
 			var altGr = false,
-				c, startPos, pos, endPos, divergingPos, input, replacement;
+				c, startPos, pos, endPos, divergingPos, input, transliterationResult, replacement, clearContext;
 
 			if ( !this.active ) {
 				return true;
@@ -142,16 +161,22 @@
 			);
 			input += c;
 
-			replacement = this.transliterate( input, this.context, altGr );
+			transliterationResult = this.transliterate( input, this.context, altGr );
+			replacement = transliterationResult.replacement;
+			clearContext = transliterationResult.clearContext;
 
 			// Update the context
-			this.context += c;
+			if(clearContext) {
+				this.context = '';
+			} else {
+				this.context += c;
 
-			if ( this.context.length > this.inputmethod.contextLength ) {
-				// The buffer is longer than needed, truncate it at the front
-				this.context = this.context.substring(
-					this.context.length - this.inputmethod.contextLength
-				);
+				if ( this.context.length > this.inputmethod.contextLength ) {
+					// The buffer is longer than needed, truncate it at the front
+					this.context = this.context.substring(
+						this.context.length - this.inputmethod.contextLength
+					);
+				}
 			}
 
 			// If replacement equals to input, no replacement is made, because

@@ -8,7 +8,10 @@
 		URL: 'https://github.com/anubhav-chattoraj/sanetype',
 		license: 'Apache 2.0',
 		maxKeyLength: 3, 
+		contextLength: 1,
 		patterns: [
+			["\\\\\\\\", "\\\\", true, "\\"], // two backslashes in a row should clear the context
+			["\\\\([\\u0021-\\u007E])", "\\\\", "$1"], // escape ASCII characters
 			[",M", "ॐ"], 
 			[",,", "॰"],
 			[",A", "ऄ"], [",a", "ॆ"],
