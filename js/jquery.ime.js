@@ -44,9 +44,10 @@
 		 * @param {string} context
 		 * @param {boolean} altGr whether altGr key is pressed or not
 		 * @returns {string} transliterated string
+		 * @returns {string or boolean} updated context, or false to use default context
 		 */
 		transliterate: function ( input, context, altGr ) {
-			var patterns, regex, rule, replacement, i, replace, clearContext;
+			var patterns, regex, rule, replacement, i, replace, newContext;
 
 			if ( altGr ) {
 				patterns = this.inputmethod.patterns_x || [];
@@ -57,12 +58,12 @@
 			if ( $.isFunction( patterns ) ) {
 				return {
 					replacement: patterns.call( this, input, context ),
-					clearContext: false
+					newContext: false
 				};
 			}
 			
 			replace = false;
-			clearContext = false;
+			newContext = false;
 			for ( i = 0; i < patterns.length; i++ ) {
 				rule = patterns[i];
 				regex = new RegExp( rule[0] + '$' );
@@ -79,27 +80,29 @@
 						if ( new RegExp( rule[1] + '$' ).test( context ) ) {
 							replace = true;
 							if(rule.length > 3) {
-								clearContext = rule[2];
+								newContext = rule[2];
 							}
 						}
 					} else {
 						// No context test required. Just replace.
 						replace = true;
 					}
-					break;
+					if(replace === true) {
+						break;
+					}
 				}
 			}
 			
 			if(replace) {
 				return {
 					replacement: input.replace( regex, replacement ),
-					clearContext: clearContext
+					newContext: newContext
 				};
 			} else {
 				// No matches, return the input
 				return {
 					replacement: input,
-					clearContext: clearContext
+					newContext: false
 				};
 			}
 		},
@@ -111,7 +114,7 @@
 		 */
 		keypress: function ( e ) {
 			var altGr = false,
-				c, startPos, pos, endPos, divergingPos, input, transliterationResult, replacement, clearContext;
+				c, startPos, pos, endPos, divergingPos, input, transliterationResult, replacement, newContext;
 
 			if ( !this.active ) {
 				return true;
@@ -163,11 +166,11 @@
 
 			transliterationResult = this.transliterate( input, this.context, altGr );
 			replacement = transliterationResult.replacement;
-			clearContext = transliterationResult.clearContext;
+			newContext = transliterationResult.newContext;
 
 			// Update the context
-			if(clearContext) {
-				this.context = '';
+			if(newContext !== false) {
+				this.context = newContext;
 			} else {
 				this.context += c;
 

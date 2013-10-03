@@ -10,7 +10,7 @@
 		maxKeyLength: 3, 
 		contextLength: 1,
 		patterns: [
-			["\\\\\\\\", "\\\\", true, "\\"], // two backslashes in a row should clear the context
+			["\\\\\\\\", "\\\\", "", "\\"], // two backslashes in a row should clear the context
 			["\\\\([\\u0021-\\u007E])", "\\\\", "$1"], // escape ASCII characters
 			[",M", "ॐ"], 
 			[",,", "॰"],
