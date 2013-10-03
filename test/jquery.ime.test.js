@@ -47,125 +47,6 @@
 		assert.strictEqual( $noimeTextarea.data( 'ime' ), undefined, 'ime is not defined for a <textarea> with class "noime"' );
 	} );
 
-	QUnit.test( 'Selector tests', 13, function ( assert ) {
-		var selector = textareaIME.selector.data( 'imeselector' ),
-			nonBrokenImeName, brokenImeName, saveBrokenImeSource;
-
-		assert.strictEqual( typeof selector, 'object', 'selector on textarea is defined' );
-
-		assert.strictEqual( textareaIME.isActive(), false, 'selector is not active initially' );
-		assert.strictEqual( textareaIME.getIM(), null, 'inputmethod is not enabled initially' );
-
-		textareaIME.enable();
-		assert.strictEqual( textareaIME.isActive(), true, 'selector is active after enabling' );
-
-		QUnit.stop();
-		textareaIME.load( 'hi-transliteration' ).done( function () {
-			selector.selectLanguage( 'hi' );
-			selector.selectIM( 'hi-transliteration' );
-			assert.strictEqual( textareaIME.getIM().id, 'hi-transliteration',
-				'Hindi inputmethod is Hindi Transliteration' );
-			QUnit.start();
-		} );
-		selector.disableIM();
-		assert.strictEqual( textareaIME.isActive(), false, 'selector is not active' );
-
-		QUnit.stop();
-		textareaIME.load( 'ta-transliteration' ).done( function () {
-			selector.selectLanguage( 'ta' );
-			selector.selectIM( 'ta-transliteration' );
-			assert.strictEqual( textareaIME.getIM().id, 'ta-transliteration',
-				'Tamil inputmethod is defaulted to Tamil Transliteration' );
-			QUnit.start();
-		} );
-
-		QUnit.stop();
-		textareaIME.load( 'ta-bamini' ).done( function () {
-			selector.selectLanguage( 'ta' );
-			selector.selectIM( 'ta-bamini' );
-			assert.strictEqual( textareaIME.getIM().id, 'ta-bamini',
-				'Tamil inputmethod is changed to Tamil Bamini' );
-			QUnit.start();
-		} );
-
-		selector.disableIM();
-		assert.strictEqual( textareaIME.isActive(), false, 'Selector is not active' );
-		selector.selectLanguage( 'kn' );
-		assert.strictEqual( textareaIME.getIM(), null,
-			'Default inputmethod for Kannada is system' );
-
-		QUnit.stop();
-		textareaIME.load( 'hi-transliteration' ).done( function () {
-			selector.selectLanguage( 'hi' );
-			textareaIME.enable();
-			assert.strictEqual( textareaIME.getIM().id, 'hi-transliteration',
-				'inputmethod is Hindi Transliteration' );
-			selector.selectLanguage( 'ta' );
-			assert.strictEqual( textareaIME.getIM().id, 'ta-bamini',
-				'inputmethod for Tamil is Tamil Bamini' );
-			QUnit.start();
-		} );
-
-		// Negative test: trying to load an IME with a broken URL
-		nonBrokenImeName = 'system';
-		brokenImeName = 'ml-inscript';
-		saveBrokenImeSource = $.ime.sources[brokenImeName].source;
-		$.ime.sources[brokenImeName].source = 'This source is wrong';
-		QUnit.stop();
-		selector.selectIM( brokenImeName );
-		QUnit.start();
-		assert.strictEqual( $.ime.preferences.getIM( 'ml' ), nonBrokenImeName,
-							'Trying to load an IME with a broken URL does not change the current IME' );
-		$.ime.sources[brokenImeName].source = saveBrokenImeSource;
-	} );
-
-	QUnit.test( 'Selector decideLanguage tests', 4, function ( assert ) {
-		var selector = textareaIME.selector.data( 'imeselector' ), originalLang;
-		originalLang = $.ime.preferences.registry.language;
-
-		$.ime.preferences.registry.language = null;
-		assert.strictEqual( selector.decideLanguage(), 'en',
-			'Selects the default lang from preference when no lang attr is set' );
-
-		$textarea.attr( 'lang', 'hi' );
-		$.ime.preferences.registry.language = null;
-		selector.$element.focus();
-		assert.strictEqual( selector.decideLanguage(), 'hi',
-			'Selects the language that has been set as an attribute' );
-
-		$textarea.attr( 'lang', 'hi' );
-		$.ime.preferences.registry.language = 'ta';
-		selector.$element.focus();
-		assert.strictEqual( selector.decideLanguage(), 'ta',
-			'Overrides the lang attr and uses user preference' );
-
-		$textarea.attr( 'lang', 'sdas' );
-		$.ime.preferences.registry.language = null;
-		selector.$element.focus();
-		assert.strictEqual( selector.decideLanguage(), 'en',
-			'Selects default lang when lang attr is wrong or IM doesnt exist' );
-
-		$.ime.preferences.registry.language = originalLang;
-
-	} );
-
-	QUnit.test( 'Preferences tests', 5, function ( assert ) {
-		$.ime.preferences.registry.previousLanguages = [];
-		$.ime.preferences.setLanguage( 'hi' );
-
-		assert.strictEqual( $.ime.preferences.getPreviousLanguages().length, 1, 'Hindi added to previous languages' );
-		// set it again
-		$.ime.preferences.setLanguage( 'hi' );
-		assert.strictEqual( $.ime.preferences.getPreviousLanguages().length, 1, 'Hindi not duplicated in previous languages' );
-		$.ime.preferences.setLanguage( 'kn' );
-		$.ime.preferences.setIM( 'kn-inscript' );
-		assert.strictEqual( $.ime.preferences.getPreviousLanguages().length, 2, 'Kannada added to previous languages' );
-		$.ime.preferences.setLanguage( 'hi' );
-		$.ime.preferences.setIM( 'hi-inscript' );
-		assert.strictEqual( $.ime.preferences.getIM( 'hi' ), 'hi-inscript', 'Hindi Inscript is the preferred IM for Hindi' );
-		assert.strictEqual( $.ime.preferences.getIM( 'kn' ), 'kn-inscript', 'Kannada Inscript is the preferred IM for Kannada' );
-	} );
-
 	QUnit.test( 'Utility functions tests', 12, function ( assert ) {
 		var setLanguageResult;
 
@@ -182,13 +63,13 @@
 		setLanguageResult = textareaIME.setLanguage( 'noSuchLanguage' );
 		assert.strictEqual( setLanguageResult, false, 'Setting an invalid language returns false' );
 		assert.strictEqual( textareaIME.getLanguage(), null, 'Language does not change after an invalid setting' );
-		setLanguageResult = textareaIME.setLanguage( 'ru' );
+		setLanguageResult = textareaIME.setLanguage( 'hi' );
 		assert.strictEqual( setLanguageResult, true, 'Setting a valid language returns true' );
-		assert.strictEqual( textareaIME.getLanguage(), 'ru', 'Language changed after setting a valid value' );
+		assert.strictEqual( textareaIME.getLanguage(), 'hi', 'Language changed after setting a valid value' );
 	} );
 
 	function caretTest( text, start, end ) {
-		QUnit.test( 'Curser positioning tests -' + text + '(' + start + ',' + end + ')' , 1, function ( assert ) {
+		QUnit.test( 'Cursor positioning tests -' + text + '(' + start + ',' + end + ')' , 1, function ( assert ) {
 			var $ced = $( '<div contenteditable="true">' ),
 				correction,
 				position,
@@ -269,7 +150,7 @@
 	} );
 
 	function clusterCaretTest( text, start, end ) {
-		QUnit.test( 'Curser positioning tests -' + text + '(' + start + ',' + end + ')' , 1, function ( assert ) {
+		QUnit.test( 'Cursor positioning tests -' + text + '(' + start + ',' + end + ')' , 1, function ( assert ) {
 			var $ced = $( '<div contenteditable="true">' ),
 				correction,
 				position,
