@@ -386,7 +386,13 @@
     <script src="/js/jquery.ime.inputmethods.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('textarea').ime();
+            var input = $('textarea');
+            input.ime();
+            var ime = input.data('ime');
+            input.focus();
+            ime.load('devanagari-sanetype').done(function() {
+                input.data('imeselector').selectIM('devanagari-sanetype');
+            });
         });
     </script>
     
