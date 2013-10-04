@@ -1,2 +1,3 @@
-scripts/*
-unicode/*
+scripts
+unicode
+_site
