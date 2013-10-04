@@ -5,6 +5,8 @@ Nepali, and a few other languages.
 
 [Live demo here](http://anubhav-chattoraj.github.io/sanetype/).
 
+[List of keys](http://anubhav-chattoraj.github.io/sanetype/#keys).
+
 # Installation
 
 ## Linux
