@@ -31,7 +31,13 @@
 <body>
     <div class="container">
         <h1 class="text-center">Sanetype {{ page.scriptname }}</h1>
-        {{content}}
+        <section id="intro">
+            {{ page.intro }}
+        </section>
+        <textarea lang="{{page.lang}}" class="col-md-12 col-xs-12 col-sm-12 col-lg-12" data-sanetype="dev" rows=20 cols=100 ></textarea>
+        <section id="keys">
+            {{ content }}
+        </section>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -48,8 +54,8 @@
             input.ime();
             var ime = input.data('ime');
             input.focus();
-            ime.load('devanagari-sanetype').done(function() {
-                input.data('imeselector').selectIM('devanagari-sanetype');
+            ime.load('{{ page.ime }}').done(function() {
+                input.data('imeselector').selectIM('{{ page.ime }}');
             });
         });
     </script>

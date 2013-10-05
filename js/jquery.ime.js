@@ -1,5 +1,6 @@
 ---
 ---
+
 ( function ( $ ) {
 	'use strict';
 
@@ -45,11 +46,11 @@
 		 * @param {string} input
 		 * @param {string} context
 		 * @param {boolean} altGr whether altGr key is pressed or not
-		 * @returns {string} transliterated string
-		 * @returns {string or boolean} updated context, or false to use default context
+		 * @returns {string} replacement transliterated string
+		 * @returns {boolean} deadkey whether the keypress sequence started with a dead key
 		 */
 		transliterate: function ( input, context, altGr ) {
-			var patterns, regex, rule, replacement, i, replace, newContext;
+			var patterns, regex, rule, replacement, i, replace, deadkey;
 
 			if ( altGr ) {
 				patterns = this.inputmethod.patterns_x || [];
@@ -60,12 +61,12 @@
 			if ( $.isFunction( patterns ) ) {
 				return {
 					replacement: patterns.call( this, input, context ),
-					newContext: false
+					deadkey: false
 				};
 			}
 			
 			replace = false;
-			newContext = false;
+			deadkey = false;
 			for ( i = 0; i < patterns.length; i++ ) {
 				rule = patterns[i];
 				regex = new RegExp( rule[0] + '$' );
@@ -82,7 +83,7 @@
 						if ( new RegExp( rule[1] + '$' ).test( context ) ) {
 							replace = true;
 							if(rule.length > 3) {
-								newContext = rule[2];
+								deadkey = rule[2];
 							}
 						}
 					} else {
@@ -98,13 +99,13 @@
 			if(replace) {
 				return {
 					replacement: input.replace( regex, replacement ),
-					newContext: newContext
+					deadkey: deadkey
 				};
 			} else {
 				// No matches, return the input
 				return {
 					replacement: input,
-					newContext: false
+					deadkey: false
 				};
 			}
 		},
@@ -116,7 +117,7 @@
 		 */
 		keypress: function ( e ) {
 			var altGr = false,
-				c, startPos, pos, endPos, divergingPos, input, transliterationResult, replacement, newContext;
+				c, startPos, pos, endPos, divergingPos, input, transliterationResult, replacement, deadkey;
 
 			if ( !this.active ) {
 				return true;
@@ -168,11 +169,12 @@
 
 			transliterationResult = this.transliterate( input, this.context, altGr );
 			replacement = transliterationResult.replacement;
-			newContext = transliterationResult.newContext;
+			deadkey = transliterationResult.deadkey;
 
 			// Update the context
-			if(newContext !== false) {
-				this.context = newContext;
+			if(deadkey === true) {
+				// after a deadkey sequence, the context should be blanked
+				this.context = '';
 			} else {
 				this.context += c;
 
