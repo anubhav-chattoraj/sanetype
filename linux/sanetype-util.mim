@@ -32,7 +32,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ;; non-printing chars
     ("`"    0x200D)             ; ZERO WIDTH JOINER
     ("~"    0x200C)             ; ZERO WIDTH NON-JOINER
-    ("F")                       ; control code for forgetting context
+    ("Q")                       ; control code for forgetting context
     ;; printable ASCII characters
     ((G-a) ?a) ((G-b) ?b) ((G-c) ?c)   ((G-d) ?d)   ((G-e) ?e)   ((G-f) ?f) 
     ((G-g) ?g) ((G-h) ?h) ((G-i) ?i)   ((G-j) ?j)   ((G-k) ?k)   ((G-l) ?l) 
