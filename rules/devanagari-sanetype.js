@@ -1,6 +1,6 @@
 ( function ( $ ) {
 	'use strict';
-	var dontIgnore = '[^F]|^$'; // if last character was F, surrounding text is ignored
+	var dontIgnore = '[^Q]|^$'; // if last character was Q, surrounding text is ignored
 	
 	var devanagariSanetype = {
 		id: 'devanagari-sanetype',
@@ -12,7 +12,7 @@
 		contextLength: 1,
 		patterns: [
 			['\\\\([\\u0021-\\u007E])', '\\\\', true, '$1'], // escape ASCII characters and clear context
-			['F', ''], // used to ignore surrounding letters & context
+			['Q', ''], // used to ignore surrounding letters & context
 			['`', '\u200D'], // ZWJ
 			['~', '\u200C'], // zWNJ
 			[',M', dontIgnore, 'ॐ'], 
