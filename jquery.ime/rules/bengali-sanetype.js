@@ -2,13 +2,13 @@
     'use strict';
     var dontIgnore = '[^Q]|^$'; // if last character was Q, surrounding text is ignored
     
-    var devanagariSanetype = {
-        id: 'devanagari-sanetype',
-        name: 'सेनटाइप',
+    var bengaliSanetype = {
+        id: 'bengali-sanetype',
+        name: 'সেনটাইপ',
         author: 'Anubhav Chattoraj',
         URL: 'https://github.com/anubhav-chattoraj/sanetype',
         license: 'Apache 2.0',
-        maxKeyLength: 3, 
+        maxKeyLength: 2, 
         contextLength: 1,
         patterns: [
             ['\\\\([\\u0021-\\u007E])', '\\\\', true, '$1'], // escape ASCII characters and clear context
@@ -70,8 +70,8 @@
             ['w', '্র'],
             ['W', 'র্'], 
             ['h', '্হ'],
-            ['>', '।'],
             ['।>', dontIgnore, '॥'],
+            ['>', '।'],
             [';', '্'],
             [':', 'ঃ'],
             ['q', '়'],
@@ -94,5 +94,5 @@
         ]
     };
     
-    $.ime.register( devanagariSanetype );
+    $.ime.register( bengaliSanetype );
 }) (jQuery); 
