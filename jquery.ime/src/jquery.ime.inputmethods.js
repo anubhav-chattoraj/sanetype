@@ -3,8 +3,12 @@
 
 	$.extend( $.ime.sources, {
 		'devanagari-sanetype': {
-			name: "सेनटाइप",
+			name: 'सेनटाइप',
 			source: 'rules/devanagari-sanetype.js'
+		},
+		'bengali-sanetype': {
+			name: 'সেনটাইপ',
+			source: 'rules/bengali-sanetype.js'
 		},
 	} );
 
@@ -12,6 +16,10 @@
 		'hi': {
 			autonym: 'हिन्दी',
 			inputmethods: [ 'devanagari-sanetype' ]
+		},
+		'bn': {
+			autonym: 'বাংলা',
+			inputmethods: [ 'bengali-sanetype' ]
 		},
 	} );
 
