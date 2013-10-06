@@ -5,7 +5,7 @@ The software is available in source form at
     https://github.com/anubhav-chattoraj/sanetype
 
 This software contains code from the Wikimedia Foundation's jQuery.IME,
-available at
+available under the MIT license at
     https://github.com/wikimedia/jquery.ime
     
 This software contains the rangy library, copyright Tim Down and made available
