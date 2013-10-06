@@ -417,7 +417,7 @@
 
 	// default options
 	$.ime.defaults = {
-		imePath: '{{ site.baseurl }}/', // Relative/Absolute path for the rules folder of jquery.ime
+		imePath: '{{ site.baseurl }}/jquery.ime/', // Relative/Absolute path for the rules folder of jquery.ime
 		languages: [], // Languages to be used- by default all languages
 		helpHandler: null // Called for each ime option in the menu
 	};
