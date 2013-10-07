@@ -42,8 +42,6 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     (",Rr"  ?ৠ)                 ; BENGALI LETTER VOCALIC RR
     (",L"   ?ঌ)                 ; BENGALI LETTER VOCALIC L
     (",Ll"  ?ৡ)                 ; BENGALI LETTER VOCALIC LL
-    ("Ae"   "অ্যা")
-    ("Ee"   "এ্যা")
     ;; Bengali vowels
     ("a"    ?া)                 ; BENGALI VOWEL SIGN AA
     ("aa"   ?া)                 ; BENGALI VOWEL SIGN AA
@@ -60,19 +58,17 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     (",rr"  ?ৢ)                 ; BENGALI VOWEL SIGN VOCALIC RR
     (",l"   ?ৄ)                 ; BENGALI VOWEL SIGN VOCALIC L
     (",ll"  ?ৣ)                 ; BENGALI VOWEL SIGN VOCALIC LL
-    ("ae"   "্যা") 
-    ("ee"   "্যা")
     ;; Plain consonants
     ("k"    ?ক)                 ; BENGALI LETTER KA
     ("kh"   ?খ)                 ; BENGALI LETTER KHA
     ("g"    ?গ)                 ; BENGALI LETTER GA
     ("gh"   ?ঘ)                 ; BENGALI LETTER GHA
-    (",g"   ?ঙ)                 ; BENGALI LETTER NGA
+    ("x"    ?ঙ)                 ; BENGALI LETTER NGA
     ("c"    ?চ)                 ; BENGALI LETTER CA
     ("ch"   ?ছ)                 ; BENGALI LETTER CHA
     ("j"    ?জ)                 ; BENGALI LETTER JA
     ("jh"   ?ঝ)                 ; BENGALI LETTER JHA
-    (",n"   ?ঞ)                 ; BENGALI LETTER NYA
+    ("X"    ?ঞ)                 ; BENGALI LETTER NYA
     ("T"    ?ট)                 ; BENGALI LETTER TTA
     ("Th"   ?ঠ)                 ; BENGALI LETTER TTHA
     ("D"    ?ড)                 ; BENGALI LETTER DDA
@@ -90,9 +86,9 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("m"    ?ম)                 ; BENGALI LETTER MA
     ("J"    ?য)                 ; BENGALI LETTER YA
     ("r"    ?র)                 ; BENGALI LETTER RA
-    ("<"    ?ৰ)                 ; BENGALI LETTER RA WITH MIDDLE DIAGONAL
+    ("z"    ?ৰ)                 ; BENGALI LETTER RA WITH MIDDLE DIAGONAL = Assamese ro
     ("l"    ?ল)                 ; BENGALI LETTER LA
-    ("v"    ?ৱ)                 ; BENGALI LETTER RA WITH LOWER DIAGONAL
+    ("v"    ?ৱ)                 ; BENGALI LETTER RA WITH LOWER DIAGONAL = Assamese wo
     ("sh"   ?শ)                 ; BENGALI LETTER SHA
     ("S"    ?ষ) ("Sh" ?ষ)       ; BENGALI LETTER SSA
     ("s"    ?স)                 ; BENGALI LETTER SA
