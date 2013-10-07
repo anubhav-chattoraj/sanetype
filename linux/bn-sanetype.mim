@@ -42,8 +42,8 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     (",Rr"  ?ৠ)                 ; BENGALI LETTER VOCALIC RR
     (",L"   ?ঌ)                 ; BENGALI LETTER VOCALIC L
     (",Ll"  ?ৡ)                 ; BENGALI LETTER VOCALIC LL
-    ("Ae"   "অ‍্যা")
-    ("Ee"   "এ‍্যা")
+    ("Ae"   "অ্যা")
+    ("Ee"   "এ্যা")
     ;; Bengali vowels
     ("a"    ?া)                 ; BENGALI VOWEL SIGN AA
     ("aa"   ?া)                 ; BENGALI VOWEL SIGN AA
@@ -60,14 +60,14 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     (",rr"  ?ৢ)                 ; BENGALI VOWEL SIGN VOCALIC RR
     (",l"   ?ৄ)                 ; BENGALI VOWEL SIGN VOCALIC L
     (",ll"  ?ৣ)                 ; BENGALI VOWEL SIGN VOCALIC LL
-    ("ae"   "‍্যা") 
-    ("ee"   "‍্যা")
+    ("ae"   "্যা") 
+    ("ee"   "্যা")
     ;; Plain consonants
     ("k"    ?ক)                 ; BENGALI LETTER KA
     ("kh"   ?খ)                 ; BENGALI LETTER KHA
     ("g"    ?গ)                 ; BENGALI LETTER GA
     ("gh"   ?ঘ)                 ; BENGALI LETTER GHA
-    (",g"    ?ঙ)                ; BENGALI LETTER NGA
+    (",g"   ?ঙ)                 ; BENGALI LETTER NGA
     ("c"    ?চ)                 ; BENGALI LETTER CA
     ("ch"   ?ছ)                 ; BENGALI LETTER CHA
     ("j"    ?জ)                 ; BENGALI LETTER JA
@@ -104,7 +104,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ;; Conjuncts
     ("K" "ক্ষ")  ("G" "জ্ঞ")
     ;; Half-consonants
-    ("h" "্হ") ("W" "র্") ("w" "্র") ("Y" "‍্য")
+    ("h" "্হ") ("W" "র্") ("w" "্র") ("Y" "্য")
     ("f" ?ৎ)                    ; BENGALI LETTER KHANDA TA
     ;; diacritics    
     (";"    ?্)                 ; BENGALI SIGN VIRAMA
