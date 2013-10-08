@@ -122,7 +122,7 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("9"    ?৯)                 ; BENGALI DIGIT NINE
     ;; symbols
     ("@"    ?ঽ)                 ; BENGALI SIGN AVAGRAHA
-    (",M"   ?ॐ)                 ; DEVANAGARI OM
+    (",M"   "ওঁ")               ; Bengali Om
     (",S"   ?৺)                 ; BENGALI ISSHAR
     ("^"    ?৳)))               ; BENGALI RUPEE SIGN
     
