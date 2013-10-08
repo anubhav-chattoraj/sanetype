@@ -15,7 +15,7 @@
             ['Q', ''], // used to ignore surrounding letters & context
             ['`', '\u200D'], // ZWJ
             ['~', '\u200C'], // zWNJ
-            [',M', dontIgnore, 'ॐ'], 
+            [',M', dontIgnore, 'ওঁ'], 
             [',S', dontIgnore, '৺'],
             ['অa', dontIgnore, 'আ'], ['াa', dontIgnore, 'া'],
             ['অi', dontIgnore, 'ঐ'], ['াi', dontIgnore, 'ৈ'],
