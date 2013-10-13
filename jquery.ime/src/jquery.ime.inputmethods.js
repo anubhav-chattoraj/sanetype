@@ -4,11 +4,11 @@
 	$.extend( $.ime.sources, {
 		'devanagari-sanetype': {
 			name: 'सेनटाइप',
-			source: 'rules/devanagari-sanetype.js'
+			source: 'rules/hi/hi-sanetype.js'
 		},
 		'bengali-sanetype': {
 			name: 'সেনটাইপ',
-			source: 'rules/bengali-sanetype.js'
+			source: 'rules/bn/bn-sanetype.js'
 		},
 	} );
 
