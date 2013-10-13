@@ -12,7 +12,7 @@ var testFixtures = [
 			{ input: ',g,j,D,b,h', output: 'ॻॼॾॿॽ', description: 'Devanagari Sanetype ejectives & glottal stop' },
 			{ input: 'd;md;y', output: 'द्मद्य', description: 'Devanagari Sanetype halant' },
 			{ input: '\\\\\\n\\\\n\\\\', output: '\\n\\न\\', description: 'Devanagari Sanetype backslash escape' },
-			{ input: 'AiAFi', output: 'ऐअि', description: 'Devanagari Sanetype F ignores surrounding letters' },
+			{ input: 'AiAQi', output: 'ऐअि', description: 'Devanagari Sanetype Q ignores surrounding letters' },
 			{ input: 'k,rrk,llkuuekooe', output: 'कॄकॣकॗकऻ', description: 'Devanagari Sanetype triple-key mātrās' },
 		], 
 		inputmethod: 'devanagari-sanetype'
