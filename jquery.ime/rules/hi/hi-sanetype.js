@@ -3,7 +3,7 @@
 	var dontIgnore = '[^Q]|^$'; // if last character was Q, surrounding text is ignored
 	
 	var devanagariSanetype = {
-		id: 'devanagari-sanetype',
+		id: 'hi-sanetype',
 		name: 'सेनटाइप',
 		author: 'Anubhav Chattoraj',
 		URL: 'https://github.com/anubhav-chattoraj/sanetype',
@@ -15,7 +15,7 @@
 			['Q', ''], // used to ignore surrounding letters & context
 			['`', '\u200D'], // ZWJ
 			['~', '\u200C'], // zWNJ
-			[',M', dontIgnore, 'ॐ'], 
+			[',M', dontIgnore, 'ॐ'],
 			[',,', dontIgnore, '॰'],
 			[',A', dontIgnore, 'ऄ'], [',a', dontIgnore, 'ॆ'],
 			[',E', dontIgnore, 'ऎ'], [',e', dontIgnore, 'ॆ'],

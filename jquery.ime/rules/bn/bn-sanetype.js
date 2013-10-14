@@ -3,7 +3,7 @@
     var dontIgnore = '[^Q]|^$'; // if last character was Q, surrounding text is ignored
     
     var bengaliSanetype = {
-        id: 'bengali-sanetype',
+        id: 'bn-sanetype',
         name: 'সেনটাইপ',
         author: 'Anubhav Chattoraj',
         URL: 'https://github.com/anubhav-chattoraj/sanetype',
