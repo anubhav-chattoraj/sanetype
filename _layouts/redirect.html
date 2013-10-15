@@ -13,6 +13,21 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-layout: redirect
-target: devanagari
 ---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="0;url={{ site.baseurl }}/{{ page.target }}" />
+    </head>
+    
+    <body>
+        <p>This is a redirect page.</p>
+        
+        <p>
+            If you are not redirected automatically, follow 
+            <a href="{{ site.baseurl }}/{{ page.target }}">this link</a>.
+        </p>
+    </body>
+</html>
