@@ -5,7 +5,7 @@ Devanagari and Bengali).
 
 ## List of Keys
 * [Bengali](http://anubhav-chattoraj.github.io/sanetype/bengali/#keys)
-* [Devanagari](http://anubhav-chattoraj.github.io/sanetype/#keys)
+* [Devanagari](http://anubhav-chattoraj.github.io/sanetype/devanagari#keys)
 
 # Linux
 
@@ -91,4 +91,4 @@ Use the web-based implementations instead.
 # Web-based implementations
 
 * [Bengali](http://anubhav-chattoraj.github.io/sanetype/bengali/)
-* [Devanagari](http://anubhav-chattoraj.github.io/sanetype/)
+* [Devanagari](http://anubhav-chattoraj.github.io/sanetype/devanagari/)
