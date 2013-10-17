@@ -67,6 +67,8 @@
 			['v', 'ৱ'], ['z', 'ৰ'],
 			['K', 'ক্ষ'],
 			['G', 'জ্ঞ'],
+			['রY', dontIgnore, 'র‍্য'], // ja-phalā after ra needs extra ZWJ
+			['ৰY', dontIgnore, 'ৰ‍্য'], // same for Assamese ra
 			['Y', '্য'],
 			['w', '্র'],
 			['W', 'র্'],
