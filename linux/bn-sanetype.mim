@@ -101,8 +101,9 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
     ("K" "ক্ষ")  ("G" "জ্ঞ")
     ;; Half-consonants
     ("h" "্হ") ("W" "র্") ("w" "্র") ("Y" "্য")
+    ("rY" "র‍্য") ("zY" "ৰ‍্য") ; producing ja-phalaa after ra (Bengali or Assamese) needs extra ZWJ
     ("f" ?ৎ)                    ; BENGALI LETTER KHANDA TA
-    ;; diacritics    
+    ;; diacritics
     (";"    ?্)                 ; BENGALI SIGN VIRAMA
     ("q"    ?়)                 ; BENGALI SIGN NUKTA
     ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
