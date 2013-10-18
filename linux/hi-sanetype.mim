@@ -16,10 +16,25 @@
 
 (input-method hi sanetype (version "1.6.2"))
 
-(description "Devanagari input by sanetype method
+(description "Sanetype input for Devanagari
+
+Input is mostly phonetic. E.g. k → क, kh → ख, t → त, T → ट, H (not h) → ह
+
+Independent vowels (svara) start with capital letters. Matras start with 
+small letters. Key sequences for independent vowels and matras are otherwise 
+identical. E.g. E → ए, ke → के, Ai → ऐ, kai → कै
+
+To type sanyuktaakshar (conjuncts), use the halant character (on the ; key) 
+between the two consonants. E.g. s;v → स्व
+
+English (ASCII) characters and digits can be typed by pressing AltGr along with 
+the relevant key. E.g. AltGr+A → A
+
+For the complete keymap, see 
+http://anubhav-chattoraj.github.io/sanetype/devanagari/#keys
 
 Author: Anubhav Chattoraj <anubhav.chattoraj@gmail.com>
-Project page: http://github.com/anubhav-chattoraj/Sanetype
+Project page: http://github.com/anubhav-chattoraj/sanetype
 ")
 
 (title "से")

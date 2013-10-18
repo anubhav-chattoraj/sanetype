@@ -16,10 +16,25 @@
 
 (input-method bn sanetype (version "1.6.2"))
 
-(description "Bengali/Assamese input by sanetype method
+(description "Sanetype input for Bengali/Assamese
+
+Input is mostly phonetic. E.g. k → ক, kh → খ, t → ত, T → ট, H (not h) → হ
+
+Independent vowels (sworborn) start with capital letters. Matras start with 
+small letters. Key sequences for independent vowels and matras are otherwise 
+identical. E.g. E → এ, ke → কে, Ai → ঐ, kai → কৈ
+
+To type juktakkhor (conjuncts), use the hasant character (on the ; key) between 
+the two consonants. E.g. s;b → স্ব
+
+English (ASCII) characters and digits can be typed by pressing AltGr along with 
+the relevant key. E.g. AltGr+A → A
+
+For the complete keymap, see 
+http://anubhav-chattoraj.github.io/sanetype/bengali/#keys
 
 Author: Anubhav Chattoraj <anubhav.chattoraj@gmail.com>
-Project page: http://github.com/anubhav-chattoraj/Sanetype
+Project page: http://github.com/anubhav-chattoraj/sanetype
 ")
 
 (title "সে")
