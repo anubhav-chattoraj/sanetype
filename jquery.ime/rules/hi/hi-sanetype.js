@@ -18,12 +18,12 @@
 			['~', '\u200C'], // zWNJ
 			[',M', dontIgnore, 'ॐ'],
 			[',,', dontIgnore, '॰'],
+			['ऄu', 'A', 'ॵ'], ['ॆu', 'a', 'ॏ'],
 			[',A', dontIgnore, 'ऄ'], [',a', dontIgnore, 'ॆ'],
 			[',E', dontIgnore, 'ऎ'], [',e', dontIgnore, 'ॆ'],
 			[',O', dontIgnore, 'ऒ'], [',o', dontIgnore, 'ॊ'],
 			['उe', dontIgnore, 'ॶ'], ['ुe', dontIgnore, 'ॖ'],
 			['ऊe', dontIgnore, 'ॷ'], ['ूe', dontIgnore, 'ॗ'],
-			['अw', dontIgnore, 'ॵ'], ['ाw', dontIgnore, 'ॏ'],
 			['ओोe', dontIgnore, 'ॴ'], ['ोोe', dontIgnore, 'ऻ'],
 			['ओe', dontIgnore, 'ॳ'], ['ोe', dontIgnore, 'ऺ'],
 			['अa', dontIgnore, 'आ'], ['ाa', dontIgnore, 'ा'],

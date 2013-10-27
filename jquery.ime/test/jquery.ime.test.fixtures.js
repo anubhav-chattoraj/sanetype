@@ -4,12 +4,12 @@ var testFixtures = [
 		description: 'Devanagari Sanetype test',
 		tests: [
 			{
-				input: 'AAaIIiUUuEAiOAu,R,Rr,L,Ll,A,E,OAeEeAoOeOoeAwUeUue',
-				output: 'अआइईउऊएऐओऔऋॠऌॡऄऎऒॲऍऑॳॴॵॶॷ',
+				input: 'AAaIIiUUuEAiOAu,R,Rr,L,Ll,A,E,O,AuAeEeAoOeOoeUeUue',
+				output: 'अआइईउऊएऐओऔऋॠऌॡऄऎऒॵॲऍऑॳॴॶॷ',
 				description: 'vowels'
 			}, {
-				input: 'kakaakikiikukuukekaikokauk,rk,rrk,lk,llk,ak,ek,okaekeekaokoekooekawkuekuue',
-				output: 'काकाकिकीकुकूकेकैकोकौकृकॄकॢकॣकॆकॆकॊकॅकॅकॉकऺकऻकॏकॖकॗ',
+				input: 'kakaakikiikukuukekaikokauk,rk,rrk,lk,llk,ak,ek,ok,aukaekeekaokoekooekuekuue',
+				output: 'काकाकिकीकुकूकेकैकोकौकृकॄकॢकॣकॆकॆकॊकॏकॅकॅकॉकऺकऻकॖकॗ',
 				description: 'vowel signs'
 			}, {
 				input: 'kkhgghGcchjjhYTThDDhNtthddhnpphbbhmyrlvshSShsHL,g,j,D,b,h',
