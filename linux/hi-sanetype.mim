@@ -20,17 +20,17 @@
 
 Input is mostly phonetic. E.g. k → क, kh → ख, t → त, T → ट, H (not h) → ह
 
-Independent vowels (svara) start with capital letters. Matras start with 
-small letters. Key sequences for independent vowels and matras are otherwise 
+Independent vowels (svara) start with capital letters. Matras start with
+small letters. Key sequences for independent vowels and matras are otherwise
 identical. E.g. E → ए, ke → के, Ai → ऐ, kai → कै
 
-To type sanyuktaakshar (conjuncts), use the halant character (on the ; key) 
+To type sanyuktaakshar (conjuncts), use the halant character (on the ; key)
 between the two consonants. E.g. s;v → स्व
 
-English (ASCII) characters and digits can be typed by pressing AltGr along with 
+English (ASCII) characters and digits can be typed by pressing AltGr along with
 the relevant key. E.g. AltGr+A → A
 
-For the complete keymap, see 
+For the complete keymap, see
 http://anubhav-chattoraj.github.io/sanetype/devanagari/#keys
 
 Author: Anubhav Chattoraj <anubhav.chattoraj@gmail.com>
@@ -41,7 +41,7 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
 
 (map
   (characters
-    ;; Hindi vowels
+    ;; Vowels
     ("A"    ?अ)                 ; DEVANAGARI LETTER A
     ("Aa"   ?आ)                 ; DEVANAGARI LETTER AA
     ("I"    ?इ)                 ; DEVANAGARI LETTER I
@@ -49,26 +49,25 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("U"    ?उ)                 ; DEVANAGARI LETTER U
     ("Uu"   ?ऊ)                 ; DEVANAGARI LETTER UU
     (",R"   ?ऋ)                 ; DEVANAGARI LETTER VOCALIC R
-    ("E"    ?ए)                 ; DEVANAGARI LETTER E
-    ("Ai"   ?ऐ)                 ; DEVANAGARI LETTER AI
-    ("O"    ?ओ)                 ; DEVANAGARI LETTER O
-    ("Au"   ?औ)                 ; DEVANAGARI LETTER AU
-    ;; Non-Hindi vowels
-    (",A"   ?ऄ)                 ; DEVANAGARI LETTER SHORT A
-    ("Ee"   ?ऍ)                 ; DEVANAGARI LETTER CANDRA E
-    (",E"   ?ऎ)                 ; DEVANAGARI LETTER SHORT E
-    ("Ao"   ?ऑ)                 ; DEVANAGARI LETTER CANDRA O
-    (",O"   ?ऒ)                 ; DEVANAGARI LETTER SHORT O
     (",Rr"  ?ॠ)                 ; DEVANAGARI LETTER VOCALIC RR
     (",L"   ?ऌ)                 ; DEVANAGARI LETTER VOCALIC L
     (",Ll"  ?ॡ)                 ; DEVANAGARI LETTER VOCALIC LL
-    ("Ae"   ?ॲ)                 ; DEVANAGARI LETTER CANDRA A
+    (",A"   ?ऄ)                 ; DEVANAGARI LETTER SHORT A = alternate form of short e
+    (",E"   ?ऎ)                 ; DEVANAGARI LETTER SHORT E
+    ("E"    ?ए)                 ; DEVANAGARI LETTER E
+    ("Ai"   ?ऐ)                 ; DEVANAGARI LETTER AI
+    (",O"   ?ऒ)                 ; DEVANAGARI LETTER SHORT O
+    ("O"    ?ओ)                 ; DEVANAGARI LETTER O
+    (",Au"   ?ॵ)                 ; DEVANAGARI LETTER AW = short au
+    ("Au"   ?औ)                 ; DEVANAGARI LETTER AU
+    ("Ae"   ?ॲ)                 ; DEVANAGARI LETTER CANDRA A = alternate form of candra e
+    ("Ee"   ?ऍ)                 ; DEVANAGARI LETTER CANDRA E
+    ("Ao"   ?ऑ)                 ; DEVANAGARI LETTER CANDRA O
     ("Oe"   ?ॳ)                 ; DEVANAGARI LETTER OE
     ("Ooe"  ?ॴ)                 ; DEVANAGARI LETTER OOE
-    ("Aw"   ?ॵ)                 ; DEVANAGARI LETTER AW
     ("Ue"   ?ॶ)                 ; DEVANAGARI LETTER UE
     ("Uue"  ?ॷ)                 ; DEVANAGARI LETTER UUE
-    ;; Hindi vowels
+    ;; Vowel signs
     ("a"    ?ा)                 ; DEVANAGARI VOWEL SIGN AA
     ("aa"   ?ा)                 ; DEVANAGARI VOWEL SIGN AA
     ("i"    ?ि)                 ; DEVANAGARI VOWEL SIGN I
@@ -76,23 +75,22 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("u"    ?ु)                 ; DEVANAGARI VOWEL SIGN U
     ("uu"   ?ू)                 ; DEVANAGARI VOWEL SIGN UU
     (",r"   ?ृ)                 ; DEVANAGARI VOWEL SIGN VOCALIC R
-    ("e"    ?े)                 ; DEVANAGARI VOWEL SIGN E
-    ("ai"   ?ै)                 ; DEVANAGARI VOWEL SIGN AI
-    ("o"    ?ो)                 ; DEVANAGARI VOWEL SIGN O
-    ("au"   ?ौ)                 ; DEVANAGARI VOWEL SIGN AU
-    ;; Non-Hindi vowels
-    (",a"   ?ॆ)                 ; DEVANAGARI VOWEL SIGN SHORT E
-    ("ee"   ?ॅ)                 ; DEVANAGARI VOWEL SIGN CANDRA E
-    (",e"   ?ॆ)                 ; DEVANAGARI VOWEL SIGN SHORT E
-    ("ao"   ?ॉ)                 ; DEVANAGARI VOWEL SIGN CANDRA O
-    (",o"   ?ॊ)                 ; DEVANAGARI VOWEL SIGN SHORT O
     (",rr"  ?ॄ)                 ; DEVANAGARI VOWEL SIGN VOCALIC RR
     (",l"   ?ॢ)                 ; DEVANAGARI VOWEL SIGN VOCALIC L
     (",ll"  ?ॣ)                 ; DEVANAGARI VOWEL SIGN VOCALIC LL
+    (",a"   ?ॆ)                 ; DEVANAGARI VOWEL SIGN SHORT E
+    (",e"   ?ॆ)                 ; DEVANAGARI VOWEL SIGN SHORT E
+    ("e"    ?े)                 ; DEVANAGARI VOWEL SIGN E
+    ("ai"   ?ै)                 ; DEVANAGARI VOWEL SIGN AI
+    (",o"   ?ॊ)                 ; DEVANAGARI VOWEL SIGN SHORT O
+    ("o"    ?ो)                 ; DEVANAGARI VOWEL SIGN O
+    (",au"   ?ॏ)                 ; DEVANAGARI VOWEL SIGN AW = short au
+    ("au"   ?ौ)                 ; DEVANAGARI VOWEL SIGN AU
+    ("ee"   ?ॅ)                 ; DEVANAGARI VOWEL SIGN CANDRA E
     ("ae"   ?ॅ)                 ; DEVANAGARI VOWEL SIGN CANDRA E
+    ("ao"   ?ॉ)                 ; DEVANAGARI VOWEL SIGN CANDRA O
     ("oe"   ?ऺ)                 ; DEVANAGARI VOWEL SIGN OE
     ("ooe"  ?ऻ)                 ; DEVANAGARI VOWEL SIGN OOE
-    ("aw"   ?ॏ)                 ; DEVANAGARI VOWEL SIGN AW
     ("ue"   ?ॖ)                 ; DEVANAGARI VOWEL SIGN UE
     ("uue"  ?ॗ)                 ; DEVANAGARI VOWEL SIGN UUE
     ;; Plain consonants
@@ -151,7 +149,7 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     (",D"   ?ॾ)                 ; DEVANAGARI LETTER DDDA
     (",b"   ?ॿ)                 ; DEVANAGARI LETTER BBA
     (",h"   ?ॽ)                 ;  DEVANAGARI LETTER GLOTTAL STOP
-    ;; diacritics    
+    ;; diacritics
     (";"    ?्)                 ; DEVANAGARI SIGN VIRAMA
     ("q"    ?़)                 ; DEVANAGARI SIGN NUKTA
     ("M"    ?ं)                 ; DEVANAGARI SIGN ANUSVARA
@@ -174,15 +172,15 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("@"    ?ऽ)                 ; DEVANAGARI SIGN AVAGRAHA
     (",M"   ?ॐ)                 ; DEVANAGARI OM
     (",,"   ?॰)))               ; DEVANAGARI ABBREVIATION SIGN
-    
-    
+
+
 (include (t nil sanetype-util) map)
 
 (state
   (init
     (characters)
     (common)))
-    
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; mode: emacs-lisp
