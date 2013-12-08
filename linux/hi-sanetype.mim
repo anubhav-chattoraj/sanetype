@@ -129,7 +129,6 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("s"    ?स)                 ; DEVANAGARI LETTER SA
     ("H"    ?ह)                 ; DEVANAGARI LETTER HA
     ;; Consonants with nuqta
-    ("x"    "ख़")
     ("z"    "ज़")
     ("R"    "ड़")
     ("Rh"   "ढ़")
@@ -139,7 +138,7 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("rq"   ?ऱ)                 ; DEVANAGARI LETTER RRA
     ("Lq"   ?ऴ)                 ; DEVANAGARI LETTER LLLA
     ;; Conjuncts
-    ("K" "क्ष")  ("J" "ज्ञ")
+    ("x" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
     ("h" "्ह") ("W" "र्") ("w" "्र")
     ("<" "ऱ्")                 ; eyelash ra
