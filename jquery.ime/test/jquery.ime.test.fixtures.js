@@ -20,11 +20,11 @@ var testFixtures = [
 				output: '\u0929\u0931\u0934क\u093Cख\u093Cग\u093Cज\u093Cड\u093Cढ\u093Cफ\u093Cय\u093C',
 				description: 'consonants with nuqta (using q)'
 			}, {
-				input: 'xzfRRh',
-				output: 'ख\u093Cज\u093Cफ\u093Cड\u093Cढ\u093C',
+				input: 'zfRRh',
+				output: 'ज\u093Cफ\u093Cड\u093Cढ\u093C',
 				description: 'consonants with nuqta (without using q)'
 			}, {
-				input: 'KJvhkwWk<y',
+				input: 'xJvhkwWk<y',
 				output: 'क्षज्ञव्हक्रर्कऱ्य',
 				description: 'conjuncts and half-consonants'
 			}, { 
