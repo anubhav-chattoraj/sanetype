@@ -28,16 +28,16 @@ var testFixtures = [
 				output: 'क्षज्ञव्हक्रर्कऱ्य',
 				description: 'conjuncts and half-consonants'
 			}, { 
-				input: 'kqkMkCk:k\'k*', 
-				output: 'क़कंकँकःकʼकॱ', 
+				input: 'kqkMkCk:', 
+				output: 'क़कंकँकः', 
 				description: 'diacritics' 
 			}, { 
 				input: 'd;md;y', 
 				output: 'द्मद्य', 
 				description: 'halant'
 			}, {
-				input: '@,M,,> >>$`~',
-				output: 'ऽॐ॰। ॥₹\u200D\u200C',
+				input: '@,M,,> >>$-><-`~',
+				output: 'ऽॐ॰। ॥₹→←\u200D\u200C',
 				description: 'other symbols'
 			}, {
 				input: '0123456789',
