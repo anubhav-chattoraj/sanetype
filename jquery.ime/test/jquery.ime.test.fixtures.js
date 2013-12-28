@@ -78,16 +78,16 @@ var testFixtures = [
 				output: 'ক্ষজ্ঞক্যর‍্যৰ‍্যক্রর্কম্হৎ',
 				description: 'conjuncts and half-consonants',
 			}, {
-				input: 'kqkMkCk:k\'',
-				output: 'ক়কংকঁকঃকʼ',
+				input: 'kqkMkCk:',
+				output: 'ক়কংকঁকঃ',
 				description: 'diacritics',
 			}, {
 				input: 's;thd;m',
 				output: 'স্থদ্ম',
 				description: 'hosont',
 			}, {
-				input: '@,M,S^> >>$`~',
-				output: 'ঽওঁ৺৳। ॥₹\u200D\u200C',
+				input: '@,M,S^> >>$<-->`~',
+				output: 'ঽওঁ৺৳। ॥₹←→\u200D\u200C',
 				description: 'other symbols',
 			}, { 
 				input: '\\\\\\n\\\\n\\\\', 

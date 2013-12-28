@@ -18,6 +18,7 @@
 			['~', '\u200C'], // zWNJ
 			[',M', dontIgnore, 'ওঁ'],
 			[',S', dontIgnore, '৺'],
+            ['->', dontIgnore, '→'], ['<-', dontIgnore, '←'],
 			['অa', dontIgnore, 'আ'], ['াa', dontIgnore, 'া'],
 			['অi', dontIgnore, 'ঐ'], ['াi', dontIgnore, 'ৈ'],
 			['অu', dontIgnore, 'ঔ'], ['াu', dontIgnore, 'ৌ'],
@@ -80,7 +81,6 @@
 			['q', '়'],
 			['M', 'ং'],
 			['C', 'ঁ'],
-			['\'', 'ʼ'],
 			['\\$', '₹'],
 			['\\^', '৳'],
 			['@', 'ঽ'],
