@@ -124,7 +124,6 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("M"    ?ং)                 ; BENGALI SIGN ANUSVARA
     ("C"    ?ঁ)                 ; BENGALI SIGN CANDRABINDU
     (":"    ?ঃ)                 ; BENGALI SIGN VISARGA
-    ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
     ;; digits
     ("0"    ?০)                 ; BENGALI DIGIT ZER0
     ("1"    ?১)                 ; BENGALI DIGIT ONE
@@ -146,8 +145,8 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
 
 (state
   (init
-    (characters)
-    (common)))
+    (common)
+    (characters)))
 
 ;; Local Variables:
 ;; coding: utf-8

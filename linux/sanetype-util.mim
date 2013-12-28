@@ -24,6 +24,8 @@ Project page: http://github.com/anubhav-chattoraj/Sanetype
 
 (map
   (common
+    ;; arrows
+    ("->"  "→") ("<-" "←")
     ;; punctuation
     (">"    ?।)                 ; DEVANAGARI DANDA
     (">>"   ?॥)                 ; DEVANAGARI DOUBLE DANDA

@@ -154,8 +154,6 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("M"    ?ं)                 ; DEVANAGARI SIGN ANUSVARA
     ("C"    ?ँ)                 ; DEVANAGARI SIGN CANDRABINDU
     (":"    ?ः)                 ; DEVANAGARI SIGN VISARGA
-    ("'"    ?ʼ)                 ; MODIFIER LETTER APOSTROPHE
-    ("*"    ?ॱ)                 ; DEVANAGARI SIGN HIGH SPACING DOT
     ;; digits
     ("0"    ?०)                 ; DEVANAGARI DIGIT ZER0
     ("1"    ?१)                 ; DEVANAGARI DIGIT ONE
@@ -177,8 +175,8 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
 
 (state
   (init
-    (characters)
-    (common)))
+    (common)
+    (characters)))
 
 ;; Local Variables:
 ;; coding: utf-8
