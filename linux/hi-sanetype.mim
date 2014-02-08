@@ -128,6 +128,7 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("S"    ?ष) ("Sh"  ?ष)      ; DEVANAGARI LETTER SSA
     ("s"    ?स)                 ; DEVANAGARI LETTER SA
     ("H"    ?ह)                 ; DEVANAGARI LETTER HA
+    ("h"    ?ह)                 ; DEVANAGARI LETTER HA -- when not used as the second letter of a key sequence
     ;; Consonants with nuqta
     ("z"    "ज़")
     ("R"    "ड़")
@@ -140,7 +141,7 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ;; Conjuncts
     ("K" "क्ष")  ("J" "ज्ञ")
     ;; Half-consonants
-    ("h" "्ह") ("W" "र्") ("w" "्र")
+    ("W" "र्") ("w" "्र")
     ("<" "ऱ्")                 ; eyelash ra
     ;; Implosives
     (",g"   ?ॻ)                 ; DEVANAGARI LETTER GGA

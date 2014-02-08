@@ -108,6 +108,7 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ("S"    ?ষ) ("Sh" ?ষ)       ; BENGALI LETTER SSA
     ("s"    ?স)                 ; BENGALI LETTER SA
     ("H"    ?হ)                 ; BENGALI LETTER HA
+    ("h"    ?হ)                 ; BENGALI LETTER HA -- when not used as the second letter of a key sequence
     ;; Consonants with nuqta
     ("R"    "ড়")
     ("Rh"   "ঢ়")
@@ -115,7 +116,7 @@ Project page: http://github.com/anubhav-chattoraj/sanetype
     ;; Conjuncts
     ("K" "ক্ষ")  ("G" "জ্ঞ")
     ;; Half-consonants
-    ("h" "্হ") ("W" "র্") ("w" "্র") ("Y" "্য")
+    ("W" "র্") ("w" "্র") ("Y" "্য")
     ("rY" "র‍্য") ("zY" "ৰ‍্য") ; producing ja-phalaa after ra (Bengali or Assamese) needs extra ZWJ
     ("f" ?ৎ)                    ; BENGALI LETTER KHANDA TA
     ;; diacritics
