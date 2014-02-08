@@ -12,8 +12,8 @@ var testFixtures = [
 				output: 'काकाकिकीकुकूकेकैकोकौकृकॄकॢकॣकॆकॆकॊकॏकॅकॅकॉकऺकऻकॖकॗ',
 				description: 'vowel signs'
 			}, {
-				input: 'kkhgghGcchjjhYTThDDhNtthddhnpphbbhmyrlvshSShsHL,g,j,D,b,h',
-				output: 'कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषषसहळॻॼॾॿॽ',
+				input: 'kkhgghGcchjjhYTThDDhNtthddhnpphbbhmyrlvshSShsHL,g,j,D,b,h h',
+				output: 'कखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषषसहळॻॼॾॿॽ ह',
 				description: 'plain consonants'
 			}, {
 				input: 'nqrqLqkqkhqgqjqDqDhqphqyq',
@@ -24,8 +24,8 @@ var testFixtures = [
 				output: 'ज\u093Cफ\u093Cड\u093Cढ\u093C',
 				description: 'consonants with nuqta (without using q)'
 			}, {
-				input: 'KJvhkwWk<y',
-				output: 'क्षज्ञव्हक्रर्कऱ्य',
+				input: 'KJvkwWk<y',
+				output: 'क्षज्ञवक्रर्कऱ्य',
 				description: 'conjuncts and half-consonants'
 			}, { 
 				input: 'kqkMkCk:', 
@@ -66,16 +66,16 @@ var testFixtures = [
 				output: 'কাকাকিকীকুকূকৃকৢকৄকৣকেকৈকোকৌ',
 				description: 'vowel signs',
 			}, {
-				input: 'kkhgghxcchjjhXTThDDhNtthddhnpphbbhmJrlvshSShsHzv',
-				output: 'কখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলৱশষষসহৰৱ',
+				input: 'kkhgghxcchjjhXTThDDhNtthddhnpphbbhmJrlvshSShsHzv h',
+				output: 'কখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলৱশষষসহৰৱ হ',
 				description: 'plain consonants',
 			}, {
 				input: 'RRhy',
 				output: 'ড\u09BCঢ\u09BCয\u09BC',
 				description: 'consonants with nuqta',
 			}, {
-				input: 'KGkYrYzYkwWkmhf',
-				output: 'ক্ষজ্ঞক্যর‍্যৰ‍্যক্রর্কম্হৎ',
+				input: 'KGkYrYzYkwWkmf',
+				output: 'ক্ষজ্ঞক্যর‍্যৰ‍্যক্রর্কমৎ',
 				description: 'conjuncts and half-consonants',
 			}, {
 				input: 'kqkMkCk:',
