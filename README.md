@@ -83,10 +83,15 @@ Now Sanetype input can be toggled by enabling/disabling SCIM.
 (Shortcuts for these actions can be set in 
 *Scim Setup* → *FrontEnd* → *Global Setup*.) 
 
-# Windows
+# Google Input Tools
 
-At present, there is no version for Windows. 
-Use the web-based implementations instead.
+Sanetype can work on Windows using [Google Input Tools](http://www.google.com/inputtools/).
+
+1. Copy the `.scm` file to `C:\ProgramData\Google\Google Input Tools\com.google.input_tools.t13n.ime.{language}\schemes\`
+2. Restart Google Input Tools.
+3. From the Windows language bar, select Google Input Tools for your language.
+4. Click the "C" button on Google Input Tools' status bar to enable canonical mode.
+5. On Google Input Tools' status bar, select Settings → Schemes → Sanetype to enable typing in Sanetype. 
 
 # Web-based implementations
 
